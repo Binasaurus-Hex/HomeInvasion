@@ -27,11 +27,11 @@ public class Explore implements Behaviour {
 
     @Override
     public void update() {
-
+        navigator.update();
         if(navigator.reachedGoal()) {
             navigator.setGoal(grid.getRandomGoal(grid.getNearestNode(navigator.currentPos.getPoint())).getPoint());
         }
-        navigator.update();
+
     }
 
     @Override

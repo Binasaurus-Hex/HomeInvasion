@@ -1,7 +1,6 @@
 package objects.gameObjects.AI;
 
 import game.Game;
-import objects.gameObjects.Enemy;
 import objects.gameObjects.GameObject;
 import objects.gameObjects.Node;
 import objects.misc.Grid;
@@ -17,7 +16,6 @@ public class Navigator {
     PathList path;
     Node goal;
     Node currentPos;
-    Node nextPoint;
     Grid grid;
     Game game;
 
@@ -31,15 +29,19 @@ public class Navigator {
     }
 
     public boolean reachedGoal(){
+        currentPos = game.grid.getNearestNode(object.getPoint());
         if(currentPos.getPoint().distance(goal.getPoint())<1.1){
             return true;
         }
         else return false;
     }
 
-    public void setGoal(Point2D.Double point){
-        path = generator.getPathList(object.getPoint(), point);
-        goal = grid.getNearestNode(point);
+    public void setGoal(Point2D.Double end){
+
+        Point2D.Double start = grid.getNearestJunction(object.getPoint()).getPoint();
+
+        path = generator.getPathList(start, end);
+        this.goal = grid.getNearestNode(end);
     }
 
     private double findRotation(Point2D.Double start , Point2D.Double point){
@@ -72,11 +74,12 @@ public class Navigator {
 
     protected void followPath() {
         currentPos.getPoint().setLocation(object.getX(),object.getY());
-        if(path.hasReachedNext(currentPos)) {
-            nextPoint = path.getNextNode();
+        if(path.getTarget() == null)return;
+        if(path.hasReachedTarget(currentPos)) {
+            path.next();
         }
-        else if(nextPoint != null){
-            moveToPoint(nextPoint.getPoint());
+        else{
+            moveToPoint(path.getTarget().getPoint());
         }
     }
 

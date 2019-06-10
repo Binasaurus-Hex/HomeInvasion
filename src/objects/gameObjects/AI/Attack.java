@@ -21,6 +21,7 @@ public class Attack implements Behaviour{
     @Override
     public boolean needsControl() {
         if(enemy.canSeePlayer()){
+            enemy.seenPlayer = true;
             return true;
         }
         else return false;
@@ -29,19 +30,15 @@ public class Attack implements Behaviour{
     @Override
     public void update() {
         enemy.setLastPlayerPosition();
-        if(enemy.getLastPlayerPosition().junction){
-            navigator.moveToPoint(enemy.getLastPlayerPosition().getPoint());
-        }
-
+        navigator.moveToPoint(enemy.getLastPlayerPosition());
     }
 
     @Override
     public int getPriority() {
-        return 0;
+        return 5;
     }
 
     @Override
     public void stop() {
-
     }
 }

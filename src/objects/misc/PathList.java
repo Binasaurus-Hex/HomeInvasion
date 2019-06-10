@@ -4,6 +4,7 @@ import game.Game;
 import objects.gameObjects.Node;
 
 import java.awt.geom.Point2D;
+import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class PathList extends CopyOnWriteArrayList<Node> {
@@ -11,30 +12,34 @@ public class PathList extends CopyOnWriteArrayList<Node> {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private int listPosition;
-	private Node nextPoint;
+	private Node target;
 	private Game game;
+	private int listPos = 0;
 	
-	public PathList(Node nextPoint, Game game) {
+	public PathList(Game game) {
 		super();
 		this.game = game;
-		listPosition = 0;
-		this.add(nextPoint);
-		this.nextPoint = nextPoint;
 	}
-	
-	
-	public Node getNextNode() {
-		if((listPosition+1)>=this.size()) {
-			return null;
-		}
-		else {
-			listPosition++;
-			nextPoint = this.get(listPosition);
-			return nextPoint;
+
+	@Override
+	public boolean add(Node node) {
+		if(target == null)target = node;
+		return super.add(node);
+	}
+
+	public Node getTarget(){
+		return target;
+	}
+
+	public void next(){
+		listPos++;
+		if(listPos>=this.size())target = null;
+		else{
+			target = this.get(listPos);
 		}
 
 	}
+
 	
 	public Node getClosetNode(Node inputNode) {
 		Node closest = new Node(1,1,game);
@@ -56,8 +61,8 @@ public class PathList extends CopyOnWriteArrayList<Node> {
 		return closest;
 	}
 	
-	public boolean hasReachedNext(Node node) {
-		if(nextPoint.getPoint().distance(node.getPoint())<1.1) {
+	public boolean hasReachedTarget(Node node) {
+		if(target.getPoint().distance(node.getPoint())<1.1) {
 			return true;
 		}
 		else {

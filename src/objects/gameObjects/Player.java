@@ -29,8 +29,8 @@ public class Player extends GameObject{
     private final int TRANSITIONTIME=1;
 
     private int moveTime = 0;
-    private int moveState = 1;
-    private Map<Integer, BufferedImage> spriteMap;
+    public int moveState = 1;
+    public Map<Integer, BufferedImage> spriteMap;
 
 
     public Player(double x, double y, int z, double width, double height, Game game) {

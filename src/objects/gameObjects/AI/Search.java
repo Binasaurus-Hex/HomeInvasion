@@ -18,26 +18,33 @@ public class Search implements Behaviour {
 
     @Override
     public void start() {
-
+        navigator.setGoal(grid.getNearestJunction(enemy.getLastPlayerPosition()).getPoint());
     }
 
     @Override
     public boolean needsControl() {
-        return false;
+        if(!enemy.canSeePlayer() && enemy.seenPlayer){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @Override
     public void update() {
-
+        if(navigator.reachedGoal()){
+            enemy.seenPlayer = false;
+        }
+        navigator.update();
     }
 
     @Override
     public int getPriority() {
-        return 0;
+        return 3;
     }
 
     @Override
     public void stop() {
-
     }
 }

@@ -51,9 +51,9 @@ public class StateHandler {
 
         //adding the enemies
         game.objectHandler.add(new Hunter(1000, 1200, game));
-        //.objectHandler.add(new Hunter(1000, 1200, game));
-        //game.objectHandler.add(new Hunter(1000, 1200, game));
-        //game.objectHandler.add(new Hunter(1000, 1200, game));
+        game.objectHandler.add(new Hunter(900, 1200, game));
+        game.objectHandler.add(new Hunter(800, 1200, game));
+        game.objectHandler.add(new Hunter(700, 1200, game));
 
 
         //Utility Room and Garage

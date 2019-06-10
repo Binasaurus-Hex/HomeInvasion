@@ -22,7 +22,9 @@ public class Arbitrator {
         Map<Integer,Behaviour> contenders = new HashMap<>();
         for(Behaviour b : behaviours){
             if(b.needsControl()) contenders.put(b.getPriority(),b);
-            else b.stop();
+            else{
+                b.stop();
+            }
         }
         if(contenders.isEmpty())return;
         Integer highest = Integer.MIN_VALUE;

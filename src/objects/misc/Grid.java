@@ -188,6 +188,26 @@ public class Grid {
         return nodeList.get(row).get(column);
     }
 
+    public Node getNearestJunction(Point2D.Double point){
+        Node nearest = null;
+        double lowestDist = Double.MAX_VALUE;
+        for(ObjectList<Node> i : nodeList){
+            for(Node j : i){
+                if(!j.junction)continue;
+                else if(nearest == null)nearest = j;
+                else {
+                    double jDist = j.getPoint().distance(point);
+                    if(jDist < lowestDist){
+                        lowestDist = jDist;
+                        nearest = j;
+                    }
+                }
+
+            }
+        }
+        return nearest;
+    }
+
     public Node getRandomNode() {
         while(true) {
             int randomRow = (int)Math.floor(Math.random() * nodeList.size());

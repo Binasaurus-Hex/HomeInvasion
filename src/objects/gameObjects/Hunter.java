@@ -22,27 +22,12 @@ public class Hunter extends Enemy {
         sprite = loader.loadImage("/sprites/enemy/enemy.png");
         arbitrator.addBehaviour(explore);
         arbitrator.addBehaviour(attack);
+        arbitrator.addBehaviour(search);
     }
 
     @Override
     public void update() {
         collision();
-        /*
-        if(canSeePlayer()){
-            setLastPlayerPosition();
-            moveToPoint(playerLastPosition);
-        }
-        else{
-            followPath();
-        }
-        */
-        /*
-        navigator.update();
-        if(navigator.reachedGoal()) {
-            Node randomNode = game.grid.getRandomGoal(game.grid.getNearestNode(getPoint()));
-            navigator.setGoal(randomNode.getPoint());
-        }
-        */
         arbitrator.update();
 
 

@@ -1,10 +1,7 @@
 package objects.gameObjects;
 
 import game.Game;
-import objects.gameObjects.AI.Arbitrator;
-import objects.gameObjects.AI.Attack;
-import objects.gameObjects.AI.Explore;
-import objects.gameObjects.AI.Navigator;
+import objects.gameObjects.AI.*;
 import objects.misc.PathGenerator;
 import objects.misc.PathList;
 import physics.MathsMethods;
@@ -15,6 +12,7 @@ import java.awt.geom.Rectangle2D;
 
 public abstract class Enemy extends GameObject {
     protected double width,height;
+    public boolean seenPlayer = false;
 
     //attributes for working out line of sight
     protected Point2D.Double playerLastPosition;
@@ -26,6 +24,7 @@ public abstract class Enemy extends GameObject {
     protected Arbitrator arbitrator;
     protected Explore explore;
     protected Attack attack;
+    protected Search search;
 
     public Enemy(int x, int y, Game game) {
         super(x, y, 1, 0, GameObjectID.Enemy, game);
@@ -37,6 +36,7 @@ public abstract class Enemy extends GameObject {
         arbitrator = new Arbitrator();
         explore = new Explore(this);
         attack = new Attack(this);
+        search = new Search(this);
     }
 
 
@@ -82,11 +82,11 @@ public abstract class Enemy extends GameObject {
         playerLastPosition.setLocation(player.getX(), player.getY());
     }
 
-    public Node getLastPlayerPosition(){
-        return game.grid.getNearestNode(playerLastPosition);
+    public Point2D.Double getLastPlayerPosition(){
+        return playerLastPosition;
     }
 
-    private Player getPlayer(){
+    protected Player getPlayer(){
         for(GameObject object : game.objectHandler.objects) {
             if(object.id == GameObjectID.Player) {
                 return (Player)object;
