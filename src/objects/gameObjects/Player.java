@@ -209,9 +209,14 @@ public class Player extends GameObject{
             }
             graphics.rotate(-getRotation(), x, y);
         };
+        Drawable debugPos = (graphics)->{
+            graphics.setColor(Color.red);
+            graphics.drawOval((int)x-5,(int)y-5,10,10);
+        };
 
         Graphics2D g2d = (Graphics2D) g;
         renderToCamera(player, g2d, camera);
+        //renderToCamera(debugPos,g2d,camera);
     }
 
     @Override
@@ -220,9 +225,5 @@ public class Player extends GameObject{
             return new Rectangle2D.Double(x-(width/4), (y-(height/4))-5, width/2, (height/2)+10);
         }
         return new Rectangle2D.Double((x-(width/4)-5), y-(height/4), (width/2)+10, height/2);
-    }
-
-    public Point2D.Double getPoint(){
-        return new Point2D.Double(x,y);
     }
 }

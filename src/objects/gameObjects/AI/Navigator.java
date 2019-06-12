@@ -1,25 +1,28 @@
 package objects.gameObjects.AI;
 
 import game.Game;
+import objects.gameObjects.Enemy;
 import objects.gameObjects.GameObject;
+import objects.gameObjects.Hunter;
 import objects.gameObjects.Node;
 import objects.misc.Grid;
 import objects.misc.PathGenerator;
 import objects.misc.PathList;
 import physics.MathsMethods;
 
+import java.awt.*;
 import java.awt.geom.Point2D;
 
 public class Navigator {
-    GameObject object;
+    Enemy object;
     PathGenerator generator;
-    PathList path;
+    public PathList path;
     Node goal;
     Node currentPos;
     Grid grid;
     Game game;
 
-    public Navigator(GameObject object, Game game){
+    public Navigator(Enemy object, Game game){
         this.object = object;
         this.game = game;
         this.generator = new PathGenerator(game);
@@ -31,15 +34,17 @@ public class Navigator {
     public boolean reachedGoal(){
         currentPos = game.grid.getNearestNode(object.getPoint());
         if(currentPos.getPoint().distance(goal.getPoint())<1.1){
+            goal.setColor(Color.green);
             return true;
         }
         else return false;
     }
 
     public void setGoal(Point2D.Double end){
-
-        Point2D.Double start = grid.getNearestJunction(object.getPoint()).getPoint();
-
+        Point2D.Double start = object.getPoint();
+        if(!grid.getNearestNode(object.getPoint()).junction){
+            start = grid.getNearestJunction(object.getPoint()).getPoint();
+        }
         path = generator.getPathList(start, end);
         this.goal = grid.getNearestNode(end);
     }
@@ -73,13 +78,11 @@ public class Navigator {
     }
 
     protected void followPath() {
-        currentPos.getPoint().setLocation(object.getX(),object.getY());
         if(path.getTarget() == null)return;
-        if(path.hasReachedTarget(currentPos)) {
+        moveToPoint(path.getTarget().getPoint());
+        if(path.hasReachedTarget(object.getPoint())) {
+            //path.getTarget().setColor(Color.green);
             path.next();
-        }
-        else{
-            moveToPoint(path.getTarget().getPoint());
         }
     }
 

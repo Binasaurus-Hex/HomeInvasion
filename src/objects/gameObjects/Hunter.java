@@ -14,8 +14,9 @@ import java.awt.image.BufferedImage;
 public class Hunter extends Enemy {
     BufferedImage sprite;
 
-    public Hunter(int x, int y, Game game) {
-        super(x, y, game);
+    public Hunter(int x, int y, Game game,Color color) {
+        super(x, y, game,color);
+        this.color = color;
         velX = 2;
         velY = 2;
         BufferedImageLoader loader = new BufferedImageLoader();
@@ -51,6 +52,10 @@ public class Hunter extends Enemy {
 
     @Override
     public void render(Graphics g) {
+        Drawable debugPos = (graphics)->{
+            graphics.setColor(Color.red);
+            graphics.drawOval((int)x-5,(int)y-5,10,10);
+        };
         Drawable enemy = (graphics)->{
             graphics.setColor(Color.blue);
             graphics.rotate(getRotation(),x,y);
@@ -58,6 +63,7 @@ public class Hunter extends Enemy {
         };
         Graphics2D g2d = (Graphics2D)g;
         renderToCamera(enemy,g2d,game.cameraMap.get(CameraID.Main));
+        //renderToCamera(debugPos,g2d,game.cameraMap.get(CameraID.Main));
 
     }
 

@@ -9,6 +9,7 @@ import objects.misc.ObjectList;
 import objects.misc.PathGenerator;
 import objects.misc.PathList;
 
+import java.awt.*;
 import java.awt.geom.Point2D;
 
 public class StateHandler {
@@ -50,10 +51,10 @@ public class StateHandler {
         game.objectHandler.add(new Player(747,447,1,50,50,game));
 
         //adding the enemies
-        game.objectHandler.add(new Hunter(1000, 1200, game));
-        game.objectHandler.add(new Hunter(900, 1200, game));
-        game.objectHandler.add(new Hunter(800, 1200, game));
-        game.objectHandler.add(new Hunter(700, 1200, game));
+        game.objectHandler.add(new Hunter(1000, 1200, game, Color.BLUE));
+        game.objectHandler.add(new Hunter(1000, 1200, game,Color.white));
+        game.objectHandler.add(new Hunter(1000, 1200, game,Color.pink));
+        game.objectHandler.add(new Hunter(1000, 1200, game,Color.black));
 
 
         //Utility Room and Garage

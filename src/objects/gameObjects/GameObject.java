@@ -19,6 +19,7 @@ public abstract class GameObject {
     protected int z;
     protected GameObjectID id;
     protected Game game;
+    private Point2D.Double point;
 
     public GameObject(double x, double y , int z ,double rotation, GameObjectID id, Game game) {
         this.x = x;
@@ -29,6 +30,7 @@ public abstract class GameObject {
         this.rotation = rotation;
         this.id = id;
         this.game = game;
+        point = new Point2D.Double(x,y);
     }
 
     //These are the abstract methods and other methods used in every game object.
@@ -78,7 +80,8 @@ public abstract class GameObject {
     }
 
     public Point2D.Double getPoint(){
-        return new Point2D.Double(x,y);
+        point.setLocation(x,y);
+        return point;
     }
 
 

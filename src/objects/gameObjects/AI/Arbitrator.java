@@ -37,7 +37,6 @@ public class Arbitrator {
             next.start();
             current = next;
         }
-        System.out.println(current.getClass());
         current.update();
     }
 

@@ -19,7 +19,6 @@ public class PathGenerator {
         Node startNode = game.grid.getNearestNode(start);
         goalNode = game.grid.getNearestNode(goal);
         PathList returnList = new PathList(game);
-        returnList.add(startNode);
         Node currentNode = startNode;
         ArrayList<Node> aStarResult = aStar(startNode,goalNode);
         Collections.reverse(aStarResult);
@@ -80,9 +79,6 @@ public class PathGenerator {
                 fscoreMap.put(child,(gscoreMap.get(child)+child.getPoint().distance(goalNode.getPoint())));
             }
         }
-        startNode.setColor(Color.black);
-        goalNode.setColor(Color.pink);
-        System.out.println(goalNode.getPoint());
         return null;
     }
 }

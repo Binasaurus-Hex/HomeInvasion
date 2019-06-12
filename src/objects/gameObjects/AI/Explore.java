@@ -16,7 +16,6 @@ public class Explore implements Behaviour {
 
     @Override
     public void start() {
-        System.out.println("sets");
         navigator.setGoal(grid.getRandomGoal(grid.getNearestNode(enemy.getPoint())).getPoint());
     }
 

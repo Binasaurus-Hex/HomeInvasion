@@ -21,13 +21,8 @@ public class PathList extends CopyOnWriteArrayList<Node> {
 		this.game = game;
 	}
 
-	@Override
-	public boolean add(Node node) {
-		if(target == null)target = node;
-		return super.add(node);
-	}
-
 	public Node getTarget(){
+		if(target == null)target = this.get(0);
 		return target;
 	}
 
@@ -61,8 +56,8 @@ public class PathList extends CopyOnWriteArrayList<Node> {
 		return closest;
 	}
 	
-	public boolean hasReachedTarget(Node node) {
-		if(target.getPoint().distance(node.getPoint())<1.1) {
+	public boolean hasReachedTarget(Point2D.Double point) {
+		if(target.getPoint().distance(point)<1.1) {
 			return true;
 		}
 		else {

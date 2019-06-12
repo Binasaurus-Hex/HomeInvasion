@@ -6,6 +6,7 @@ import objects.misc.PathGenerator;
 import objects.misc.PathList;
 import physics.MathsMethods;
 
+import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
@@ -17,6 +18,7 @@ public abstract class Enemy extends GameObject {
     //attributes for working out line of sight
     protected Point2D.Double playerLastPosition;
     protected Line2D line;
+    public Color color;
 
     public Navigator navigator;
 
@@ -26,7 +28,7 @@ public abstract class Enemy extends GameObject {
     protected Attack attack;
     protected Search search;
 
-    public Enemy(int x, int y, Game game) {
+    public Enemy(int x, int y, Game game, Color color) {
         super(x, y, 1, 0, GameObjectID.Enemy, game);
         width = 50;
         height = 50;
