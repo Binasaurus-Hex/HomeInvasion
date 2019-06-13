@@ -45,6 +45,9 @@ public class Hunter extends Enemy {
                         Player player = (Player)object;
                         //player.kill();
                         break;
+                    case Door:
+                        resolveCollision(object);
+                        break;
                 }
             }
         }

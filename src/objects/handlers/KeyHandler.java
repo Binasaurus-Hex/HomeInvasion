@@ -15,6 +15,7 @@ public class KeyHandler extends KeyAdapter {
         keyMap.put("A", false);
         keyMap.put("S", false);
         keyMap.put("D", false);
+        keyMap.put("M",false);
         keyMap.put("Enter",false);
     }
 
@@ -46,6 +47,9 @@ public class KeyHandler extends KeyAdapter {
         if(key == KeyEvent.VK_ENTER) {
             keyMap.replace("Enter", true);
         }
+        if(key == KeyEvent.VK_M) {
+            keyMap.replace("M", true);
+        }
     }
 
     @Override
@@ -66,6 +70,9 @@ public class KeyHandler extends KeyAdapter {
         }
         if(key == KeyEvent.VK_ENTER) {
             keyMap.replace("Enter", false);
+        }
+        if(key == KeyEvent.VK_M) {
+            keyMap.replace("M", false);
         }
     }
 }

@@ -49,7 +49,7 @@ public class MusicHandler {
     }
 
     public void start(){
-        ac.start();
+        //ac.start();
     }
 
     public void stop(){

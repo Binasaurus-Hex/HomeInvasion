@@ -10,5 +10,6 @@ public enum GameObjectID {
     Light,
     Door,
     Popup,
-    Score
+    Score,
+    ActivatableBounds
 }

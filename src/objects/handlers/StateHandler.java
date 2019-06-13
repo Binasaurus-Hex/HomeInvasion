@@ -2,6 +2,9 @@ package objects.handlers;
 
 import game.Game;
 
+import objects.gameObjects.Doors.Door;
+import objects.gameObjects.Doors.HorizontalDoor;
+import objects.gameObjects.Doors.VerticalDoor;
 import objects.gameObjects.Hunter;
 import objects.gameObjects.*;
 import objects.misc.BufferedImageLoader;
@@ -54,6 +57,7 @@ public class StateHandler {
         game.objectHandler.add(new Hunter(1000, 1200, game,Color.black));
 
 
+
         //Utility Room and Garage
         game.objectHandler.add(new Wall(297, 395, 200, 10, game));
         game.objectHandler.add(new Wall(295, 395, 10, 610, game));
@@ -61,7 +65,7 @@ public class StateHandler {
         game.objectHandler.add(new Wall(497, 775, 10, 225, game));
         game.objectHandler.add(new Wall(295, 545, 80, 10, game));
         game.objectHandler.add(new Wall(425, 545, 80, 10, game));
-        game.objectHandler.add(new Door(372, 504, true, game));
+        game.objectHandler.add(new HorizontalDoor(372, 504,true, game));
 
         //Kitchen
         game.objectHandler.add(new Wall(497, 595, 325, 10, game));
@@ -69,7 +73,7 @@ public class StateHandler {
         game.objectHandler.add(new Wall(497, 295, 409, 10, game));
         game.objectHandler.add(new Wall(896, 300, 10, 305, game));
         game.objectHandler.add(new Wall(875, 595, 30, 10, game));
-        game.objectHandler.add(new Door(822, 555, true, game));
+        game.objectHandler.add(new HorizontalDoor(822, 555, true,game));
 
         //Stairs
         game.objectHandler.add(new Wall(900, 396, 100, 10, game));
@@ -81,48 +85,48 @@ public class StateHandler {
         game.objectHandler.add(new Wall(996, 595, 79, 10, game));
         game.objectHandler.add(new Wall(1125, 595, 100, 10, game));
         game.objectHandler.add(new Wall(1196, 525, 10, 100, game));
-        game.objectHandler.add(new Door(1072, 555, true, game));
+        game.objectHandler.add(new HorizontalDoor(1072, 555,true, game));
 
         //Study2
         game.objectHandler.add(new Wall(1205, 396, 140, 10, game));
         game.objectHandler.add(new Wall(1345, 396, 10, 200, game));
         game.objectHandler.add(new Wall(1275, 595, 80, 10, game));
-        game.objectHandler.add(new Door(1222, 555, true, game));
+        game.objectHandler.add(new HorizontalDoor(1222, 555,true, game));
 
         //HallwayH1
         game.objectHandler.add(new Wall(497, 675, 10, 50, game));
         game.objectHandler.add(new Wall(497, 696, 328, 10, game));
         game.objectHandler.add(new Wall(875, 696, 328, 10, game));
-        game.objectHandler.add(new Door(822, 655, true, game));
-        game.objectHandler.add(new Door(497, 625, false, game));
+        game.objectHandler.add(new HorizontalDoor(822, 655,true, game));
+        game.objectHandler.add(new VerticalDoor(497, 625, true,game));
 
         //Lounge
         game.objectHandler.add(new Wall(496, 995, 308, 10, game));
         game.objectHandler.add(new Wall(795, 700, 10, 25, game));
         game.objectHandler.add(new Wall(795, 775, 10, 250, game));
-        game.objectHandler.add(new Door(497, 725, false, game));
-        game.objectHandler.add(new Door(795, 725, false, game));
+        game.objectHandler.add(new VerticalDoor(497, 725, true, game));
+        game.objectHandler.add(new VerticalDoor(795, 725,true,  game));
 
         //Fireplace room/Dining room
         game.objectHandler.add(new Wall(895, 700, 10, 25, game));
         game.objectHandler.add(new Wall(895, 895, 300, 10, game));
         game.objectHandler.add(new Wall(895, 775, 10, 375, game));
         game.objectHandler.add(new Wall(875, 1145, 350, 10, game));
-        game.objectHandler.add(new Door(895, 725, false, game));
-        game.objectHandler.add(new Door(1194, 975, false, game));
+        game.objectHandler.add(new VerticalDoor(895, 725,true,  game));
+        game.objectHandler.add(new VerticalDoor(1194, 975,true,  game));
 
         //HallwayH2
         game.objectHandler.add(new Wall(545, 1000, 10, 350, game));
         game.objectHandler.add(new Wall(800, 1145, 25, 10, game));
-        game.objectHandler.add(new Door(822, 1105, true, game));
+        game.objectHandler.add(new HorizontalDoor(822, 1105, true, game));
 
         //Pantry
         game.objectHandler.add(new Wall(545, 1095, 250, 10, game));
         game.objectHandler.add(new Wall(545, 1345, 250, 10, game));
         game.objectHandler.add(new Wall(794, 1075, 10, 150, game));
         game.objectHandler.add(new Wall(794, 1275, 10, 80, game));
-        game.objectHandler.add(new Door(794, 1025, false, game));
-        game.objectHandler.add(new Door(794, 1225, false, game));
+        game.objectHandler.add(new VerticalDoor(794, 1025,true,  game));
+        game.objectHandler.add(new VerticalDoor(794, 1225,true,  game));
 
         //TV room
         game.objectHandler.add(new Wall(800, 1345, 500, 10, game));
@@ -133,14 +137,14 @@ public class StateHandler {
         //Bathroom
         game.objectHandler.add(new Wall(1100, 1245, 75, 10, game));
         game.objectHandler.add(new Wall(1225, 1245, 75, 10, game));
-        game.objectHandler.add(new Door(1172, 1205, true, game));
+        game.objectHandler.add(new HorizontalDoor(1172, 1205, true, game));
 
         //HallwayH3
         game.objectHandler.add(new Wall(1295, 600, 10, 755, game));
         game.objectHandler.add(new Wall(1195, 675, 10, 300, game));
         game.objectHandler.add(new Wall(1195, 1025, 10, 125, game));
         game.objectHandler.add(new Wall(1275, 1145, 30, 10, game));
-        game.objectHandler.add(new Door(1222, 1105, true, game));
+        game.objectHandler.add(new HorizontalDoor(1222, 1105, true, game));
 
         //Room Bounds
 

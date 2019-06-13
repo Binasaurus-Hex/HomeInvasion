@@ -123,6 +123,8 @@ public class Player extends GameObject{
                     case Wall:
                         resolveCollision(object);
                         break;
+                    case Door:
+                        resolveCollision(object);
                 }
             }
         }
@@ -174,6 +176,11 @@ public class Player extends GameObject{
         if(KeyHandler.isKeyPressed("D")){
             x+=velX;
             setRotation(0);
+        }
+
+        if(KeyHandler.isKeyPressed("M")){
+            game.objectHandler.clear();
+            game.stateHandler.init(game);
         }
 
         if(KeyHandler.isKeyPressed("W") && KeyHandler.isKeyPressed("D")) {

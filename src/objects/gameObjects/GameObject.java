@@ -71,10 +71,18 @@ public abstract class GameObject {
         }
     }
 
+    /**
+     * returns the rotation of the object (radians)
+     * @return
+     */
     public double getRotation() {
         return rotation;
     }
 
+    /**
+     * sets the rotation (radians)
+     * @param rotation
+     */
     public void setRotation(double rotation) {
         this.rotation = rotation;
     }

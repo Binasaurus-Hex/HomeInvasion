@@ -244,12 +244,12 @@ Event: 4.124 Thread 0x000000001f13e000 Uncommon trap: reason=unstable_if action=
 Event: 4.128 Thread 0x000000001ead0000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002f50328 method=sun.java2d.opengl.OGLSurfaceData.validatePipe(Lsun/java2d/SunGraphics2D;)V @ 93
 Event: 4.135 Thread 0x000000001ead0000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002f1f0f4 method=sun.java2d.pipe.BufferedContext.validate(Lsun/java2d/pipe/hw/AccelSurface;Lsun/java2d/pipe/hw/AccelSurface;Lsun/java2d/pipe/Region;Ljava/awt/Composite;Ljava/awt/geom/AffineTr`vե@
 Event: 4.162 Thread 0x000000001ead0000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002f04534 method=sun.java2d.SunGraphics2D.validateColor()V @ 48
-Event: 4.163 Thread 0x000000001fcad800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002fb0998 method=objects.gameObjects.Door.update()V @ 130
+Event: 4.163 Thread 0x000000001fcad800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002fb0998 method=objects.gameObjects.Doors.Door.update()V @ 130
 Event: 4.163 Thread 0x000000001ead0000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002e31b90 method=sun.font.FileFontStrike.getCachedGlyphPtr(I)J @ 99
-Event: 4.172 Thread 0x000000001fcad800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002fa1058 method=objects.gameObjects.Door.update()V @ 130
+Event: 4.172 Thread 0x000000001fcad800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002fa1058 method=objects.gameObjects.Doors.Door.update()V @ 130
 Event: 4.176 Thread 0x000000001ead0000 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002f06284 method=sun.java2d.SunGraphics2D.validateColor()V @ 48
 Event: 4.178 Thread 0x000000001fce0800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002c2c60c method=net.beadsproject.beads.ugens.SamplePlayer.calculateBuffer()V @ 635
-Event: 4.236 Thread 0x000000001fcad800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002fecc2c method=objects.gameObjects.Door.update()V @ 110
+Event: 4.236 Thread 0x000000001fcad800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x0000000002fecc2c method=objects.gameObjects.Doors.Door.update()V @ 110
 
 Internal exceptions (10 events):
 Event: 0.148 Thread 0x00000000026c3800 Exception <a 'java/security/PrivilegedActionException'> (0x000000076b446320) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u51\3951\hotspot\src\share\vm\prims\jvm.cpp, line 1382]

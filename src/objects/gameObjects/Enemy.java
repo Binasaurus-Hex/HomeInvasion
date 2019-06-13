@@ -63,13 +63,8 @@ public abstract class Enemy extends GameObject {
             Player player = getPlayer();
             line = new Line2D.Double(x,y,player.x,player.y);
             for(GameObject object : game.objectHandler.objects) {
-                if(object.id == GameObjectID.Wall) {
+                if(object.id == GameObjectID.Wall || object.id == GameObjectID.Door) {
                     if(line.intersects(object.getBounds())) {
-                        return false;
-                    }
-                }
-                if(object.id == GameObjectID.Door){
-                    if(line.intersects(object.getBounds())){
                         return false;
                     }
                 }
@@ -78,7 +73,6 @@ public abstract class Enemy extends GameObject {
         }catch (Exception e){
             return false;
         }
-
     }
 
     /**
