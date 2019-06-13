@@ -6,11 +6,8 @@ import objects.gameObjects.Hunter;
 import objects.gameObjects.*;
 import objects.misc.BufferedImageLoader;
 import objects.misc.ObjectList;
-import objects.misc.PathGenerator;
-import objects.misc.PathList;
 
 import java.awt.*;
-import java.awt.geom.Point2D;
 
 public class StateHandler {
     public StateHandler(Game game) {

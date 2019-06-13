@@ -1,9 +1,10 @@
-package objects.handlers;
+package objects.gameObjects;
 
 import game.CameraID;
 import game.Game;
 import objects.gameObjects.GameObject;
 import objects.gameObjects.GameObjectID;
+import objects.handlers.MusicPlayer;
 import objects.interfaces.Drawable;
 import objects.misc.BufferedImageLoader;
 
@@ -71,8 +72,13 @@ public class Door extends GameObject {
                 }
             }
         };
+        Drawable debug = (graphics)->{
+            graphics.setColor(Color.red);
+            graphics.drawRect((int)x,(int)y,50,40);
+        };
         Graphics2D g2d = (Graphics2D) g;
         renderToCamera(drawable, g2d, game.cameraMap.get(CameraID.Main));
+        renderToCamera(debug,g2d,game.cameraMap.get(CameraID.Main));
     }
 
     @Override

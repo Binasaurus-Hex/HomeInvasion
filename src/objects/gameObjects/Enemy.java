@@ -68,6 +68,11 @@ public abstract class Enemy extends GameObject {
                         return false;
                     }
                 }
+                if(object.id == GameObjectID.Door){
+                    if(line.intersects(object.getBounds())){
+                        return false;
+                    }
+                }
             }
             return true;
         }catch (Exception e){
