@@ -39,10 +39,10 @@ public class Game extends JComponent {
     public Game() {
         musicHandler = new MusicHandler();
         musicHandler.start();
-        backgroundMusic = new MusicPlayer(musicHandler.getAC(),musicHandler.getTrack("night"),1.5f,1,true);
-        backgroundMusic.resume();
-        backgroundSong = new MusicPlayer(musicHandler.getAC(),musicHandler.getTrack("music"),0.2f,1,true);
-        backgroundSong.resume();
+        //backgroundMusic = new MusicPlayer(musicHandler.getAC(),musicHandler.getTrack("night"),1.5f,1,true);
+        //backgroundMusic.resume();
+        //backgroundSong = new MusicPlayer(musicHandler.getAC(),musicHandler.getTrack("music"),0.2f,1,true);
+        //backgroundSong.resume();
 
         grid = new Grid(this);
         objectHandler = new ObjectHandler();
@@ -54,7 +54,7 @@ public class Game extends JComponent {
 
         //creating and adding the initial camera to the camera list
         cameraMap = new ObjectMap<>();
-        Camera main = new Camera(0, 0, 1,window.gameWidth,window.gameHeight);
+        Camera main = new Camera(0, 0, 2,window.gameWidth,window.gameHeight);
         Camera screen = new Camera(0,0,1,window.gameWidth,window.gameHeight);
         cameraMap.put(CameraID.Main,main);
         cameraMap.put(CameraID.Screen,screen);
@@ -151,5 +151,11 @@ public class Game extends JComponent {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public void reset(){
+        objectHandler.clear();
+        musicHandler.start();
+        stateHandler.init(this);
     }
 }

@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Player extends GameObject{
-    private double width, height;
+    public double width, height;
     private boolean movable = true;
     private Camera camera;
     private boolean moving;
@@ -60,7 +60,6 @@ public class Player extends GameObject{
 
     }
 
-    @SuppressWarnings("Duplicates")
     @Override
     public void update() {
         camera.setX(x);
@@ -79,7 +78,13 @@ public class Player extends GameObject{
             }
         }
 
-        //audio
+        //enemyAudio();
+
+
+
+    }
+
+    private void enemyAudio(){
         int closestLeft=Integer.MAX_VALUE;
         int closestRight=Integer.MAX_VALUE;
         for(GameObject object : game.objectHandler.objects) {
@@ -113,7 +118,6 @@ public class Player extends GameObject{
             float perc = 100-(closestRight*100)/MAXDETECT;
             enemyRight.fade((6.0f/100f)*perc+3,TRANSITIONTIME);
         }
-
     }
 
     private void collision() {
@@ -196,11 +200,12 @@ public class Player extends GameObject{
 
     public void kill(){
         if(!ded) {
+            moving = false;
             PopupLose lose = new PopupLose(0, 0, 0, 0, GameObjectID.Popup, game);
-//        game.objectHandler.clear();
             game.objectHandler.add(lose);
             game.repaint();
             ded=true;
+            playerWalking.pause();
         }
     }
 

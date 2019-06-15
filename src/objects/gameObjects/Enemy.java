@@ -38,7 +38,7 @@ public abstract class Enemy extends GameObject {
         arbitrator = new Arbitrator();
         explore = new Explore(this);
         attack = new Attack(this);
-        search = new Search(this);
+        search = new Search(this,game);
     }
 
 
@@ -87,7 +87,7 @@ public abstract class Enemy extends GameObject {
         return playerLastPosition;
     }
 
-    protected Player getPlayer(){
+    public Player getPlayer(){
         for(GameObject object : game.objectHandler.objects) {
             if(object.id == GameObjectID.Player) {
                 return (Player)object;

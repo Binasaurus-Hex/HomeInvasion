@@ -10,12 +10,26 @@ public class VerticalDoor extends Door {
 
     public VerticalDoor(double x, double y,boolean inward, Game game) {
         super(x, y, game);
-        width = 8;
+        width = 6;
         height = 50;
 
+        this.inward = inward;
+        init();
+    }
+
+    public VerticalDoor(double x,double y,double width,double height,boolean inward,Game game){
+        super(x,y,game);
+        this.width = width;
+        this.height = height;
+        this.inward = inward;
+        init();
+
+    }
+
+    private void init(){
         closedBounds = new Rectangle2D.Double(x,y,width,height);
         if(!inward){
-            openBounds = new Rectangle2D.Double(x+width,y,height,width);
+            openBounds = new Rectangle2D.Double(x,y,height,width);
         }
         else {
             openBounds = new Rectangle2D.Double(x+(width)-height,y,height,width);

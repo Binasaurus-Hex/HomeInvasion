@@ -24,8 +24,8 @@ public abstract class Door extends GameObject {
     protected Rectangle2D.Double openBounds;
     protected Rectangle2D.Double closedBounds;
     protected ActivatableBounds doorActivate;
-    protected double width,height;
-
+    public double width,height;
+    protected boolean inward = false;
 
 
     public Door(double x, double y, Game game) {
@@ -42,7 +42,6 @@ public abstract class Door extends GameObject {
         if(state == DoorState.closed){
             state = DoorState.open;
             doorBounds = openBounds;
-            System.out.println("open");
         }
     }
 
@@ -50,7 +49,6 @@ public abstract class Door extends GameObject {
         if(state == DoorState.open){
             state = DoorState.closed;
             doorBounds = closedBounds;
-            System.out.println("closed");
         }
     }
 

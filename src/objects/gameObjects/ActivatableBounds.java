@@ -72,7 +72,7 @@ public class ActivatableBounds extends GameObject {
             graphics.draw(bounds);
         };
         Graphics2D g2d = (Graphics2D)g;
-        renderToCamera(debug,g2d,game.cameraMap.get(CameraID.Main));
+        //renderToCamera(debug,g2d,game.cameraMap.get(CameraID.Main));
     }
 
     @Override

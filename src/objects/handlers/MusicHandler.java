@@ -14,14 +14,12 @@ import java.util.Scanner;
 
 public class MusicHandler {
     private AudioContext ac;
-    private Game game;
     public HashMap<String,Sample> trackList;
     //music:
     public MusicPlayer playerWalking;
 
     public MusicHandler(){
         this.ac = new AudioContext();
-//        this.game = g;
         trackList = new HashMap<>();
         trackList.put("alarm",SampleManager.sample("res/audio/alarm.mp3"));
         trackList.put("doorOpen",SampleManager.sample("res/audio/doorOpen.wav"));
@@ -49,29 +47,12 @@ public class MusicHandler {
     }
 
     public void start(){
-        //ac.start();
+        ac.start();
     }
 
     public void stop(){
         ac.stop();
     }
 
-//    TEST function to check if audio playing and libs work
-    public static void main(String[] args) {
-        MusicHandler music = new MusicHandler();
-        music.start();
-        MusicPlayer track2 = new MusicPlayer(music.getAC(),music.trackList.get("night"),2,2000,true);
-//        MusicPlayer track1 = new MusicPlayer(music.getAC(),music.trackList.get("whisper1"),1,2000,true);
-        Scanner sc = new Scanner(System.in);
-        while(true){
-            int i = sc.nextInt();
-            if(i==1){
-                music.playerWalking.resume();
-            }else{
-                music.playerWalking.pause();
-            }
-        }
-
-    }
 }
 

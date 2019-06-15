@@ -40,8 +40,7 @@ public class PopupLose extends GameObject{
     @Override
     public void update() {
         if(KeyHandler.isKeyPressed("Enter")&&active){
-            game.objectHandler.clear();
-            game.stateHandler.init(game);
+            game.reset();
         }
     }
 

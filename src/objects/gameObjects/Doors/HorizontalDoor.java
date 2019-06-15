@@ -11,8 +11,20 @@ public class HorizontalDoor extends Door {
     public HorizontalDoor(double x, double y,boolean inward, Game game) {
         super(x, y, game);
         width = 50;
-        height = 8;
+        height = 6;
+        this.inward = inward;
+        init();
+    }
 
+    public HorizontalDoor(double x,double y,double width,double height,boolean inward,Game game){
+        super(x,y,game);
+        this.width = width;
+        this.height = height;
+        this.inward = inward;
+        init();
+    }
+
+    private void init(){
         closedBounds = new Rectangle2D.Double(x,y,width,height);
         if(!inward){
             openBounds = new Rectangle2D.Double(x,y+height,height,width);
@@ -29,4 +41,6 @@ public class HorizontalDoor extends Door {
         doorActivate.setOnExit(()->close());
         game.objectHandler.add(doorActivate);
     }
+
+
 }
