@@ -24,9 +24,6 @@ public class Game extends JComponent {
 
     public ObjectHandler objectHandler;
     public StateHandler stateHandler;
-    public MusicHandler musicHandler;
-    private MusicPlayer backgroundMusic;
-    private MusicPlayer backgroundSong;
 
     //This is the camera which is an object of type Camera from my Camera class. It's used for updating the camera each tick of the game
     public Map<CameraID,Camera> cameraMap;
@@ -37,8 +34,6 @@ public class Game extends JComponent {
     private Thread thread;
 
     public Game() {
-        musicHandler = new MusicHandler();
-        musicHandler.start();
         //backgroundMusic = new MusicPlayer(musicHandler.getAC(),musicHandler.getTrack("night"),1.5f,1,true);
         //backgroundMusic.resume();
         //backgroundSong = new MusicPlayer(musicHandler.getAC(),musicHandler.getTrack("music"),0.2f,1,true);
@@ -155,7 +150,6 @@ public class Game extends JComponent {
 
     public void reset(){
         objectHandler.clear();
-        musicHandler.start();
         stateHandler.init(this);
     }
 }

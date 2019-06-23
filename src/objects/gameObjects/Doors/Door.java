@@ -5,13 +5,10 @@ import game.Game;
 import objects.gameObjects.ActivatableBounds;
 import objects.gameObjects.GameObject;
 import objects.gameObjects.GameObjectID;
-import objects.handlers.MusicPlayer;
 import objects.interfaces.Drawable;
-import objects.misc.BufferedImageLoader;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
-import java.awt.image.BufferedImage;
 
 public abstract class Door extends GameObject {
 

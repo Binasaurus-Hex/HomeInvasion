@@ -2,13 +2,13 @@ package objects.gameObjects;
 
 import game.CameraID;
 import game.Game;
-import objects.handlers.MusicPlayer;
 import objects.interfaces.Drawable;
 import objects.handlers.KeyHandler;
 import objects.misc.BufferedImageLoader;
 import objects.misc.Camera;
+import objects.misc.Sound;
+
 import java.awt.*;
-import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
@@ -21,10 +21,6 @@ public class Player extends GameObject{
     private boolean moving;
     private boolean ded;
 
-    //music
-    private MusicPlayer playerWalking;
-    private MusicPlayer enemyLeft;
-    private MusicPlayer enemyRight;
     private final int MAXDETECT=300;
     private final int TRANSITIONTIME=1;
 
@@ -52,12 +48,6 @@ public class Player extends GameObject{
         spriteMap.put(7, loader.loadImage("/sprites/player/8.png"));
         spriteMap.put(8, loader.loadImage("/sprites/player/9.png"));
         spriteMap.put(9, loader.loadImage("/sprites/player/10.png"));
-
-        //music
-        playerWalking = new MusicPlayer(game.musicHandler.getAC(),game.musicHandler.getTrack("playerSteps"),1.5f,1,true);
-        enemyLeft = new MusicPlayer(game.musicHandler.getAC(),game.musicHandler.getTrack("whisper1Left"),0,10,true);
-        enemyRight = new MusicPlayer(game.musicHandler.getAC(),game.musicHandler.getTrack("whisper1Right"),0,10,true);
-
     }
 
     @Override
@@ -69,56 +59,10 @@ public class Player extends GameObject{
             move();
         }
         if(moving){
-            if(!playerWalking.isPlaying()){
-                playerWalking.resume();
-            }
         }else{
-            if(playerWalking.isPlaying()){
-                playerWalking.pause();
-            }
         }
-
-        //enemyAudio();
-
-
-
     }
 
-    private void enemyAudio(){
-        int closestLeft=Integer.MAX_VALUE;
-        int closestRight=Integer.MAX_VALUE;
-        for(GameObject object : game.objectHandler.objects) {
-            if(object.id == GameObjectID.Enemy){
-                if(object.y >= y-MAXDETECT && object.y <= y+MAXDETECT) {
-                    if(object.x > x && (object.x - x)<MAXDETECT){
-                        //further right
-                        closestRight=(int)(object.x - x);
-                    }else if(object.x < x && (x - object.x)<MAXDETECT){
-                        //further left
-                        closestLeft=(int)(x - object.x);
-                    }
-                }
-            }
-        }
-
-        if(closestLeft==Integer.MAX_VALUE){
-            if(enemyLeft.isPlaying()){enemyLeft.pause();}
-
-        }else{
-            if(!enemyLeft.isPlaying()){ enemyLeft.resume();}
-            float perc = 100-(closestLeft*100)/MAXDETECT;
-            enemyLeft.fade((6.0f/100f)*perc+3,TRANSITIONTIME);
-        }
-
-        if(closestRight==Integer.MAX_VALUE){
-            if(enemyRight.isPlaying()){enemyRight.pause();}
-
-        }else{
-            if(!enemyRight.isPlaying()){ enemyRight.resume();}
-            float perc = 100-(closestRight*100)/MAXDETECT;
-            enemyRight.fade((6.0f/100f)*perc+3,TRANSITIONTIME);
-        }
-    }
 
     private void collision() {
         for(GameObject object : game.objectHandler.objects) {
@@ -205,7 +149,6 @@ public class Player extends GameObject{
             game.objectHandler.add(lose);
             game.repaint();
             ded=true;
-            playerWalking.pause();
         }
     }
 
