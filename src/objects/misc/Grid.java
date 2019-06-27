@@ -1,24 +1,38 @@
 package objects.misc;
 
 import game.Game;
+import objects.gameObjects.GameObject;
 import objects.gameObjects.Node;
+import objects.gameObjects.Wall;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class Grid {
     
     private Game game;
     private ObjectList<ObjectList<Node>> nodeList;
-    private int[][] matrix = new int[33][33]; //y, x
+    private int[][] matrix;
 
     public Grid(Game game){
         this.game = game;
         nodeList = new ObjectList<>();
+        try {
+            makeImage();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         BufferedImageLoader loader = new BufferedImageLoader();
-        readGridFromFile(loader.loadImage("/map/Floor1.png"));
+        readGridFromFile(loader.loadImage("/map/generatedMap.png"));
         generateNodes();
+
     }
 
     public int[][] getMatrix() {
@@ -32,7 +46,7 @@ public class Grid {
     private void generateNodes(){
         ObjectList<ObjectList<Node>> nodes = new ObjectList<>();
         for (int row = 0;row < matrix.length;row++){
-            ObjectList<Node> rowNodes = new ObjectList<Node>();
+            ObjectList<Node> rowNodes = new ObjectList<>();
             for (int column = 0; column < matrix[0].length; column ++){
                 Node temp = new Node(column*Node.size,row*Node.size,game);
                 if(matrix[row][column] == 1){
@@ -57,7 +71,7 @@ public class Grid {
                 if(temp.getColor().equals(Color.red) || temp.getColor().equals(Color.blue)){
                     continue;
                 }
-                else if(!isCorridor(temp)){
+                else{
                     temp.junction = true;
                 }
             }
@@ -124,6 +138,7 @@ public class Grid {
         }
     }
 
+    @Deprecated
     private boolean isCorridor(Node test){
         Point2D.Double testPoint = test.getPoint();
         try{
@@ -146,10 +161,48 @@ public class Grid {
 
 
     }
+
+    public void makeImage() throws IOException {
+        int val = 300;
+        int offset = -150;
+        BufferedImage image = new BufferedImage(val,val,BufferedImage.TYPE_INT_RGB);
+        Rectangle2D.Double template = new Rectangle2D.Double(0,0,Node.size,Node.size);
+        for(int i = 0; i < val; i++) {
+            template.y = (i * 5) - offset;
+            for (int j = 0; j < val; j++) {
+                image.setRGB(j,i, Color.green.getRGB());
+                template.x = (j * 5) - offset;
+                for (GameObject obj : game.objectHandler.objects) {
+                    if (obj.getBounds() != null) {
+                        if (obj.getBounds().intersects(template)) {
+                            if (obj instanceof Wall) {
+                                Wall wall = (Wall) obj;
+                                wall.color = Color.blue;
+                                image.setRGB(j, i, Color.RED.getRGB());
+                                System.out.println("x = " + j + "  y = " + i);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        for(int i = 0; i < image.getHeight();i++){
+            image.setRGB(0,i,Color.red.getRGB());
+            image.setRGB(image.getWidth()-1,i,Color.red.getRGB());
+            image.setRGB(i,0,Color.red.getRGB());
+            image.setRGB(i,image.getHeight()-1,Color.red.getRGB());
+        }
+
+        File file = new File("res/map/generatedMap.png");
+        ImageIO.write(image,"png",file);
+    }
     
     private void readGridFromFile(BufferedImage image) {
         int w = image.getWidth(); //gets the width of the image
         int h = image.getHeight(); //gets the height of the image
+
+        matrix = new int[h][w]; //y, x
 
         for(int y = 0; y < h; y++) { //first for loop, starts in top left, progressively goes to the down
             for(int x = 0; x < w; x++) { //second for loop, starts in top left, progressively moves right.

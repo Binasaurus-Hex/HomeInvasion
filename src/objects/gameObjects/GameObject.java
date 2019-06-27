@@ -46,7 +46,7 @@ public abstract class GameObject {
         item.draw(g2d);
     }
 
-    protected boolean isColliding(GameObject g){
+    public boolean isColliding(GameObject g){
         if(g.getBounds() == null){
             return false;
         }

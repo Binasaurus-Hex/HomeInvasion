@@ -8,9 +8,11 @@ import objects.gameObjects.Doors.VerticalDoor;
 import objects.gameObjects.Hunter;
 import objects.gameObjects.*;
 import objects.misc.BufferedImageLoader;
+import objects.misc.Grid;
 import objects.misc.ObjectList;
 
 import java.awt.*;
+import java.io.IOException;
 
 public class StateHandler {
     public StateHandler(Game game) {
@@ -19,12 +21,7 @@ public class StateHandler {
 
     public void init(Game game){
         BufferedImageLoader loader = new BufferedImageLoader();
-        ObjectList<ObjectList<Node>> nodeList = game.grid.getNodes();
-        for(ObjectList<Node> row : nodeList){
-            for(Node node : row){
-                game.objectHandler.add(node);
-            }
-        }
+
 
         //Floor
         game.objectHandler.add(new Floor(-200, -200, 2500, 2500, loader.loadImage("/sprites/floor/grass.png"), game));//Grass
@@ -47,14 +44,7 @@ public class StateHandler {
         game.objectHandler.add(new Floor(1201, 601, 100, 550, loader.loadImage("/sprites/floor/wood.png"), game));//HallwayH3
         game.objectHandler.add(new Floor(1100, 1150, 200, 100, loader.loadImage("/sprites/floor/wood.png"), game));//HallwayH3-sub
 
-        //Player
-        game.objectHandler.add(new Player(747,447,1,50,50,game));
 
-        //adding the enemies
-        game.objectHandler.add(new Hunter(1000, 1200, game, Color.BLUE));
-        game.objectHandler.add(new Hunter(1000, 1200, game,Color.white));
-        game.objectHandler.add(new Hunter(1000, 1200, game,Color.pink));
-        game.objectHandler.add(new Hunter(1000, 1200, game,Color.black));
 
 
         int xOffsetHorizontal = 3;
@@ -170,6 +160,25 @@ public class StateHandler {
         game.objectHandler.add(new LightSource(0, 0, 0, game));
 
         game.objectHandler.add(new Score(-200,-450,game));
+
+        game.grid = new Grid(game);
+        ObjectList<ObjectList<Node>> nodeList = game.grid.getNodes();
+        for(ObjectList<Node> row : nodeList){
+            for(Node node : row){
+                game.objectHandler.add(node);
+            }
+        }
+
+        //Player
+        game.objectHandler.add(new Player(747,447,1,50,50,game));
+
+        //adding the enemies
+        /*
+        game.objectHandler.add(new Hunter(1000, 1200, game, Color.BLUE));
+        game.objectHandler.add(new Hunter(1000, 1200, game,Color.white));
+        game.objectHandler.add(new Hunter(1000, 1200, game,Color.pink));
+        game.objectHandler.add(new Hunter(1000, 1200, game,Color.black));
+        */
     }
 
     public void update(){

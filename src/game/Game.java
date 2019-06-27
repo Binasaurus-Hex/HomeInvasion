@@ -39,7 +39,6 @@ public class Game extends JComponent {
         //backgroundSong = new MusicPlayer(musicHandler.getAC(),musicHandler.getTrack("music"),0.2f,1,true);
         //backgroundSong.resume();
 
-        grid = new Grid(this);
         objectHandler = new ObjectHandler();
         //creating the window
         window = new Window(this,"There's no place like home - Running on Scythe engine");

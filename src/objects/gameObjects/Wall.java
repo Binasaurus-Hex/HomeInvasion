@@ -9,8 +9,10 @@ import java.awt.geom.Rectangle2D;
 
 public class Wall extends GameObject{
     private int width, height;
+    public Color color;
     public Wall(int x, int y, int width, int height, Game game) {
         super(x, y, 0, 0, GameObjectID.Wall, game);
+        color = Color.darkGray;
         this.width = width;
          this.height = height;
     }
@@ -21,7 +23,7 @@ public class Wall extends GameObject{
     @Override
     public void render(Graphics g) {
         Drawable drawable = (graphics)->{
-            g.setColor(Color.DARK_GRAY);
+            g.setColor(color);
             g.fillRect((int)x, (int)y, width, height);
         };
 
@@ -32,5 +34,6 @@ public class Wall extends GameObject{
     @Override
     public Rectangle2D.Double getBounds() {
         return new Rectangle2D.Double(x, y, width, height);
+
     }
 }

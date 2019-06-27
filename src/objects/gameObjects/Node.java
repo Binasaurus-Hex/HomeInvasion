@@ -18,12 +18,15 @@ public class Node extends GameObject {
     public Node parent;
     public ObjectList<Node> children;
     public int score = Integer.MAX_VALUE;
+    public Rectangle2D bounds;
+    public static int count = 0;
 
     public Node(Point2D.Double point, Game game){
         super(point.x,point.y,0,0,GameObjectID.Node,game);
         children = new ObjectList<>();
         parent = null;
         this.point = point;
+        bounds = new Rectangle2D.Double(point.x,point.y,size,size);
     }
 
     public Node(double x,double y,Game game){
@@ -31,6 +34,8 @@ public class Node extends GameObject {
         this.point = new Point2D.Double(x,y);
         parent = null;
         children = new ObjectList<>();
+        count++;
+        System.out.println(count);
     }
 
     public Point2D.Double getPoint(){
@@ -58,7 +63,7 @@ public class Node extends GameObject {
             graphics.fillOval((int)x,(int)y,1,1);
         };
         Graphics2D g2d = (Graphics2D)g;
-        //renderToCamera(node,g2d,game.cameraMap.get(CameraID.Main));
+        renderToCamera(node,g2d,game.cameraMap.get(CameraID.Main));
     }
 
     @Override
