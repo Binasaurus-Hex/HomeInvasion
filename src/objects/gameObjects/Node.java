@@ -58,7 +58,7 @@ public class Node extends GameObject {
             graphics.fillOval((int)x,(int)y,1,1);
         };
         Graphics2D g2d = (Graphics2D)g;
-        //renderToCamera(node,g2d,game.cameraMap.get(CameraID.Main));
+        renderToCamera(node,g2d,game.cameraMap.get(CameraID.Main));
     }
 
     @Override
