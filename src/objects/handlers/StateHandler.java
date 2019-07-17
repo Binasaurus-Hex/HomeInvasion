@@ -130,7 +130,9 @@ public class StateHandler {
         game.objectHandler.add(new VerticalDoor(794, 1225,true,  game));
 
         //TV room
-        game.objectHandler.add(new Wall(800, 1345, 500, 10, game));
+        //front door wall
+        game.objectHandler.add(new Wall(800, 1345, 125, 10, game));
+        game.objectHandler.add(new Wall(975, 1345, 325, 10, game));
         game.objectHandler.add(new Wall(1095, 1150, 10, 25, game));
         game.objectHandler.add(new Wall(1095, 1225, 10, 130, game));
 

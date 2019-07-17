@@ -10,80 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eabf5829-657b-4141-aed0-c5553208c85e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/HomeInvasion_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/misc/Sound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/beads.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HomeInvasion.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HomeInvasion.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/beads/beads-io.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/beads/beads.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/beads/jarjar-1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/beads/jl1.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/beads/jna.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/beads/mp3spi1.9.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/beads/org-jaudiolibs-audioservers-jack.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/beads/org-jaudiolibs-audioservers-javasound.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/beads/org-jaudiolibs-audioservers.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/beads/org-jaudiolibs-jnajack.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/beads/tools.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/beads/tritonus_aos-0.3.6.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/beads/tritonus_share.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/alarm.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/doorClose.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/doorOpen.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/music - Copy.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/music.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/nailing.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/night.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/playerSteps.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/stairs.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/tripwire.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/whisper1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/whisper1Left.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/whisper1Right.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/whisper2.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/windup.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/audio/woosh.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/game/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/ActivatableBounds.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/ActivatableBounds.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Doors/Door$DoorState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Doors/Door$DoorState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Doors/Door.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Doors/Door.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Doors/HorizontalDoor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Doors/HorizontalDoor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Doors/VerticalDoor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Doors/VerticalDoor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Floor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Floor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Hunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Hunter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Illusion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Illusion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/LightSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/LightSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Player$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/PopupLose.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/PopupLose.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/RoomBounds.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/RoomBounds.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Wall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/handlers/MusicHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/handlers/MusicPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/alarm.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/doorClose.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/doorOpen.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/music - Copy.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/music.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/nailing.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/night.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/playerSteps.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/stairs.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/tripwire.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/whisper1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/whisper1Left.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/whisper1Right.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/whisper2.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/windup.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/audio/woosh.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/Doors/Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/Doors/Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/handlers/MusicHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/handlers/MusicPlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/handlers/StateHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/handlers/StateHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/misc/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/misc/Grid.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -91,6 +22,10 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="HomeInvasion" />
@@ -110,28 +45,53 @@
         <entry file="file://$PROJECT_DIR$/src/game/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/objects/misc/Sound.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="106" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Illusion.java">
+        <entry file="file://$PROJECT_DIR$/src/objects/misc/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="238">
+              <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/objects/handlers/StateHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="134" column="54" selection-start-line="134" selection-start-column="54" selection-end-line="134" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/map/Floor1.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/map/Floor2.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Node.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/objects/misc/Sound.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="106" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,47 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Floor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
+            <state relative-caret-position="459">
               <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://F:/Program Files/Java/jdk1.8.0_51/src.zip!/javax/sound/sampled/AudioSystem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18224">
-              <caret line="1112" selection-start-line="1112" selection-end-line="1112" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://F:/Program Files/Java/jdk1.8.0_51/jre/lib/rt.jar!/com/sun/media/sound/SoftMidiAudioFileReader.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
-              <caret line="117" selection-start-line="117" selection-end-line="117" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://F:/Program Files/Java/jdk1.8.0_51/src.zip!/java/io/FilterInputStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3366">
-              <caret line="225" selection-start-line="225" selection-end-line="225" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://F:/Program Files/Java/jdk1.8.0_51/src.zip!/java/util/zip/InflaterInputStream.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4335">
-              <caret line="285" selection-start-line="285" selection-end-line="285" />
             </state>
           </provider>
         </entry>
@@ -211,7 +135,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/game/Main.java" />
         <option value="$PROJECT_DIR$/src/game/Test.java" />
-        <option value="$PROJECT_DIR$/src/objects/misc/Grid.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/PlayerIllusion.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/AI/Attack.java" />
         <option value="$PROJECT_DIR$/src/objects/misc/PathGenerator.java" />
@@ -228,13 +151,10 @@
         <option value="$PROJECT_DIR$/src/objects/gameObjects/ActivatableBounds.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/Doors/HorizontalDoor.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/Doors/VerticalDoor.java" />
-        <option value="$PROJECT_DIR$/src/objects/handlers/StateHandler.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/RoomBounds.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/Hunter.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/GameObjectID.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/Enemy.java" />
-        <option value="$PROJECT_DIR$/src/objects/gameObjects/Node.java" />
-        <option value="$PROJECT_DIR$/src/objects/gameObjects/Floor.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/Illusion.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/PopupLose.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/AI/Search.java" />
@@ -243,6 +163,10 @@
         <option value="$PROJECT_DIR$/src/game/Game.java" />
         <option value="$PROJECT_DIR$/src/objects/misc/Sound.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/Player.java" />
+        <option value="$PROJECT_DIR$/src/objects/misc/Grid.java" />
+        <option value="$PROJECT_DIR$/src/objects/handlers/StateHandler.java" />
+        <option value="$PROJECT_DIR$/src/objects/gameObjects/Node.java" />
+        <option value="$PROJECT_DIR$/src/objects/gameObjects/Floor.java" />
       </list>
     </option>
   </component>
@@ -257,7 +181,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="185" />
     <option name="y" value="73" />
     <option name="width" value="1378" />
@@ -276,6 +200,17 @@
             <path>
               <item name="HomeInvasion" type="b2602c69:ProjectViewProjectNode" />
               <item name="HomeInvasion" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomeInvasion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomeInvasion" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomeInvasion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomeInvasion" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="HomeInvasion" type="b2602c69:ProjectViewProjectNode" />
@@ -299,7 +234,41 @@
               <item name="HomeInvasion" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="objects" type="462c0819:PsiDirectoryNode" />
+              <item name="FileIO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomeInvasion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomeInvasion" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="objects" type="462c0819:PsiDirectoryNode" />
+              <item name="gameObjects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomeInvasion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomeInvasion" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="objects" type="462c0819:PsiDirectoryNode" />
+              <item name="handlers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomeInvasion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomeInvasion" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="objects" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomeInvasion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomeInvasion" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="objects" type="462c0819:PsiDirectoryNode" />
               <item name="misc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HomeInvasion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="HomeInvasion" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="physics" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -309,13 +278,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1561289321267" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/res" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -358,7 +328,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomeInvasion.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+    <configuration name="HomeInvasion.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/HomeInvasion_jar/HomeInvasion.jar" />
       <method v="2" />
     </configuration>
@@ -394,17 +364,18 @@
       <workItem from="1560539373221" duration="1839000" />
       <workItem from="1560612636011" duration="6682000" />
       <workItem from="1561278328765" duration="2475000" />
+      <workItem from="1563379364832" duration="2264000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84125000" />
+    <option name="totallyTimeSpent" value="86389000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="185" y="73" width="1378" height="1047" extended-state="1" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4983871" visible="true" weight="0.2602428" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4983871" visible="true" weight="0.21271394" />
       <window_info id="Structure" order="1" sideWeight="0.5016129" side_tool="true" weight="0.18123667" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -414,7 +385,7 @@
       <window_info id="simpleUML" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32804233" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32822758" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3281075" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3707265" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -442,13 +413,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/objects/interfaces/Action.java" />
-    <entry file="file://$PROJECT_DIR$/res/sprites/verticalDoorOpen.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/verticalDoorClose.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/sprites/horizontalDoorOpen.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -510,13 +474,6 @@
             <element signature="e#2608#2609#0" expanded="true" />
             <element signature="e#2636#2637#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -673,13 +630,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/handlers/MusicHandler.java" />
-    <entry file="file://$PROJECT_DIR$/src/objects/handlers/StateHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1533">
-          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/handlers/ObjectHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -715,6 +665,10 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://F:/Program Files/Java/jdk1.8.0_51/src.zip!/javax/sound/sampled/AudioSystem.java" />
+    <entry file="jar://F:/Program Files/Java/jdk1.8.0_51/jre/lib/rt.jar!/com/sun/media/sound/SoftMidiAudioFileReader.class" />
+    <entry file="jar://F:/Program Files/Java/jdk1.8.0_51/src.zip!/java/io/FilterInputStream.java" />
+    <entry file="jar://F:/Program Files/Java/jdk1.8.0_51/src.zip!/java/util/zip/InflaterInputStream.java" />
     <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Illusion.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -732,38 +686,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Floor.java">
+    <entry file="file://$PROJECT_DIR$/src/objects/misc/Sound.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/Program Files/Java/jdk1.8.0_51/src.zip!/javax/sound/sampled/AudioSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18224">
-          <caret line="1112" selection-start-line="1112" selection-end-line="1112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/Program Files/Java/jdk1.8.0_51/jre/lib/rt.jar!/com/sun/media/sound/SoftMidiAudioFileReader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="117" selection-start-line="117" selection-end-line="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/Program Files/Java/jdk1.8.0_51/src.zip!/java/io/FilterInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3366">
-          <caret line="225" selection-start-line="225" selection-end-line="225" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/Program Files/Java/jdk1.8.0_51/src.zip!/java/util/zip/InflaterInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4335">
-          <caret line="285" selection-start-line="285" selection-end-line="285" />
+        <state relative-caret-position="340">
+          <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="106" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -777,17 +706,41 @@
     <entry file="file://$PROJECT_DIR$/src/game/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/misc/Sound.java">
+    <entry file="file://$PROJECT_DIR$/res/map/Floor1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/map/Floor2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/misc/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" column="73" selection-start-line="20" selection-start-column="73" selection-end-line="20" selection-end-column="106" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="238">
+          <caret line="19" column="54" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/handlers/StateHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="134" column="54" selection-start-line="134" selection-start-column="54" selection-end-line="134" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="60" column="10" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Floor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -802,7 +755,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -851,7 +803,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
