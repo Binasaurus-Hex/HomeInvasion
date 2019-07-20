@@ -2,6 +2,7 @@ package objects.handlers;
 
 import game.Game;
 
+import game.Main;
 import objects.gameObjects.Doors.Door;
 import objects.gameObjects.Doors.HorizontalDoor;
 import objects.gameObjects.Doors.VerticalDoor;
@@ -19,12 +20,18 @@ public class StateHandler {
 
     public void init(Game game){
         BufferedImageLoader loader = new BufferedImageLoader();
+        //load the nodes
         ObjectList<ObjectList<Node>> nodeList = game.grid.getNodes();
-        for(ObjectList<Node> row : nodeList){
-            for(Node node : row){
-                game.objectHandler.add(node);
+
+        //if debug mode -> add the nodes to the object list
+        if(Main.debug){
+            for(ObjectList<Node> row : nodeList){
+                for(Node node : row){
+                    game.objectHandler.add(node);
+                }
             }
         }
+
 
         //Floor
         game.objectHandler.add(new Floor(-200, -200, 2500, 2500, loader.loadImage("/sprites/floor/grass.png"), game));//Grass
@@ -130,7 +137,9 @@ public class StateHandler {
         game.objectHandler.add(new VerticalDoor(794, 1225,true,  game));
 
         //TV room
-        game.objectHandler.add(new Wall(800, 1345, 500, 10, game));
+        //front door wall
+        game.objectHandler.add(new Wall(800, 1345, 125, 10, game));
+        game.objectHandler.add(new Wall(975, 1345, 325, 10, game));
         game.objectHandler.add(new Wall(1095, 1150, 10, 25, game));
         game.objectHandler.add(new Wall(1095, 1225, 10, 130, game));
 
