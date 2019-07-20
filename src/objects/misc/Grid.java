@@ -11,7 +11,7 @@ public class Grid {
     
     private Game game;
     private ObjectList<ObjectList<Node>> nodeList;
-    private int[][] matrix = new int[33][33]; //y, x
+    private int[][] matrix;
 
     public Grid(Game game){
         this.game = game;
@@ -32,15 +32,20 @@ public class Grid {
     private void generateNodes(){
         ObjectList<ObjectList<Node>> nodes = new ObjectList<>();
         for (int row = 0;row < matrix.length;row++){
-            ObjectList<Node> rowNodes = new ObjectList<Node>();
+            ObjectList<Node> rowNodes = new ObjectList<>();
             for (int column = 0; column < matrix[0].length; column ++){
-                Node temp = new Node(column*Node.size,row*Node.size,game);
+                double xOffset = 0;
+                double yOffset = 0;
+                Node temp = new Node((column*Node.size)-xOffset,(row*Node.size)-yOffset,game);
                 if(matrix[row][column] == 1){
                     temp.setColor(Color.green);
+                    temp.score = 1;
                 } else if(matrix[row][column] == 0){
                     temp.setColor(Color.red);
+                    temp.score = Integer.MAX_VALUE;
                 } else if(matrix[row][column] == 2){
                     temp.setColor(Color.blue);
+                    temp.score = 3;
                 }
                 rowNodes.add(temp);
             }
@@ -150,6 +155,7 @@ public class Grid {
     private void readGridFromFile(BufferedImage image) {
         int w = image.getWidth(); //gets the width of the image
         int h = image.getHeight(); //gets the height of the image
+        matrix = new int[w][h];
 
         for(int y = 0; y < h; y++) { //first for loop, starts in top left, progressively goes to the down
             for(int x = 0; x < w; x++) { //second for loop, starts in top left, progressively moves right.

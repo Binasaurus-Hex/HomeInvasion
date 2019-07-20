@@ -7,7 +7,8 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.*;
 
-public class PathGenerator {
+public class
+PathGenerator {
     private Game game;
     public Node goalNode;
 
@@ -66,7 +67,7 @@ public class PathGenerator {
                 if(closedList.contains(child)){
                     continue;
                 }
-                double tempGScore = gscoreMap.get(smallest) + smallest.getPoint().distance(child.getPoint());
+                double tempGScore = gscoreMap.get(smallest) + smallest.getPoint().distance(child.getPoint())+ child.score;
                 if(!openList.contains(child)){
                     openList.add(child);
                 }
