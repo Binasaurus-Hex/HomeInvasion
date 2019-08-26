@@ -20,6 +20,7 @@ public abstract class GameObject {
     protected GameObjectID id;
     protected Game game;
     private Point2D.Double point;
+    public double speed;
 
     public GameObject(double x, double y , int z ,double rotation, GameObjectID id, Game game) {
         this.x = x;

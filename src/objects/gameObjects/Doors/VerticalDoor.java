@@ -39,8 +39,8 @@ public class VerticalDoor extends Door {
         doorActivate = new ActivatableBounds(x-(height/2)+(width/2),y,height,height,game);
         doorActivate.addObjectID(GameObjectID.Enemy);
         doorActivate.addObjectID(GameObjectID.Player);
-        doorActivate.setOnEnter(()->open());
-        doorActivate.setOnExit(()->close());
+        doorActivate.setOnEnter((object)->open());
+        doorActivate.setOnExit((object)->close());
         game.objectHandler.add(doorActivate);
     }
 }

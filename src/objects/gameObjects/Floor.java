@@ -2,6 +2,7 @@ package objects.gameObjects;
 
 import game.CameraID;
 import game.Game;
+import game.Main;
 import objects.interfaces.Drawable;
 
 import java.awt.*;
@@ -34,7 +35,7 @@ public class Floor extends GameObject{
         };
 
         Graphics2D g2d = (Graphics2D) g;
-        //renderToCamera(drawable, g2d, game.cameraMap.get(CameraID.Main));
+        if(!Main.debug) renderToCamera(drawable, g2d, game.cameraMap.get(CameraID.Main));
     }
 
     @Override

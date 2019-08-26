@@ -67,7 +67,7 @@ PathGenerator {
                 if(closedList.contains(child)){
                     continue;
                 }
-                double tempGScore = gscoreMap.get(smallest) + smallest.getPoint().distance(child.getPoint())+ child.score;
+                double tempGScore = gscoreMap.get(smallest) + smallest.getPoint().distance(child.getPoint()) + child.score;
                 if(!openList.contains(child)){
                     openList.add(child);
                 }

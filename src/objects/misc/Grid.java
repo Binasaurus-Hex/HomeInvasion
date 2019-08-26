@@ -1,6 +1,7 @@
 package objects.misc;
 
 import game.Game;
+import objects.FileIO.BufferedImageLoader;
 import objects.gameObjects.Node;
 
 import java.awt.*;
@@ -17,7 +18,7 @@ public class Grid {
         this.game = game;
         nodeList = new ObjectList<>();
         BufferedImageLoader loader = new BufferedImageLoader();
-        readGridFromFile(loader.loadImage("/map/Floor3.png"));
+        readGridFromFile(loader.loadImage("/map/FloorWindowTest.png"));
         generateNodes();
     }
 
@@ -45,7 +46,7 @@ public class Grid {
                     temp.score = Integer.MAX_VALUE;
                 } else if(matrix[row][column] == 2){
                     temp.setColor(Color.blue);
-                    temp.score = 3;
+                    temp.score = 500;
                 }
                 rowNodes.add(temp);
             }
@@ -55,103 +56,33 @@ public class Grid {
         this.nodeList = nodes;
     }
 
-    @SuppressWarnings("Duplicates")
     public void setJunctions(ObjectList<ObjectList<Node>> nodeList){
-        for(ObjectList<Node> row : nodeList){
-            for(Node temp : row){
-                if(temp.getColor().equals(Color.red) || temp.getColor().equals(Color.blue)){
-                    continue;
-                }
-                else if(!isCorridor(temp)){
-                    temp.junction = true;
-                }
-            }
-        }
-
-        for(int row = 0;row < nodeList.size();row++){
-            for(int column = 0;column < nodeList.get(0).size();column++){
+        for(int row = 0; row < nodeList.size(); row++){
+            for(int column = 0; column < nodeList.get(0).size(); column++){
                 Node temp = nodeList.get(row).get(column);
-                if(temp.junction){
-                    int upCount = 1;
-                    int downCount = 1;
-                    int leftCount = 1;
-                    int rightCount = 1;
-                    while (true){
-                        Node next = nodeList.get(row-upCount).get(column);
-                        if(next.getColor().equals(Color.red) || next.getColor().equals(Color.blue)){
-                            break;
-                        }
-                        else if(next.junction){
-                            next.parent = temp;
-                            temp.children.add(next);
-                            break;
-                        }
-                        upCount++;
-                    }
-                    while (true){
-                        Node next = nodeList.get(row+downCount).get(column);
-                        if(next.getColor().equals(Color.red)||next.getColor().equals(Color.blue)){
-                            break;
-                        }
-                        else if(next.junction){
-                            next.parent = temp;
-                            temp.children.add(next);
-                            break;
-                        }
-                        downCount++;
-                    }
-                    while (true){
-                        Node next = nodeList.get(row).get(column-leftCount);
-                        if(next.getColor().equals(Color.red)||next.getColor().equals(Color.blue)){
-                            break;
-                        }
-                        else if(next.junction){
-                            next.parent = temp;
-                            temp.children.add(next);
-                            break;
-                        }
-                        leftCount++;
-                    }
-                    while (true){
-                        Node next = nodeList.get(row).get(column+rightCount);
-                        if(next.getColor().equals(Color.red)||next.getColor().equals(Color.blue)){
-                            break;
-                        }
-                        else if(next.junction){
-                            next.parent = temp;
-                            temp.children.add(next);
-                            break;
-                        }
-                        rightCount++;
-                    }
-                }
+                Node north = getNodeAtLocation(nodeList,row-1,column);
+                Node south = getNodeAtLocation(nodeList,row+1,column);
+                Node east = getNodeAtLocation(nodeList,row,column+1);
+                Node west = getNodeAtLocation(nodeList,row,column-1);
+
+                if(north != null) temp.children.add(north);
+                if(south != null) temp.children.add(south);
+                if(east != null) temp.children.add(east);
+                if(west != null) temp.children.add(west);
             }
         }
     }
 
-    private boolean isCorridor(Node test){
-        Point2D.Double testPoint = test.getPoint();
-        try{
-            boolean up = matrix[(int)(testPoint.y/Node.size) +1][(int)(testPoint.x/Node.size)] != 0;
-            boolean down = matrix[(int)(testPoint.y/Node.size)-1][(int)(testPoint.x/Node.size)] != 0;
-            boolean left = matrix[(int)(testPoint.y/Node.size)][(int)(testPoint.x/Node.size)-1] != 0;
-            boolean right = matrix[(int)(testPoint.y/Node.size)][(int)(testPoint.x/Node.size)+1] != 0;
-
-            if((up && down && !left && !right) || (left && right && !up && !down)){
-                return false;
+    private Node getNodeAtLocation(ObjectList<ObjectList<Node>> nodeList,int row,int column){
+        if(row >= 0 && row < nodeList.size()){
+            ObjectList<Node> nodeRow = nodeList.get(row);
+            if(column >= 0 && column < nodeRow.size()){
+                return nodeRow.get(column);
             }
-            else {
-                return false;
-            }
-        }catch (Exception e){
-            System.out.println("error");
-            return false;
         }
-
-
-
+        return null;
     }
-    
+
     private void readGridFromFile(BufferedImage image) {
         int w = image.getWidth(); //gets the width of the image
         int h = image.getHeight(); //gets the height of the image
@@ -163,8 +94,6 @@ public class Grid {
                 int red = (pixel >> 16) & 0xff;
                 int green = (pixel >> 8) & 0xff;
                 int blue = (pixel) & 0xff;
-
-//                System.out.println(blue);
 
                 if(red == 255 && green == 0 && blue == 0) {
                     matrix[y][x] = 0;
@@ -199,8 +128,8 @@ public class Grid {
         double lowestDist = Double.MAX_VALUE;
         for(ObjectList<Node> i : nodeList){
             for(Node j : i){
-                if(!j.junction)continue;
-                else if(nearest == null)nearest = j;
+                if(!(j.getColor() == Color.green || j.getColor() == Color.blue))continue;
+                if(nearest == null)nearest = j;
                 else {
                     double jDist = j.getPoint().distance(point);
                     if(jDist < lowestDist){
@@ -218,7 +147,7 @@ public class Grid {
         while(true) {
             int randomRow = (int)Math.floor(Math.random() * nodeList.size());
             int randomColumn = (int)Math.floor(Math.random() * nodeList.get(0).size());
-            if(nodeList.get(randomRow).get(randomColumn).junction) {
+            if(nodeList.get(randomRow).get(randomColumn).getColor().equals(Color.green)) {
                 return nodeList.get(randomRow).get(randomColumn);
             }
         }

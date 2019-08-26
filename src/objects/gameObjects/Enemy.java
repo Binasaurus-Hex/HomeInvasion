@@ -2,8 +2,10 @@ package objects.gameObjects;
 
 import game.Game;
 import objects.gameObjects.AI.*;
+import objects.interfaces.Character;
 import objects.misc.PathGenerator;
 import objects.misc.PathList;
+import objects.misc.animation.Animation;
 import physics.MathsMethods;
 
 import java.awt.*;
@@ -11,7 +13,7 @@ import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
-public abstract class Enemy extends GameObject {
+public abstract class Enemy extends GameObject implements Character {
     protected double width,height;
     public boolean seenPlayer = false;
 
@@ -27,6 +29,8 @@ public abstract class Enemy extends GameObject {
     protected Explore explore;
     protected Attack attack;
     protected Search search;
+    protected OpenWindow openWindow;
+    protected Vault vault;
 
     public Enemy(int x, int y, Game game, Color color) {
         super(x, y, 1, 0, GameObjectID.Enemy, game);
@@ -39,6 +43,8 @@ public abstract class Enemy extends GameObject {
         explore = new Explore(this);
         attack = new Attack(this);
         search = new Search(this,game);
+        openWindow = new OpenWindow();
+        vault = new Vault();
     }
 
 
@@ -51,7 +57,6 @@ public abstract class Enemy extends GameObject {
         else {
             return false;
         }
-
     }
 
     /**
@@ -61,6 +66,7 @@ public abstract class Enemy extends GameObject {
     public boolean isSightClear(){
         try{
             Player player = getPlayer();
+            if(!player.visible)return false;
             line = new Line2D.Double(x,y,player.x,player.y);
             for(GameObject object : game.objectHandler.objects) {
                 if(object.id == GameObjectID.Wall || object.id == GameObjectID.Door) {

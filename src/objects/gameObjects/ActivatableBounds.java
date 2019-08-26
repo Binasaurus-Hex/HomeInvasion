@@ -2,21 +2,26 @@ package objects.gameObjects;
 
 import game.CameraID;
 import game.Game;
+import game.Main;
+import javafx.util.Pair;
 import objects.interfaces.Drawable;
 
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ActivatableBounds extends GameObject {
 
     public interface Action{
-        void action();
+        void action(GameObject o);
     }
 
-    private boolean entered;
+    private Map<GameObject,Boolean> objectsEntered;
+
     private Action enter;
     private Action exit;
     private Rectangle2D.Double bounds;
@@ -27,8 +32,8 @@ public class ActivatableBounds extends GameObject {
         enter = null;
         exit = null;
         bounds = new Rectangle2D.Double(x,y,width,height);
-        entered = false;
         searchObjects = new ArrayList<>();
+        objectsEntered = new HashMap<>();
     }
 
     /**
@@ -51,18 +56,32 @@ public class ActivatableBounds extends GameObject {
         for(GameObject object : game.objectHandler.objects){
             if(searchObjects.contains(object.id)){
                 if(isColliding(object)){
+                    boolean entered = objectsEntered.getOrDefault(object,false);
                     if(!entered){
-                        entered = true;
-                        if(enter != null)enter.action();
+                        if(objectsEntered.containsKey(object)){
+                            objectsEntered.replace(object,true);
+                        }
+                        else{
+                            objectsEntered.put(object,true);
+                        }
+                        if(enter != null)enter.action(object);
                     }
-                    return;
                 }
-                else if(entered){
-                    entered = false;
-                    if(exit != null)exit.action();
+                else if(objectsEntered.getOrDefault(object,false)){
+                    objectsEntered.replace(object,false);
+                    if(exit != null)exit.action(object);
                 }
             }
         }
+    }
+
+    public boolean isEmpty(){
+        for(Map.Entry<GameObject,Boolean> entry : objectsEntered.entrySet()){
+            if(entry.getValue() == true){
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
@@ -72,7 +91,9 @@ public class ActivatableBounds extends GameObject {
             graphics.draw(bounds);
         };
         Graphics2D g2d = (Graphics2D)g;
-        //renderToCamera(debug,g2d,game.cameraMap.get(CameraID.Main));
+        if(Main.debug){
+            renderToCamera(debug,g2d,game.cameraMap.get(CameraID.Main));
+        }
     }
 
     @Override

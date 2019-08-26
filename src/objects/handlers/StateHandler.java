@@ -3,12 +3,12 @@ package objects.handlers;
 import game.Game;
 
 import game.Main;
-import objects.gameObjects.Doors.Door;
 import objects.gameObjects.Doors.HorizontalDoor;
 import objects.gameObjects.Doors.VerticalDoor;
 import objects.gameObjects.Hunter;
 import objects.gameObjects.*;
-import objects.misc.BufferedImageLoader;
+import objects.gameObjects.Windows.Window;
+import objects.FileIO.BufferedImageLoader;
 import objects.misc.ObjectList;
 
 import java.awt.*;
@@ -53,6 +53,9 @@ public class StateHandler {
         game.objectHandler.add(new Floor(1100, 1250, 200, 100, loader.loadImage("/sprites/floor/bathroom.png"), game));//Bathroom
         game.objectHandler.add(new Floor(1201, 601, 100, 550, loader.loadImage("/sprites/floor/wood.png"), game));//HallwayH3
         game.objectHandler.add(new Floor(1100, 1150, 200, 100, loader.loadImage("/sprites/floor/wood.png"), game));//HallwayH3-sub
+
+
+
 
         //Player
         game.objectHandler.add(new Player(747,447,1,50,50,game));
@@ -175,6 +178,9 @@ public class StateHandler {
         game.objectHandler.add(new RoomBounds(1100, 1250, 200, 100, game));//Bathroom
         game.objectHandler.add(new RoomBounds(1201, 601, 100, 549, game));//HallwayH3
         game.objectHandler.add(new RoomBounds(1100, 1150, 200, 100, game));//HallwayH3-sub
+
+        //windows
+        game.objectHandler.add(Window.Horizontal(875,2100,game));
 
         game.objectHandler.add(new LightSource(0, 0, 0, game));
 

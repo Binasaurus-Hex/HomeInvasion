@@ -2,11 +2,13 @@ package objects.gameObjects;
 
 import game.CameraID;
 import game.Game;
+import objects.gameObjects.Windows.Window;
+import objects.interfaces.Character;
 import objects.interfaces.Drawable;
 import objects.handlers.KeyHandler;
-import objects.misc.BufferedImageLoader;
+import objects.FileIO.BufferedImageLoader;
 import objects.misc.Camera;
-import objects.misc.Sound;
+import objects.misc.animation.Animation;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
@@ -14,12 +16,13 @@ import java.awt.image.BufferedImage;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Player extends GameObject{
+public class Player extends GameObject implements Character {
     public double width, height;
     private boolean movable = true;
     private Camera camera;
     private boolean moving;
     private boolean ded;
+    public boolean visible = false;
 
     private final int MAXDETECT=300;
     private final int TRANSITIONTIME=1;
@@ -36,6 +39,7 @@ public class Player extends GameObject{
         this.height = height;
         velX = 2.5;
         velY = 2.5;
+        speed = 2.5;
         spriteMap = new HashMap<>();
         BufferedImageLoader loader = new BufferedImageLoader();
         spriteMap.put(0, loader.loadImage("/sprites/player/1.png"));
@@ -48,6 +52,8 @@ public class Player extends GameObject{
         spriteMap.put(7, loader.loadImage("/sprites/player/8.png"));
         spriteMap.put(8, loader.loadImage("/sprites/player/9.png"));
         spriteMap.put(9, loader.loadImage("/sprites/player/10.png"));
+
+        Animation a = new Animation("C:\\Users\\White Wolf\\Documents\\Uni Work Year 2\\Java\\HomeInvasion\\res\\sprites\\player",null,null,0);
     }
 
     @Override
@@ -73,12 +79,25 @@ public class Player extends GameObject{
                         break;
                     case Door:
                         resolveCollision(object);
+                        break;
+                    case Window:
+                        Window window = (Window)object;
+                        if(window.isClosed()){
+                            resolveCollision(window);
+                        }
+                        break;
                 }
             }
         }
     }
 
     private void move() {
+        if(KeyHandler.isKeyPressed("I")){
+            visible = true;
+        }
+        if(KeyHandler.isKeyPressed("P")){
+            visible = false;
+        }
         if(KeyHandler.isKeyPressed("W") || KeyHandler.isKeyPressed("S") || KeyHandler.isKeyPressed("A") || KeyHandler.isKeyPressed("D")) {
             moving = true;
             moveTime++;
@@ -180,5 +199,10 @@ public class Player extends GameObject{
             return new Rectangle2D.Double(x-(width/4), (y-(height/4))-5, width/2, (height/2)+10);
         }
         return new Rectangle2D.Double((x-(width/4)-5), y-(height/4), (width/2)+10, height/2);
+    }
+
+    @Override
+    public void onWindowTouched(Window window) {
+
     }
 }

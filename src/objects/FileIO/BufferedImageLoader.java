@@ -1,4 +1,4 @@
-package objects.misc;
+package objects.FileIO;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

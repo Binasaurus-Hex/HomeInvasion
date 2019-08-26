@@ -43,7 +43,7 @@ public abstract class Door extends GameObject {
     }
 
     protected void close(){
-        if(state == DoorState.open){
+        if(state == DoorState.open && doorActivate.isEmpty()){
             state = DoorState.closed;
             doorBounds = closedBounds;
         }

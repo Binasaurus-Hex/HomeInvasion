@@ -17,6 +17,8 @@ public class KeyHandler extends KeyAdapter {
         keyMap.put("D", false);
         keyMap.put("M",false);
         keyMap.put("Enter",false);
+        keyMap.put("I",false);
+        keyMap.put("P",false);
     }
 
     public static boolean isKeyPressed(String key) {
@@ -50,6 +52,12 @@ public class KeyHandler extends KeyAdapter {
         if(key == KeyEvent.VK_M) {
             keyMap.replace("M", true);
         }
+        if(key == KeyEvent.VK_I) {
+            keyMap.replace("I", true);
+        }
+        if(key == KeyEvent.VK_P){
+            keyMap.replace("P",true);
+        }
     }
 
     @Override
@@ -73,6 +81,12 @@ public class KeyHandler extends KeyAdapter {
         }
         if(key == KeyEvent.VK_M) {
             keyMap.replace("M", false);
+        }
+        if(key == KeyEvent.VK_I) {
+            keyMap.replace("I", false);
+        }
+        if(key == KeyEvent.VK_P){
+            keyMap.replace("P",false);
         }
     }
 }
