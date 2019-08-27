@@ -5,6 +5,7 @@ import objects.gameObjects.ActivatableBounds;
 import objects.gameObjects.GameObjectID;
 
 import java.awt.*;
+import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
 public class VerticalWindow extends Window {
@@ -55,6 +56,16 @@ public class VerticalWindow extends Window {
 
     @Override
     public Rectangle2D.Double getBounds() {
+        return null;
+    }
+
+    @Override
+    public Point2D.Double getStartPoint() {
+        return null;
+    }
+
+    @Override
+    public Point2D.Double getEndPoint() {
         return null;
     }
 }

@@ -45,7 +45,14 @@ public class Game extends JComponent {
 
         //creating and adding the initial camera to the camera list
         cameraMap = new ObjectMap<>();
-        Camera main = new Camera(0, 0, 1,window.gameWidth,window.gameHeight);
+        Camera main;
+        if(Main.debug){
+            main = new Camera(0, 0, 1,window.gameWidth,window.gameHeight);
+        }
+        else{
+            main = new Camera(0,0,2,window.gameWidth,window.gameHeight);
+        }
+
         Camera screen = new Camera(0,0,1,window.gameWidth,window.gameHeight);
         cameraMap.put(CameraID.Main,main);
         cameraMap.put(CameraID.Screen,screen);

@@ -1,18 +1,28 @@
 package objects.gameObjects.AI;
 
+import objects.gameObjects.Enemy;
 import objects.gameObjects.Windows.Window;
 
-public class OpenWindow implements Behaviour,WindowListener{
+import java.util.Timer;
+import java.util.TimerTask;
 
+public class OpenWindow implements Behaviour,WindowListener{
+    private Enemy enemy;
     private Window touchedWindow;
 
-    public OpenWindow(){
-
+    public OpenWindow(Enemy enemy){
+        this.enemy = enemy;
     }
 
     @Override
     public void start() {
-
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                touchedWindow.open();
+                touchedWindow = null;
+            }
+        },1000);
     }
 
     @Override
@@ -28,8 +38,7 @@ public class OpenWindow implements Behaviour,WindowListener{
 
     @Override
     public void update() {
-        touchedWindow.open();
-        touchedWindow = null;
+
     }
 
     @Override

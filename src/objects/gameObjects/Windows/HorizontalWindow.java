@@ -10,17 +10,23 @@ import objects.interfaces.Character;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Color;
+import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class HorizontalWindow extends Window {
 
+    private Point2D.Double startPoint;
+    private Point2D.Double endPoint;
+
     public HorizontalWindow(double x, double y, int z, Game game) {
         super(x, y, z, game);
         width = 50;
         height = 6;
 
+        startPoint = new Point2D.Double(x+width/2,y);
+        endPoint = new Point2D.Double(x+width/2,y+height);
         bounds = new Rectangle2D.Double(x,y,width,height);
         activation = new ActivatableBounds(x,y,width,height,game);
 
@@ -86,5 +92,15 @@ public class HorizontalWindow extends Window {
     @Override
     public Rectangle2D.Double getBounds() {
         return bounds;
+    }
+
+    @Override
+    public Point2D.Double getPoint(){
+        return new Point2D.Double(x+width/2,y+height/2);
+    }
+
+    @Override
+    public Point2D.Double[] getAnchorPoints() {
+        return new Point2D.Double[]{startPoint,endPoint};
     }
 }
