@@ -8,7 +8,6 @@ import objects.interfaces.Drawable;
 import objects.handlers.KeyHandler;
 import objects.FileIO.BufferedImageLoader;
 import objects.misc.Camera;
-import objects.misc.animation.Animation;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
@@ -42,18 +41,16 @@ public class Player extends GameObject implements Character {
         speed = 2.5;
         spriteMap = new HashMap<>();
         BufferedImageLoader loader = new BufferedImageLoader();
-        spriteMap.put(0, loader.loadImage("/sprites/player/1.png"));
-        spriteMap.put(1, loader.loadImage("/sprites/player/2.png"));
-        spriteMap.put(2, loader.loadImage("/sprites/player/3.png"));
-        spriteMap.put(3, loader.loadImage("/sprites/player/4.png"));
-        spriteMap.put(4, loader.loadImage("/sprites/player/5.png"));
-        spriteMap.put(5, loader.loadImage("/sprites/player/6.png"));
-        spriteMap.put(6, loader.loadImage("/sprites/player/7.png"));
-        spriteMap.put(7, loader.loadImage("/sprites/player/8.png"));
-        spriteMap.put(8, loader.loadImage("/sprites/player/9.png"));
-        spriteMap.put(9, loader.loadImage("/sprites/player/10.png"));
-
-        Animation a = new Animation("C:\\Users\\White Wolf\\Documents\\Uni Work Year 2\\Java\\HomeInvasion\\res\\sprites\\player",null,null,0);
+        spriteMap.put(0, loader.loadImage("/sprites/player/moving/1.png"));
+        spriteMap.put(1, loader.loadImage("/sprites/player/moving/2.png"));
+        spriteMap.put(2, loader.loadImage("/sprites/player/moving/3.png"));
+        spriteMap.put(3, loader.loadImage("/sprites/player/moving/4.png"));
+        spriteMap.put(4, loader.loadImage("/sprites/player/moving/5.png"));
+        spriteMap.put(5, loader.loadImage("/sprites/player/moving/6.png"));
+        spriteMap.put(6, loader.loadImage("/sprites/player/moving/7.png"));
+        spriteMap.put(7, loader.loadImage("/sprites/player/moving/8.png"));
+        spriteMap.put(8, loader.loadImage("/sprites/player/moving/9.png"));
+        spriteMap.put(9, loader.loadImage("/sprites/player/moving/10.png"));
     }
 
     @Override

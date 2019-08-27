@@ -43,8 +43,8 @@ public abstract class Enemy extends GameObject implements Character {
         explore = new Explore(this);
         attack = new Attack(this);
         search = new Search(this,game);
-        openWindow = new OpenWindow();
-        vault = new Vault();
+        openWindow = new OpenWindow(this);
+        vault = new Vault(this);
     }
 
 

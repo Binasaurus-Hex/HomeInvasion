@@ -42,8 +42,12 @@ public class Vault implements Behaviour,WindowListener{
 
     @Override
     public void update() {
-        System.out.println("valued bitch");
-        touchedWindow = null;
+        if(!enemy.navigator.reachedGoal()){
+            enemy.navigator.update();
+        }
+        else{
+            touchedWindow = null;
+        }
     }
 
     @Override

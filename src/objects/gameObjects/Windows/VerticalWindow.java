@@ -60,12 +60,7 @@ public class VerticalWindow extends Window {
     }
 
     @Override
-    public Point2D.Double getStartPoint() {
-        return null;
-    }
-
-    @Override
-    public Point2D.Double getEndPoint() {
-        return null;
+    public Point2D.Double[] getAnchorPoints() {
+        return new Point2D.Double[0];
     }
 }
