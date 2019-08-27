@@ -30,7 +30,7 @@ public class Search implements Behaviour {
         Point2D.Double playerPos = enemy.getLastPlayerPosition();
 
         navigator.setGoal(grid.getNearestJunction(playerPos).getPoint());
-        illusion = new Illusion(playerPos.x,playerPos.y,player.width,player.height,player.getRotation(),player.spriteMap.get(player.moveState),game);
+        illusion = new Illusion(playerPos.x,playerPos.y,player.width,player.height,player.getRotation(),player.moveAnimation.getSprite(),game);
         game.objectHandler.add(illusion);
     }
 

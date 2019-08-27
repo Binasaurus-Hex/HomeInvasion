@@ -24,7 +24,7 @@ public class Hunter extends Enemy {
         velY = 2;
         speed = 2;
         BufferedImageLoader loader = new BufferedImageLoader();
-        sprite = loader.loadImage("/sprites/enemy/enemy.png");
+        sprite = loader.loadImage("/sprites/enemy/walking/enemy.png");
         arbitrator.addBehaviour(explore);
         arbitrator.addBehaviour(attack);
         arbitrator.addBehaviour(search);

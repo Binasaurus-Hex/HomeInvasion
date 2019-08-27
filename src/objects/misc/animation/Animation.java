@@ -34,17 +34,16 @@ public class Animation {
     }
 
     private List<BufferedImage> loadSprites(String filepath) throws IOException {
-        List<File> filesInFolder = Files.walk(Paths.get(filepath))
-                .filter(Files::isRegularFile)
-                .map(Path::toFile)
-                .collect(Collectors.toList());
+        File folder = new File("res"+filepath).getAbsoluteFile();
+        File[] listOfFiles = folder.listFiles();
 
+        List<BufferedImage> sprites = new ArrayList<>();
         BufferedImageLoader loader = new BufferedImageLoader();
-        List<BufferedImage> spriteList = new ArrayList<>();
-        for(File file : filesInFolder){
-            spriteList.add(loader.loadImage(file.getPath()));
+        for(File file : listOfFiles){
+            System.out.println(filepath+"/"+file.getName());
+            sprites.add(loader.loadImage(filepath+"/"+file.getName()));
         }
-        return spriteList;
+        return sprites;
     }
 
     public void update(){

@@ -8,6 +8,7 @@ import objects.interfaces.Drawable;
 import objects.handlers.KeyHandler;
 import objects.FileIO.BufferedImageLoader;
 import objects.misc.Camera;
+import objects.misc.animation.Animation;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
@@ -28,7 +29,7 @@ public class Player extends GameObject implements Character {
 
     private int moveTime = 0;
     public int moveState = 1;
-    public Map<Integer, BufferedImage> spriteMap;
+    public Animation moveAnimation;
 
 
     public Player(double x, double y, int z, double width, double height, Game game) {
@@ -39,18 +40,8 @@ public class Player extends GameObject implements Character {
         velX = 2.5;
         velY = 2.5;
         speed = 2.5;
-        spriteMap = new HashMap<>();
-        BufferedImageLoader loader = new BufferedImageLoader();
-        spriteMap.put(0, loader.loadImage("/sprites/player/moving/1.png"));
-        spriteMap.put(1, loader.loadImage("/sprites/player/moving/2.png"));
-        spriteMap.put(2, loader.loadImage("/sprites/player/moving/3.png"));
-        spriteMap.put(3, loader.loadImage("/sprites/player/moving/4.png"));
-        spriteMap.put(4, loader.loadImage("/sprites/player/moving/5.png"));
-        spriteMap.put(5, loader.loadImage("/sprites/player/moving/6.png"));
-        spriteMap.put(6, loader.loadImage("/sprites/player/moving/7.png"));
-        spriteMap.put(7, loader.loadImage("/sprites/player/moving/8.png"));
-        spriteMap.put(8, loader.loadImage("/sprites/player/moving/9.png"));
-        spriteMap.put(9, loader.loadImage("/sprites/player/moving/10.png"));
+
+        moveAnimation = new Animation("/sprites/player/moving",null,null,0);
     }
 
     @Override
@@ -96,33 +87,10 @@ public class Player extends GameObject implements Character {
             visible = false;
         }
         if(KeyHandler.isKeyPressed("W") || KeyHandler.isKeyPressed("S") || KeyHandler.isKeyPressed("A") || KeyHandler.isKeyPressed("D")) {
+            moveAnimation.update();
             moving = true;
-            moveTime++;
-            if(moveTime <= 50) {
-                if(moveTime == 5) {
-                    moveState = 1;
-                } else if(moveTime == 10) {
-                    moveState = 2;
-                } else if(moveTime == 15) {
-                    moveState = 3;
-                } else if(moveTime == 20) {
-                    moveState = 4;
-                } else if(moveTime == 25) {
-                    moveState = 5;
-                } else if(moveTime == 30) {
-                    moveState = 6;
-                } else if(moveTime == 35) {
-                    moveState = 7;
-                } else if(moveTime == 40) {
-                    moveState = 8;
-                } else if(moveTime == 45) {
-                    moveState = 9;
-                }
-            } else {
-                moveState = 0;
-                moveTime = 0;
-            }
         } else {
+            moveAnimation.reset();
             moving = false;
         }
         if(KeyHandler.isKeyPressed("W")){
@@ -173,11 +141,7 @@ public class Player extends GameObject implements Character {
         Drawable player = (graphics)->{
             graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             graphics.rotate(getRotation(), x, y);
-            if(moving) {
-                graphics.drawImage(spriteMap.get(moveState), (int)(x-(width/2)), (int)(y-(width/2)), (int)width, (int)height, null);
-            } else {
-                graphics.drawImage(spriteMap.get(0), (int)(x-(width/2)), (int)(y-(width/2)), (int)width, (int)height, null);
-            }
+            graphics.drawImage(moveAnimation.getSprite(), (int)(x-(width/2)), (int)(y-(width/2)), (int)width, (int)height, null);
             graphics.rotate(-getRotation(), x, y);
         };
         Drawable debugPos = (graphics)->{
