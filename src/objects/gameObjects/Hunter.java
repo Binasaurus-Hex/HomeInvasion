@@ -2,7 +2,7 @@ package objects.gameObjects;
 
 import game.CameraID;
 import game.Game;
-import objects.gameObjects.AI.WindowListener;
+import objects.interfaces.WindowListener;
 import objects.gameObjects.Windows.Window;
 import objects.interfaces.Drawable;
 import objects.FileIO.BufferedImageLoader;

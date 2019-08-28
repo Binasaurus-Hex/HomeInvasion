@@ -1,4 +1,4 @@
-package objects.gameObjects.AI;
+package objects.gameObjects.behaviour;
 
 import java.util.*;
 

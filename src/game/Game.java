@@ -106,7 +106,7 @@ public class Game extends JComponent {
     }
 
     /**This is the update method which is called from the game timer in the "start" method. It basically will first
-     * find the player in the handler and send it to the camera so that it can change it's position to the cameras
+     * find the playerBehaviours in the handler and send it to the camera so that it can change it's position to the cameras
      * players current position. Afterwords it runs the update method in the object handler
      */
     private void update() {

@@ -1,9 +1,7 @@
-package objects.gameObjects.AI;
+package objects.gameObjects.behaviour.EnemyAI;
 
 import game.Game;
 import objects.gameObjects.Enemy;
-import objects.gameObjects.GameObject;
-import objects.gameObjects.Hunter;
 import objects.gameObjects.Node;
 import objects.misc.Grid;
 import objects.misc.PathGenerator;

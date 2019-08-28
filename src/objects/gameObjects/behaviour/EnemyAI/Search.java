@@ -1,9 +1,10 @@
-package objects.gameObjects.AI;
+package objects.gameObjects.behaviour.EnemyAI;
 
 import game.Game;
 import objects.gameObjects.Enemy;
 import objects.gameObjects.Illusion;
 import objects.gameObjects.Player;
+import objects.gameObjects.behaviour.Behaviour;
 import objects.misc.Grid;
 
 import java.awt.geom.Point2D;
@@ -30,7 +31,7 @@ public class Search implements Behaviour {
         Point2D.Double playerPos = enemy.getLastPlayerPosition();
 
         navigator.setGoal(grid.getNearestJunction(playerPos).getPoint());
-        illusion = new Illusion(playerPos.x,playerPos.y,player.width,player.height,player.getRotation(),player.moveAnimation.getSprite(),game);
+        illusion = new Illusion(playerPos.x,playerPos.y,player.width,player.height,player.getRotation(),player.currentSprite,game);
         game.objectHandler.add(illusion);
     }
 

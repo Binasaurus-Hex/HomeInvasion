@@ -1,11 +1,13 @@
-package objects.gameObjects.AI;
+package objects.gameObjects.behaviour.EnemyAI;
 
 import objects.gameObjects.Enemy;
 import objects.gameObjects.Windows.Window;
+import objects.gameObjects.behaviour.Behaviour;
+import objects.interfaces.WindowListener;
 
 import java.awt.geom.Point2D;
 
-public class Vault implements Behaviour,WindowListener{
+public class Vault implements Behaviour, WindowListener {
     private Window touchedWindow;
     private Enemy enemy;
 

@@ -1,6 +1,7 @@
-package objects.gameObjects.AI;
+package objects.gameObjects.behaviour.EnemyAI;
 
 import objects.gameObjects.Enemy;
+import objects.gameObjects.behaviour.Behaviour;
 import objects.misc.Grid;
 
 public class Explore implements Behaviour {

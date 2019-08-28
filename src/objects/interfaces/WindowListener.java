@@ -1,4 +1,4 @@
-package objects.gameObjects.AI;
+package objects.interfaces;
 
 import objects.gameObjects.Windows.Window;
 

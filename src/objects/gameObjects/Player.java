@@ -3,6 +3,9 @@ package objects.gameObjects;
 import game.CameraID;
 import game.Game;
 import objects.gameObjects.Windows.Window;
+import objects.gameObjects.behaviour.Arbitrator;
+import objects.gameObjects.behaviour.playerBehaviours.Move;
+import objects.gameObjects.behaviour.playerBehaviours.OpenWindow;
 import objects.interfaces.Character;
 import objects.interfaces.Drawable;
 import objects.handlers.KeyHandler;
@@ -27,9 +30,10 @@ public class Player extends GameObject implements Character {
     private final int MAXDETECT=300;
     private final int TRANSITIONTIME=1;
 
-    private int moveTime = 0;
-    public int moveState = 1;
-    public Animation moveAnimation;
+    public BufferedImage currentSprite;
+    private Arbitrator arbitrator;
+    private Move move;
+    private OpenWindow openWindow;
 
 
     public Player(double x, double y, int z, double width, double height, Game game) {
@@ -41,7 +45,11 @@ public class Player extends GameObject implements Character {
         velY = 2.5;
         speed = 2.5;
 
-        moveAnimation = new Animation("/sprites/player/moving",10);
+        arbitrator = new Arbitrator();
+        move = new Move(this);
+        openWindow = new OpenWindow(this);
+        arbitrator.addBehaviour(move);
+        arbitrator.addBehaviour(openWindow);
     }
 
     @Override
@@ -50,10 +58,7 @@ public class Player extends GameObject implements Character {
         camera.setY(y);
         if(movable&&!ded) {
             collision();
-            move();
-        }
-        if(moving){
-        }else{
+            arbitrator.update();
         }
     }
 
@@ -86,44 +91,8 @@ public class Player extends GameObject implements Character {
         if(KeyHandler.isKeyPressed("P")){
             visible = false;
         }
-        if(KeyHandler.isKeyPressed("W") || KeyHandler.isKeyPressed("S") || KeyHandler.isKeyPressed("A") || KeyHandler.isKeyPressed("D")) {
-            moveAnimation.update();
-            moving = true;
-        } else {
-            moveAnimation.reset();
-            moving = false;
-        }
-        if(KeyHandler.isKeyPressed("W")){
-            y-=velY;
-            setRotation(-1.5);
-        }
-        if(KeyHandler.isKeyPressed("S")){
-            y+=velY;
-            setRotation(1.5);
-        }
-        if(KeyHandler.isKeyPressed("A")){
-            x-=velX;
-            setRotation(-3);
-        }
-        if(KeyHandler.isKeyPressed("D")){
-            x+=velX;
-            setRotation(0);
-        }
 
-        if(KeyHandler.isKeyPressed("M")){
-            game.objectHandler.clear();
-            game.stateHandler.init(game);
-        }
 
-        if(KeyHandler.isKeyPressed("W") && KeyHandler.isKeyPressed("D")) {
-            setRotation(-0.75);
-        } else if(KeyHandler.isKeyPressed("S") && KeyHandler.isKeyPressed("D")) {
-            setRotation(0.75);
-        } else if(KeyHandler.isKeyPressed("W") && KeyHandler.isKeyPressed("A")) {
-            setRotation(-2.5);
-        } else if(KeyHandler.isKeyPressed("S") && KeyHandler.isKeyPressed("A")) {
-            setRotation(2.5);
-        }
     }
 
     public void kill(){
@@ -136,12 +105,14 @@ public class Player extends GameObject implements Character {
         }
     }
 
+
+
     @Override
     public void render(Graphics g) {
         Drawable player = (graphics)->{
             graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             graphics.rotate(getRotation(), x, y);
-            graphics.drawImage(moveAnimation.getSprite(), (int)(x-(width/2)), (int)(y-(width/2)), (int)width, (int)height, null);
+            graphics.drawImage(currentSprite, (int)(x-(width/2)), (int)(y-(width/2)), (int)width, (int)height, null);
             graphics.rotate(-getRotation(), x, y);
         };
         Drawable debugPos = (graphics)->{
@@ -164,6 +135,6 @@ public class Player extends GameObject implements Character {
 
     @Override
     public void onWindowTouched(Window window) {
-
+        
     }
 }

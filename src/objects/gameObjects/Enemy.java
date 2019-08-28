@@ -1,12 +1,9 @@
 package objects.gameObjects;
 
 import game.Game;
-import objects.gameObjects.AI.*;
+import objects.gameObjects.behaviour.EnemyAI.*;
+import objects.gameObjects.behaviour.Arbitrator;
 import objects.interfaces.Character;
-import objects.misc.PathGenerator;
-import objects.misc.PathList;
-import objects.misc.animation.Animation;
-import physics.MathsMethods;
 
 import java.awt.*;
 import java.awt.geom.Line2D;
@@ -60,7 +57,7 @@ public abstract class Enemy extends GameObject implements Character {
     }
 
     /**
-     * works out if there are any walls in between the enemy and the player
+     * works out if there are any walls in between the enemy and the playerBehaviours
      * @return
      */
     public boolean isSightClear(){
@@ -82,7 +79,7 @@ public abstract class Enemy extends GameObject implements Character {
     }
 
     /**
-     * sets the last known position of the player
+     * sets the last known position of the playerBehaviours
      */
     public void setLastPlayerPosition(){
         Player player = getPlayer();

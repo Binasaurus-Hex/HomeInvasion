@@ -1,12 +1,14 @@
-package objects.gameObjects.AI;
+package objects.gameObjects.behaviour.EnemyAI;
 
 import objects.gameObjects.Enemy;
 import objects.gameObjects.Windows.Window;
+import objects.gameObjects.behaviour.Behaviour;
+import objects.interfaces.WindowListener;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class OpenWindow implements Behaviour,WindowListener{
+public class OpenWindow implements Behaviour, WindowListener {
     private Enemy enemy;
     private Window touchedWindow;
 

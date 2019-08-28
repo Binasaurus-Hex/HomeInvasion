@@ -30,6 +30,10 @@ public class Animation {
         this.fps = fps;
     }
 
+    public Animation(String filepath){
+
+    }
+
     private List<BufferedImage> loadSprites(String filepath){
         File folder = new File("res"+filepath).getAbsoluteFile();
         File[] listOfFiles = folder.listFiles();
