@@ -41,7 +41,7 @@ public class Player extends GameObject implements Character {
         velY = 2.5;
         speed = 2.5;
 
-        moveAnimation = new Animation("/sprites/player/moving",null,null,0);
+        moveAnimation = new Animation("/sprites/player/moving",10);
     }
 
     @Override
