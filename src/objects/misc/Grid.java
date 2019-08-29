@@ -18,7 +18,7 @@ public class Grid {
         this.game = game;
         nodeList = new ObjectList<>();
         BufferedImageLoader loader = new BufferedImageLoader();
-        readGridFromFile(loader.loadImage("/map/FloorWindowTest.png"));
+        readGridFromFile(loader.loadImage("/map/Floor1.png"));
         generateNodes();
     }
 

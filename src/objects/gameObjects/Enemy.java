@@ -3,6 +3,7 @@ package objects.gameObjects;
 import game.Game;
 import objects.gameObjects.behaviour.EnemyAI.*;
 import objects.gameObjects.behaviour.Arbitrator;
+import objects.gameObjects.behaviour.Navigator;
 import objects.interfaces.Character;
 
 import java.awt.*;

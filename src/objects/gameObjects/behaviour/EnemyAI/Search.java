@@ -5,6 +5,7 @@ import objects.gameObjects.Enemy;
 import objects.gameObjects.Illusion;
 import objects.gameObjects.Player;
 import objects.gameObjects.behaviour.Behaviour;
+import objects.gameObjects.behaviour.Navigator;
 import objects.misc.Grid;
 
 import java.awt.geom.Point2D;

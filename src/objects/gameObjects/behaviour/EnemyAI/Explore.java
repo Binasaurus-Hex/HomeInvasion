@@ -2,6 +2,7 @@ package objects.gameObjects.behaviour.EnemyAI;
 
 import objects.gameObjects.Enemy;
 import objects.gameObjects.behaviour.Behaviour;
+import objects.gameObjects.behaviour.Navigator;
 import objects.misc.Grid;
 
 public class Explore implements Behaviour {

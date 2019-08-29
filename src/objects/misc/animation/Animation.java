@@ -65,6 +65,10 @@ public class Animation {
         }
     }
 
+    public boolean isFinished(){
+        return !spriteIterator.hasNext();
+    }
+
     public BufferedImage getSprite(){
         return currentSprite;
     }

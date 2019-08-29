@@ -47,7 +47,7 @@ public class Player extends GameObject implements Character {
 
         arbitrator = new Arbitrator();
         move = new Move(this);
-        openWindow = new OpenWindow(this);
+        openWindow = new OpenWindow(this,game);
         arbitrator.addBehaviour(move);
         arbitrator.addBehaviour(openWindow);
     }
@@ -135,6 +135,6 @@ public class Player extends GameObject implements Character {
 
     @Override
     public void onWindowTouched(Window window) {
-        
+        openWindow.setWindowTouched(window);
     }
 }

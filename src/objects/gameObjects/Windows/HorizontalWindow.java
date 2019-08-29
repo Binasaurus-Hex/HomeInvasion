@@ -25,8 +25,8 @@ public class HorizontalWindow extends Window {
         width = 50;
         height = 6;
 
-        startPoint = new Point2D.Double(x+width/2,y);
-        endPoint = new Point2D.Double(x+width/2,y+height);
+        startPoint = new Point2D.Double(x+width/2,y-15);
+        endPoint = new Point2D.Double(x+width/2,y+height+15);
         bounds = new Rectangle2D.Double(x,y,width,height);
         activation = new ActivatableBounds(x,y,width,height,game);
 

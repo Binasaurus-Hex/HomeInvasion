@@ -1,7 +1,8 @@
-package objects.gameObjects.behaviour.EnemyAI;
+package objects.gameObjects.behaviour;
 
 import game.Game;
 import objects.gameObjects.Enemy;
+import objects.gameObjects.GameObject;
 import objects.gameObjects.Node;
 import objects.misc.Grid;
 import objects.misc.PathGenerator;
@@ -12,15 +13,15 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 
 public class Navigator {
-    Enemy object;
+    GameObject object;
     PathGenerator generator;
     public PathList path;
     Node goal;
-    Node currentPos;
-    Grid grid;
+    public Node currentPos;
+    public Grid grid;
     Game game;
 
-    public Navigator(Enemy object, Game game){
+    public Navigator(GameObject object, Game game){
         this.object = object;
         this.game = game;
         this.generator = new PathGenerator(game);
