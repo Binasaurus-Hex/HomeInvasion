@@ -47,7 +47,9 @@ public class OpenWindow implements Behaviour, WindowListener {
     @Override
     public boolean needsControl() {
         if(window != null){
-            return true;
+            if(window.isClosed()){
+                return true;
+            }
         }
         return false;
     }
@@ -71,6 +73,7 @@ public class OpenWindow implements Behaviour, WindowListener {
                 player.currentSprite = openWindow.getSprite();
             }
             else {
+                window.open();
                 openWindow.reset();
                 window = null;
             }
