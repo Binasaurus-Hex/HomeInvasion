@@ -5,9 +5,11 @@ import java.util.*;
 public class Arbitrator {
     public List<Behaviour> behaviours;
     public Behaviour current;
+    Map<Integer,Behaviour> contenders;
 
     public Arbitrator(){
         behaviours = new ArrayList<>();
+        contenders = new HashMap<>();
     }
 
     public void addBehaviour(Behaviour b){
@@ -19,7 +21,6 @@ public class Arbitrator {
     }
 
     public void update(){
-        Map<Integer,Behaviour> contenders = new HashMap<>();
         for(Behaviour b : behaviours){
             if(b.needsControl()) contenders.put(b.getPriority(),b);
             else{
@@ -37,6 +38,7 @@ public class Arbitrator {
             next.start();
             current = next;
         }
+        contenders.clear();
         current.update();
     }
 

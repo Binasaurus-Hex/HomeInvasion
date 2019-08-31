@@ -9,8 +9,10 @@ import java.awt.geom.Rectangle2D;
 
 public class Score extends GameObject{
     private double time = 0;
+    private Font font;
     public Score(double x, double y,Game game) {
         super(x, y, 0,0, GameObjectID.Score, game);
+        font = new Font("Impact",Font.BOLD,50);
     }
 
     @Override
@@ -22,7 +24,7 @@ public class Score extends GameObject{
     public void render(Graphics g) {
         Drawable score = (graphics)->{
             graphics.setColor(Color.red);
-            graphics.setFont(new Font("Impact",Font.BOLD,50));
+            graphics.setFont(font);
             graphics.drawString(String.valueOf("Score = "+Math.round(time)),(int)x,(int)y);
         };
         Graphics2D g2d = (Graphics2D)g;

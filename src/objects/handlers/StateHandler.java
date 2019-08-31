@@ -21,10 +21,11 @@ public class StateHandler {
     public void init(Game game){
         BufferedImageLoader loader = new BufferedImageLoader();
         //load the nodes
-        ObjectList<ObjectList<Node>> nodeList = game.grid.getNodes();
+
 
         //if debug mode -> add the nodes to the object list
         if(Main.debug){
+            ObjectList<ObjectList<Node>> nodeList = game.grid.getNodes();
             for(ObjectList<Node> row : nodeList){
                 for(Node node : row){
                     game.objectHandler.add(node);

@@ -26,6 +26,7 @@ public class Player extends GameObject implements Character {
     private boolean moving;
     private boolean ded;
     public boolean visible = false;
+    private Rectangle2D.Double bounds;
 
     private final int MAXDETECT=300;
     private final int TRANSITIONTIME=1;
@@ -44,6 +45,7 @@ public class Player extends GameObject implements Character {
         velX = 2.5;
         velY = 2.5;
         speed = 2.5;
+        bounds = new Rectangle2D.Double((x-(width/4)-5), y-(height/4), (width/2)+10, height/2);
 
         arbitrator = new Arbitrator();
         move = new Move(this);
@@ -128,9 +130,12 @@ public class Player extends GameObject implements Character {
     @Override
     public Rectangle2D.Double getBounds() {
         if(getRotation() == 0 || getRotation() == -3) {
-            return new Rectangle2D.Double(x-(width/4), (y-(height/4))-5, width/2, (height/2)+10);
+            bounds.setRect(x-(width/4), (y-(height/4))-5, width/2, (height/2)+10);
         }
-        return new Rectangle2D.Double((x-(width/4)-5), y-(height/4), (width/2)+10, height/2);
+        else{
+            bounds.setRect((x-(width/4)-5), y-(height/4), (width/2)+10, height/2);
+        }
+        return bounds;
     }
 
     @Override

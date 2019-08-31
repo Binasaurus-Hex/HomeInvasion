@@ -30,10 +30,13 @@ public abstract class Enemy extends GameObject implements Character {
     protected OpenWindow openWindow;
     protected Vault vault;
 
+    private Rectangle2D.Double bounds;
+
     public Enemy(int x, int y, Game game, Color color) {
         super(x, y, 1, 0, GameObjectID.Enemy, game);
         width = 50;
         height = 50;
+        bounds = new Rectangle2D.Double(x-width/4, y-height/4, width/2, height/2);
         playerLastPosition = new Point2D.Double();
         navigator = new Navigator(this,game);
 
@@ -102,6 +105,7 @@ public abstract class Enemy extends GameObject implements Character {
 
     @Override
     public Rectangle2D.Double getBounds() {
-        return new Rectangle2D.Double(x-width/4, y-height/4, width/2, height/2);
+        bounds.setRect(x-width/4, y-height/4, width/2, height/2);
+        return bounds;
     }
 }

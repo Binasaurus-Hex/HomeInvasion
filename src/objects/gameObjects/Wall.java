@@ -8,11 +8,15 @@ import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
 public class Wall extends GameObject{
+
+    private Rectangle2D.Double bounds;
     private int width, height;
+
     public Wall(int x, int y, int width, int height, Game game) {
         super(x, y, 0, 0, GameObjectID.Wall, game);
         this.width = width;
-         this.height = height;
+        this.height = height;
+        bounds = new Rectangle2D.Double(x, y, width, height);
     }
 
     @Override
@@ -31,6 +35,6 @@ public class Wall extends GameObject{
 
     @Override
     public Rectangle2D.Double getBounds() {
-        return new Rectangle2D.Double(x, y, width, height);
+        return bounds;
     }
 }
