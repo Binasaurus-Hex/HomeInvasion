@@ -24,17 +24,20 @@ public class Animation {
     private int fps;
 
     public Animation(String filepath,int fps){
-        spriteList = loadSprites(filepath);
+        spriteList = loadSprites(filepath,false);
         spriteIterator = spriteList.listIterator();
         currentSprite = spriteList.get(0);
         this.fps = fps;
     }
 
-    public Animation(String filepath){
-
+    public Animation(String filepath,int fps, boolean reversed){
+        spriteList = loadSprites(filepath,reversed);
+        spriteIterator = spriteList.listIterator();
+        currentSprite = spriteList.get(0);
+        this.fps = fps;
     }
 
-    private List<BufferedImage> loadSprites(String filepath){
+    private List<BufferedImage> loadSprites(String filepath,boolean reversed){
         File folder = new File("res"+filepath).getAbsoluteFile();
         File[] listOfFiles = folder.listFiles();
         Arrays.sort(listOfFiles, (o1, o2) -> {
@@ -42,6 +45,10 @@ public class Animation {
             int b = Integer.valueOf(o2.getName().replace(".png",""));
             return a-b;
         });
+
+        if(reversed){
+            Collections.reverse(Arrays.asList(listOfFiles));
+        }
 
         List<BufferedImage> sprites = new ArrayList<>();
         BufferedImageLoader loader = new BufferedImageLoader();

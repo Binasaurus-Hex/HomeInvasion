@@ -4,6 +4,7 @@ import game.CameraID;
 import game.Game;
 import objects.gameObjects.Windows.Window;
 import objects.gameObjects.behaviour.Arbitrator;
+import objects.gameObjects.behaviour.playerBehaviours.CloseWindow;
 import objects.gameObjects.behaviour.playerBehaviours.Move;
 import objects.gameObjects.behaviour.playerBehaviours.OpenWindow;
 import objects.interfaces.Character;
@@ -35,6 +36,7 @@ public class Player extends GameObject implements Character {
     private Arbitrator arbitrator;
     private Move move;
     private OpenWindow openWindow;
+    private CloseWindow closeWindow;
 
 
     public Player(double x, double y, int z, double width, double height, Game game) {
@@ -50,12 +52,17 @@ public class Player extends GameObject implements Character {
         arbitrator = new Arbitrator();
         move = new Move(this);
         openWindow = new OpenWindow(this,game);
+        closeWindow = new CloseWindow(this,game);
         arbitrator.addBehaviour(move);
         arbitrator.addBehaviour(openWindow);
+        arbitrator.addBehaviour(closeWindow);
     }
 
     @Override
     public void update() {
+        if(KeyHandler.isKeyPressed("L")){
+            game.stop();
+        }
         camera.setX(x);
         camera.setY(y);
         if(movable&&!ded) {
@@ -141,5 +148,6 @@ public class Player extends GameObject implements Character {
     @Override
     public void onWindowTouched(Window window) {
         openWindow.setWindowTouched(window);
+        closeWindow.setWindowTouched(window);
     }
 }

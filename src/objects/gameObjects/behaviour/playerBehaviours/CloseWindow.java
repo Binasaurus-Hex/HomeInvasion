@@ -11,9 +11,9 @@ import objects.misc.animation.Animation;
 
 import java.awt.geom.Point2D;
 
-public class OpenWindow implements Behaviour, WindowListener {
+public class CloseWindow implements Behaviour, WindowListener {
     private Player player;
-    private Animation openWindow;
+    private Animation closeWindow;
     private Window window;
     private Navigator navigator;
     private Point2D.Double start;
@@ -21,9 +21,9 @@ public class OpenWindow implements Behaviour, WindowListener {
     private boolean finishedMove;
     private boolean activated = false;
 
-    public OpenWindow(Player player, Game game){
+    public CloseWindow(Player player, Game game){
         this.player = player;
-        openWindow = new Animation("/sprites/player/openWindow",10);
+        closeWindow = new Animation("/sprites/player/openWindow",10,true);
         window = null;
         navigator = new Navigator(player,game);
         start = null;
@@ -32,7 +32,7 @@ public class OpenWindow implements Behaviour, WindowListener {
     }
     @Override
     public void start() {
-        player.currentSprite = openWindow.getSprite();
+        player.currentSprite = closeWindow.getSprite();
         Point2D.Double[] anchors = window.getAnchorPoints();
         if(anchors[0].distance(player.getPoint())< anchors[1].distance(player.getPoint())){
             start = anchors[0];
@@ -48,7 +48,7 @@ public class OpenWindow implements Behaviour, WindowListener {
     @Override
     public boolean needsControl() {
         if(window != null){
-            if(window.isClosed() && KeyHandler.isKeyPressed("F") || activated){
+            if(window.isOpen() && KeyHandler.isKeyPressed("F") || activated){
                 activated = true;
                 return true;
             }
@@ -69,13 +69,13 @@ public class OpenWindow implements Behaviour, WindowListener {
             }
         }
         else {
-            if(!openWindow.isFinished()){
-                openWindow.update();
-                player.currentSprite = openWindow.getSprite();
+            if(!closeWindow.isFinished()){
+                closeWindow.update();
+                player.currentSprite = closeWindow.getSprite();
             }
             else {
-                window.open();
-                openWindow.reset();
+                window.close();
+                closeWindow.reset();
                 activated = false;
             }
         }

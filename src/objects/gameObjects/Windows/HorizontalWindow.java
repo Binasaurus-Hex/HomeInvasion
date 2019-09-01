@@ -19,16 +19,20 @@ public class HorizontalWindow extends Window {
 
     private Point2D.Double startPoint;
     private Point2D.Double endPoint;
+    private Point2D.Double[] anchorPoints;
+    private Point2D.Double point;
 
     public HorizontalWindow(double x, double y, int z, Game game) {
         super(x, y, z, game);
         width = 50;
         height = 6;
 
+        point = new Point2D.Double(x+width/2,y+height/2);
         startPoint = new Point2D.Double(x+width/2,y-15);
         endPoint = new Point2D.Double(x+width/2,y+height+15);
+        anchorPoints = new Point2D.Double[]{startPoint,endPoint};
         bounds = new Rectangle2D.Double(x,y,width,height);
-        activation = new ActivatableBounds(x,y,width,height,game);
+        activation = new ActivatableBounds(x-10,y-20,width+20,height+40,game);
 
         activation.addObjectID(GameObjectID.Player);
         activation.addObjectID(GameObjectID.Enemy);
@@ -38,7 +42,8 @@ public class HorizontalWindow extends Window {
             character.onWindowTouched(this);
         });
         activation.setOnExit((object)->{
-
+            Character character = (Character)object;
+            character.onWindowTouched(null);
         });
 
         game.objectHandler.add(activation);
@@ -96,11 +101,11 @@ public class HorizontalWindow extends Window {
 
     @Override
     public Point2D.Double getPoint(){
-        return new Point2D.Double(x+width/2,y+height/2);
+        return point;
     }
 
     @Override
     public Point2D.Double[] getAnchorPoints() {
-        return new Point2D.Double[]{startPoint,endPoint};
+        return anchorPoints;
     }
 }

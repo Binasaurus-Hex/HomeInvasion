@@ -1,7 +1,10 @@
 package objects.handlers;
 
+import javafx.scene.input.KeyCode;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,19 +14,11 @@ public class KeyHandler extends KeyAdapter {
 
     public KeyHandler() {
         keyMap = new HashMap<>();
-        keyMap.put("W", false);
-        keyMap.put("A", false);
-        keyMap.put("S", false);
-        keyMap.put("D", false);
-        keyMap.put("M",false);
-        keyMap.put("Enter",false);
-        keyMap.put("I",false);
-        keyMap.put("P",false);
     }
 
     public static boolean isKeyPressed(String key) {
         if(keyMap != null) {
-            return keyMap.get(key);
+            return keyMap.getOrDefault(key,false);
         } else {
             return false;
         }
@@ -32,61 +27,26 @@ public class KeyHandler extends KeyAdapter {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        int key = e.getKeyCode();
-
-        if(key == KeyEvent.VK_W) {
-            keyMap.replace("W", true);
+        String key = KeyEvent.getKeyText(e.getKeyCode());
+        if(!keyMap.containsKey(key)){
+            keyMap.put(key,true);
         }
-        if(key == KeyEvent.VK_A) {
-            keyMap.replace("A", true);
-        }
-        if(key == KeyEvent.VK_S) {
-            keyMap.replace("S", true);
-        }
-        if(key == KeyEvent.VK_D) {
-            keyMap.replace("D", true);
-        }
-        if(key == KeyEvent.VK_ENTER) {
-            keyMap.replace("Enter", true);
-        }
-        if(key == KeyEvent.VK_M) {
-            keyMap.replace("M", true);
-        }
-        if(key == KeyEvent.VK_I) {
-            keyMap.replace("I", true);
-        }
-        if(key == KeyEvent.VK_P){
-            keyMap.replace("P",true);
+        else {
+            keyMap.replace(key,true);
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        int key = e.getKeyCode();
-
-        if(key == KeyEvent.VK_W) {
-            keyMap.replace("W", false);
+        String key = KeyEvent.getKeyText(e.getKeyCode());
+        if(!keyMap.containsKey(key)){
+            keyMap.put(key,false);
         }
-        if(key == KeyEvent.VK_A) {
-            keyMap.replace("A", false);
-        }
-        if(key == KeyEvent.VK_S) {
-            keyMap.replace("S", false);
-        }
-        if(key == KeyEvent.VK_D) {
-            keyMap.replace("D", false);
-        }
-        if(key == KeyEvent.VK_ENTER) {
-            keyMap.replace("Enter", false);
-        }
-        if(key == KeyEvent.VK_M) {
-            keyMap.replace("M", false);
-        }
-        if(key == KeyEvent.VK_I) {
-            keyMap.replace("I", false);
-        }
-        if(key == KeyEvent.VK_P){
-            keyMap.replace("P",false);
+        else{
+            keyMap.replace(key,false);
         }
     }
+
+
+
 }

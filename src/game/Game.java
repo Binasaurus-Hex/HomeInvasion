@@ -141,7 +141,7 @@ public class Game extends JComponent {
     /**This method is called from the start method when the game is no longer running and simply joins the two threads
      * together to prevent system problems.
      */
-    private void stop() {
+    public void stop() {
         isRunning = false;
         try {
             thread.join();

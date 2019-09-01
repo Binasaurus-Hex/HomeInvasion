@@ -35,7 +35,6 @@ public class Vault implements Behaviour, WindowListener {
     public boolean needsControl() {
         if(touchedWindow != null){
             if(touchedWindow.isOpen()){
-                System.out.println("window open");
                 return true;
             }
         }

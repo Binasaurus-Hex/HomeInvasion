@@ -38,12 +38,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-36" />
-    <option name="y" value="-15" />
-    <option name="width" value="1929" />
-    <option name="height" value="869" />
-  </component>
   <component name="ProjectId" id="1QCYNRiv8zPXrCYhXDaqV82hfLm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
@@ -54,6 +48,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -156,7 +151,9 @@
       <workItem from="1567100481716" duration="1854000" />
       <workItem from="1567115865333" duration="3670000" />
       <workItem from="1567185597479" duration="1307000" />
-      <workItem from="1567276039226" duration="2767000" />
+      <workItem from="1567276039226" duration="7024000" />
+      <workItem from="1567289943476" duration="473000" />
+      <workItem from="1567329564137" duration="1337000" />
     </task>
     <servers />
   </component>
@@ -168,22 +165,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/game/Game.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="masterDetails">
     <states>
