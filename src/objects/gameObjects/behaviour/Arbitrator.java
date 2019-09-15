@@ -13,6 +13,7 @@ public class Arbitrator {
     }
 
     public void addBehaviour(Behaviour b){
+
         if(current == null){
             current = b;
             current.start();

@@ -64,7 +64,7 @@ public class Navigator {
         double y = object.getY();
         object.setRotation(findRotation(object.getPoint(),point));
         double[] unitVector = MathsMethods.getUnitVector(x,y,point.getX(),point.getY());
-        if(MathsMethods.distance(x,y, point.getX(), point.getY())>1) {
+        if(MathsMethods.distance(x,y, point.getX(), point.getY())>1.5) {
             x +=(unitVector[0]*object.getVelX());
             y +=(unitVector[1]*object.getVelY());
             object.setX(x);

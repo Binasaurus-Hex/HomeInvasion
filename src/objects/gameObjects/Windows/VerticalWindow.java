@@ -63,4 +63,9 @@ public class VerticalWindow extends Window {
     public Point2D.Double[] getAnchorPoints() {
         return new Point2D.Double[0];
     }
+
+    @Override
+    public boolean useable() {
+        return isOpen();
+    }
 }

@@ -35,7 +35,7 @@ public class StateHandler {
 
 
         //Floor
-        game.objectHandler.add(new Floor(-200, -200, 2500, 2500, loader.loadImage("/sprites/floor/grass.png"), game));//Grass
+        game.objectHandler.add(new Floor(-200, -200, 5000, 5000, loader.loadImage("/sprites/floor/grass.png"), game));//Grass
 
         game.objectHandler.add(new Floor(300, 400, 200, 150, loader.loadImage("/sprites/floor/redBrick.png"), game));//Utility Room
         game.objectHandler.add(new Floor(300, 550, 201, 450, loader.loadImage("/sprites/floor/garage.png"), game));//Garage
@@ -181,7 +181,7 @@ public class StateHandler {
         game.objectHandler.add(new RoomBounds(1100, 1150, 200, 100, game));//HallwayH3-sub
 
         //windows
-        game.objectHandler.add(Window.Horizontal(875,2100,game));
+        game.objectHandler.add(Window.Horizontal(875,1500,game));
 
         game.objectHandler.add(new LightSource(0, 0, 0, game));
 

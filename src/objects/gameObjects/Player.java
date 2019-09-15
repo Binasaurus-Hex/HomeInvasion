@@ -4,9 +4,8 @@ import game.CameraID;
 import game.Game;
 import objects.gameObjects.Windows.Window;
 import objects.gameObjects.behaviour.Arbitrator;
-import objects.gameObjects.behaviour.playerBehaviours.CloseWindow;
-import objects.gameObjects.behaviour.playerBehaviours.Move;
-import objects.gameObjects.behaviour.playerBehaviours.OpenWindow;
+import objects.gameObjects.behaviour.Navigator;
+import objects.gameObjects.behaviour.playerBehaviours.*;
 import objects.interfaces.Character;
 import objects.interfaces.Drawable;
 import objects.handlers.KeyHandler;
@@ -15,6 +14,7 @@ import objects.misc.Camera;
 import objects.misc.animation.Animation;
 
 import java.awt.*;
+import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.HashMap;
@@ -32,11 +32,16 @@ public class Player extends GameObject implements Character {
     private final int MAXDETECT=300;
     private final int TRANSITIONTIME=1;
 
+    private Navigator navigator;
+
     public BufferedImage currentSprite;
     private Arbitrator arbitrator;
     private Move move;
     private OpenWindow openWindow;
     private CloseWindow closeWindow;
+    private Vault vault;
+    private MoveToVaultable moveToVaultable;
+    private boolean collidable = true;
 
 
     public Player(double x, double y, int z, double width, double height, Game game) {
@@ -48,14 +53,19 @@ public class Player extends GameObject implements Character {
         velY = 2.5;
         speed = 2.5;
         bounds = new Rectangle2D.Double((x-(width/4)-5), y-(height/4), (width/2)+10, height/2);
+        navigator = new Navigator(this,game);
 
         arbitrator = new Arbitrator();
         move = new Move(this);
-        openWindow = new OpenWindow(this,game);
-        closeWindow = new CloseWindow(this,game);
+        openWindow = new OpenWindow(this);
+        closeWindow = new CloseWindow(this);
+        vault = new Vault(this);
+        moveToVaultable = new MoveToVaultable(this);
         arbitrator.addBehaviour(move);
         arbitrator.addBehaviour(openWindow);
         arbitrator.addBehaviour(closeWindow);
+        arbitrator.addBehaviour(vault);
+        arbitrator.addBehaviour(moveToVaultable);
     }
 
     @Override
@@ -66,11 +76,30 @@ public class Player extends GameObject implements Character {
         camera.setX(x);
         camera.setY(y);
         if(movable&&!ded) {
-            collision();
+            if(collidable)collision();
             arbitrator.update();
         }
     }
 
+    public boolean moveToAnchorPoint(Point2D.Double start,Point2D.Double end){
+        setVelX(1);
+        setVelY(1);
+        if(navigator.moveToPoint(start)){
+            setRotation(Math.atan2(end.getY()-start.getY(),end.getX()-start.getX()));
+            setVelX(speed);
+            setVelY(speed);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean moveToPoint(Point2D.Double point){
+        return navigator.moveToPoint(point);
+    }
+
+    public void setCollidable(boolean value){
+        collidable = value;
+    }
 
     private void collision() {
         for(GameObject object : game.objectHandler.objects) {
@@ -83,10 +112,7 @@ public class Player extends GameObject implements Character {
                         resolveCollision(object);
                         break;
                     case Window:
-                        Window window = (Window)object;
-                        if(window.isClosed()){
-                            resolveCollision(window);
-                        }
+                        resolveCollision(object);
                         break;
                 }
             }
@@ -124,6 +150,10 @@ public class Player extends GameObject implements Character {
             graphics.drawImage(currentSprite, (int)(x-(width/2)), (int)(y-(width/2)), (int)width, (int)height, null);
             graphics.rotate(-getRotation(), x, y);
         };
+        Drawable input = (graphics)->{
+            graphics.setColor(Color.RED);
+            graphics.drawString(KeyHandler.getTypedKey(), (int)(x),(int)(y-50));
+        };
         Drawable debugPos = (graphics)->{
             graphics.setColor(Color.red);
             graphics.drawOval((int)x-5,(int)y-5,10,10);
@@ -131,6 +161,7 @@ public class Player extends GameObject implements Character {
 
         Graphics2D g2d = (Graphics2D) g;
         renderToCamera(player, g2d, camera);
+        renderToCamera(input,g2d,camera);
         //renderToCamera(debugPos,g2d,camera);
     }
 
@@ -149,5 +180,7 @@ public class Player extends GameObject implements Character {
     public void onWindowTouched(Window window) {
         openWindow.setWindowTouched(window);
         closeWindow.setWindowTouched(window);
+        moveToVaultable.setVaultableTouched(window);
+        vault.setVaultableTouched(window);
     }
 }

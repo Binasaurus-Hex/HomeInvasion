@@ -11,12 +11,13 @@ public class Move implements Behaviour {
 
     public Move(Player player){
         this.player = player;
-        walkingAnimation = new Animation("/sprites/player/moving",10);
+        walkingAnimation = new Animation("/sprites/player/moving",10,10);
         player.currentSprite = walkingAnimation.getSprite();
     }
 
     @Override
     public void start() {
+        System.out.println("Moving");
     }
 
     @Override

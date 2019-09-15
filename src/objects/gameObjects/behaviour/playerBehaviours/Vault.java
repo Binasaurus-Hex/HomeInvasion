@@ -1,43 +1,42 @@
 package objects.gameObjects.behaviour.playerBehaviours;
 
-import game.Game;
 import objects.gameObjects.Player;
 import objects.gameObjects.Windows.Window;
 import objects.gameObjects.behaviour.Behaviour;
 import objects.gameObjects.behaviour.HelperFunctions;
-import objects.gameObjects.behaviour.Navigator;
 import objects.handlers.KeyHandler;
+import objects.interfaces.Vaultable;
+import objects.interfaces.VaultableListener;
 import objects.interfaces.WindowListener;
 import objects.misc.animation.Animation;
 
 import java.awt.geom.Point2D;
 
-public class OpenWindow implements Behaviour, WindowListener {
+public class Vault implements Behaviour, VaultableListener {
     private Player player;
-    private Animation openWindow;
-    private Window window;
+    private Vaultable vaultable;
+    private Animation vault;
     private Point2D.Double start;
     private Point2D.Double end;
-    private boolean activated = false;
+    private boolean activated;
 
-    public OpenWindow(Player player){
+    public Vault(Player player){
         this.player = player;
-        openWindow = new Animation("/sprites/player/openWindow",10,7);
-        window = null;
-        start = null;
-        end = null;
-
     }
+
+
     @Override
     public void start() {
-        System.out.println("OpenWindow");
-        player.currentSprite = openWindow.getSprite();
+        Point2D.Double[] anchors = HelperFunctions.getOrderedAnchors(player.getPoint(),vaultable.getAnchorPoints());
+        start = anchors[0];
+        end = anchors[1];
+        player.setCollidable(false);
     }
 
     @Override
     public boolean needsControl() {
-        if(window != null){
-            if(window.isClosed() && KeyHandler.isKeyPressed("F") || activated){
+        if(vaultable != null && vaultable.useable()){
+            if(KeyHandler.isKeyPressed("Space") || activated){
                 activated = true;
                 return true;
             }
@@ -47,20 +46,15 @@ public class OpenWindow implements Behaviour, WindowListener {
 
     @Override
     public void update() {
-        if(!openWindow.isFinished()){
-            openWindow.update();
-            player.currentSprite = openWindow.getSprite();
-        }
-        else {
-            window.open();
-            openWindow.reset();
+        if(player.moveToPoint(end)){
             activated = false;
+            player.setCollidable(true);
         }
     }
 
     @Override
     public int getPriority() {
-        return 1;
+        return 0;
     }
 
     @Override
@@ -69,7 +63,7 @@ public class OpenWindow implements Behaviour, WindowListener {
     }
 
     @Override
-    public void setWindowTouched(Window window) {
-        this.window = window;
+    public void setVaultableTouched(Vaultable vaultable) {
+        this.vaultable = vaultable;
     }
 }

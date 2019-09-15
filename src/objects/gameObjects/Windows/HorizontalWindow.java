@@ -108,4 +108,9 @@ public class HorizontalWindow extends Window {
     public Point2D.Double[] getAnchorPoints() {
         return anchorPoints;
     }
+
+    @Override
+    public boolean useable() {
+        return isOpen();
+    }
 }

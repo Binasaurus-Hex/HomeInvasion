@@ -23,40 +23,35 @@ public class Animation {
     private int frameCount = 0;
     private int fps;
 
-    public Animation(String filepath,int fps){
-        spriteList = loadSprites(filepath,false);
+    public Animation(String filepath,int fps,int frames){
+        spriteList = loadSprites(filepath,frames,false);
         spriteIterator = spriteList.listIterator();
         currentSprite = spriteList.get(0);
         this.fps = fps;
     }
 
-    public Animation(String filepath,int fps, boolean reversed){
-        spriteList = loadSprites(filepath,reversed);
+    public Animation(String filepath,int fps, int frames, boolean reversed){
+        spriteList = loadSprites(filepath,frames,reversed);
         spriteIterator = spriteList.listIterator();
         currentSprite = spriteList.get(0);
         this.fps = fps;
     }
 
-    private List<BufferedImage> loadSprites(String filepath,boolean reversed){
-        File folder = new File("res"+filepath).getAbsoluteFile();
-        File[] listOfFiles = folder.listFiles();
-        Arrays.sort(listOfFiles, (o1, o2) -> {
-            int a = Integer.valueOf(o1.getName().replace(".png",""));
-            int b = Integer.valueOf(o2.getName().replace(".png",""));
-            return a-b;
-        });
-
-        if(reversed){
-            Collections.reverse(Arrays.asList(listOfFiles));
-        }
-
-        List<BufferedImage> sprites = new ArrayList<>();
+    private List<BufferedImage> loadSprites(String filepath,int frames, boolean reversed){
         BufferedImageLoader loader = new BufferedImageLoader();
-        for(File file : listOfFiles){
-            System.out.println(filepath+"/"+file.getName());
-            sprites.add(loader.loadImage(filepath+"/"+file.getName()));
+        List<BufferedImage> images = new ArrayList<>();
+        if(!reversed){
+            for(int i = 1; i <= frames ; i++){
+                images.add(loader.loadImage(filepath+"/"+i+".png"));
+            }
         }
-        return sprites;
+        else{
+            for(int i = frames; i > 0 ; i--){
+                images.add(loader.loadImage(filepath+"/"+i+".png"));
+            }
+        }
+        return images;
+
     }
 
     public void update(){
