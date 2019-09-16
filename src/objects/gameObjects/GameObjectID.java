@@ -13,5 +13,6 @@ public enum GameObjectID {
     Score,
     ActivatableBounds,
     Illusion,
-    Window
+    Window,
+    Anime
 }

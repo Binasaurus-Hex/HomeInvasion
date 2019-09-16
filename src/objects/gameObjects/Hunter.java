@@ -91,4 +91,9 @@ public class Hunter extends Enemy {
             i.setWindowTouched(window);
         }
     }
+
+    @Override
+    public void onAnimeTouched(Anime anime) {
+
+    }
 }

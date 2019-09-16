@@ -55,7 +55,7 @@ public class StateHandler {
         game.objectHandler.add(new Floor(1201, 601, 100, 550, loader.loadImage("/sprites/floor/wood.png"), game));//HallwayH3
         game.objectHandler.add(new Floor(1100, 1150, 200, 100, loader.loadImage("/sprites/floor/wood.png"), game));//HallwayH3-sub
 
-
+        game.objectHandler.add(new Anime(1000,1500,game));
 
 
         //Player
@@ -182,7 +182,6 @@ public class StateHandler {
 
         //windows
         game.objectHandler.add(Window.Horizontal(875,1500,game));
-
         game.objectHandler.add(new LightSource(0, 0, 0, game));
 
         game.objectHandler.add(new Score(-200,-450,game));

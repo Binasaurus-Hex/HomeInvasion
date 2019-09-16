@@ -77,5 +77,6 @@ public class Animation {
 
     public void reset(){
         spriteIterator = spriteList.listIterator();
+        currentSprite = spriteList.get(0);
     }
 }
