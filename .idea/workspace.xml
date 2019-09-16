@@ -7,30 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eabf5829-657b-4141-aed0-c5553208c85e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/objects/gameObjects/Anime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Headpat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/MoveToActivatable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/interfaces/Activatable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/interfaces/ActivatableListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objects/interfaces/AnimeListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/HomeInvasion_jar/HomeInvasion.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/HomeInvasion_jar/HomeInvasion.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/GameObjectID.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/GameObjectID.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Hunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Hunter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Player$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Windows/HorizontalWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Windows/HorizontalWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/handlers/StateHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/handlers/StateHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/interfaces/Character.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/interfaces/Character.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/misc/animation/Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/misc/animation/Animation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/GameObjectID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/GameObjectID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/Hunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/Hunter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/13.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/Windows/HorizontalWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/Windows/HorizontalWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Vault.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Vault.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/handlers/StateHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/handlers/StateHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/interfaces/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/interfaces/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/misc/animation/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/misc/animation/Animation.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,11 +41,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Vault.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+            <state relative-caret-position="187">
+              <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
               <folding>
+                <element signature="e#2030#2031#0" expanded="true" />
                 <element signature="e#2054#2055#0" expanded="true" />
+                <element signature="e#2094#2095#0" expanded="true" />
                 <element signature="e#2127#2128#0" expanded="true" />
+                <element signature="e#2201#2202#0" expanded="true" />
                 <element signature="e#2243#2244#0" expanded="true" />
               </folding>
             </state>
@@ -61,28 +56,48 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/2.png">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Idle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/3.png">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/src/objects/FileIO/FileWriter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/4.png">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/src/objects/interfaces/VaultableListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/13.png">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/src/objects/misc/ObjectMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/12.png">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/src/objects/misc/PathGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -98,8 +113,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Headpat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="33" column="33" lean-forward="true" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+            <state relative-caret-position="442">
+              <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,8 +125,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Windows/HorizontalWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+            <state relative-caret-position="306">
+              <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -183,8 +198,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -325,14 +338,16 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568591848853" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dev/src/CiQ-Mobile-AppMaker" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568595138871" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -445,17 +460,18 @@
       <workItem from="1568229824530" duration="1371000" />
       <workItem from="1568418642599" duration="23495000" />
       <workItem from="1568534835501" duration="14431000" />
+      <workItem from="1568667913507" duration="2737000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40988000" />
+    <option name="totallyTimeSpent" value="43725000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4983871" visible="true" weight="0.26066098" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4983871" visible="true" weight="0.26332623" />
       <window_info id="Structure" order="1" sideWeight="0.5016129" side_tool="true" weight="0.18123667" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -465,7 +481,7 @@
       <window_info id="simpleUML" order="7" weight="0.32995737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3261105" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3163597" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3163597" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.37053087" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -560,12 +576,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/headpat/3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/headpat/4.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/sprites/player/headpat/5.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -630,13 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Idle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/interfaces/ActivatableListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -683,20 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/misc/ObjectMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/misc/PathGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -778,9 +767,7 @@
     <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/7.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/8.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/14.png" />
     <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/2.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -790,13 +777,13 @@
     <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/4.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/12.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/13.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/14.png">
+    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/12.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/8.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/1.png">
@@ -804,28 +791,66 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Headpat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="33" column="33" lean-forward="true" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+        <state relative-caret-position="442">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/FileIO/FileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/interfaces/VaultableListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/misc/ObjectMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/misc/PathGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Windows/HorizontalWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
+        <state relative-caret-position="306">
+          <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Idle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Vault.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="24" column="59" selection-start-line="24" selection-start-column="59" selection-end-line="24" selection-end-column="59" />
+        <state relative-caret-position="187">
+          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
           <folding>
+            <element signature="e#2030#2031#0" expanded="true" />
             <element signature="e#2054#2055#0" expanded="true" />
+            <element signature="e#2094#2095#0" expanded="true" />
             <element signature="e#2127#2128#0" expanded="true" />
+            <element signature="e#2201#2202#0" expanded="true" />
             <element signature="e#2243#2244#0" expanded="true" />
           </folding>
         </state>

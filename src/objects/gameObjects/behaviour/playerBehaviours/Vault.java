@@ -22,7 +22,7 @@ public class Vault implements Behaviour, VaultableListener {
 
     public Vault(Player player){
         this.player = player;
-        vault = new Animation("/sprites/player/vaulting",19,13);
+        vault = new Animation("/sprites/player/vaulting",13,13);
     }
 
 
@@ -34,8 +34,8 @@ public class Vault implements Behaviour, VaultableListener {
         player.setCollidable(false);
         vault.reset();
         player.currentSprite = vault.getSprite();
-        player.setVelY(player.speed/2);
-        player.setVelX(player.speed/2);
+        player.setVelY(player.speed/3);
+        player.setVelX(player.speed/3);
     }
 
     @Override
