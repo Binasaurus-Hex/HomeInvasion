@@ -4,6 +4,7 @@ import game.Game;
 import objects.gameObjects.ActivatableBounds;
 import objects.gameObjects.GameObject;
 import objects.gameObjects.GameObjectID;
+import objects.interfaces.Activatable;
 import objects.interfaces.Vaultable;
 
 import java.awt.*;
@@ -11,7 +12,7 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 
-public abstract class Window extends GameObject implements Vaultable {
+public abstract class Window extends GameObject implements Vaultable, Activatable {
 
     protected enum State{
         open,closed;

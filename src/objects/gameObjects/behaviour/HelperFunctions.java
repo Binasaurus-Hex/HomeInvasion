@@ -1,6 +1,10 @@
 package objects.gameObjects.behaviour;
 
+import javafx.util.Pair;
+
 import java.awt.geom.Point2D;
+import java.util.Collections;
+import java.util.List;
 
 public class HelperFunctions {
 
@@ -15,6 +19,11 @@ public class HelperFunctions {
             orderedAnchors[1] = anchors[0];
         }
         return orderedAnchors;
+    }
+
+    public static List<Pair<Point2D.Double,Double>> getOrderedAnchorPairs(Point2D.Double entity, List<Pair<Point2D.Double,Double>> pairs){
+        Collections.sort(pairs,(a,b)-> (int)(a.getKey().distance(entity) - b.getKey().distance(entity)));
+        return pairs;
     }
 
 

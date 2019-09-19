@@ -2,6 +2,7 @@ package objects.gameObjects.Windows;
 
 import game.CameraID;
 import game.Game;
+import javafx.util.Pair;
 import objects.gameObjects.ActivatableBounds;
 import objects.gameObjects.GameObjectID;
 import objects.interfaces.Character;
@@ -12,8 +13,7 @@ import java.awt.Graphics2D;
 import java.awt.Color;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.*;
 
 public class HorizontalWindow extends Window {
 
@@ -112,5 +112,13 @@ public class HorizontalWindow extends Window {
     @Override
     public boolean useable() {
         return isOpen();
+    }
+
+    @Override
+    public List<Pair<Point2D.Double, Double>> getAnchors() {
+        List<Pair<Point2D.Double,Double>> pairs = new ArrayList<>();
+        pairs.add(new Pair<>(startPoint,Math.PI/2));
+        pairs.add(new Pair<>(endPoint,-Math.PI/2));
+        return pairs;
     }
 }
