@@ -43,6 +43,7 @@ public class Player extends GameObject implements Character {
     private MoveToVaultable moveToVaultable;
     private Headpat headpat;
     private MoveToActivatable moveToActivatable;
+    private Idle idle;
     private boolean collidable = true;
 
 
@@ -65,6 +66,7 @@ public class Player extends GameObject implements Character {
         moveToVaultable = new MoveToVaultable(this);
         headpat = new Headpat(this);
         moveToActivatable = new MoveToActivatable(this);
+        idle = new Idle(this);
         arbitrator.addBehaviour(move);
         arbitrator.addBehaviour(openWindow);
         arbitrator.addBehaviour(closeWindow);
@@ -72,6 +74,7 @@ public class Player extends GameObject implements Character {
         arbitrator.addBehaviour(moveToVaultable);
         arbitrator.addBehaviour(headpat);
         arbitrator.addBehaviour(moveToActivatable);
+        arbitrator.addBehaviour(idle);
     }
 
     @Override

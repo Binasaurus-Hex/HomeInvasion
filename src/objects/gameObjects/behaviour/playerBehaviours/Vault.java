@@ -22,7 +22,7 @@ public class Vault implements Behaviour, VaultableListener {
 
     public Vault(Player player){
         this.player = player;
-        vault = new Animation("/sprites/player/vaulting",13,13);
+        vault = new Animation("/sprites/player/vaulting",14,12);
     }
 
 

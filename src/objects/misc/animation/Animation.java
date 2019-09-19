@@ -42,6 +42,7 @@ public class Animation {
         List<BufferedImage> images = new ArrayList<>();
         if(!reversed){
             for(int i = 1; i <= frames ; i++){
+                System.out.println(i);
                 images.add(loader.loadImage(filepath+"/"+i+".png"));
             }
         }
