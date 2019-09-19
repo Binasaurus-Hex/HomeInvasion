@@ -8,21 +8,20 @@
   <component name="ChangeListManager">
     <list default="true" id="eabf5829-657b-4141-aed0-c5553208c85e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Hunter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Hunter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Score.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Score.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Wall.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Windows/HorizontalWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/objects/gameObjects/Windows/HorizontalWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/10.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/12.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/13.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/8.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sprites/player/vaulting/9.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sprites/player/vaulting/9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HomeInvasion/sprites/player/vaulting/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/HomeInvasion/sprites/player/vaulting/7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/Anime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/Anime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/Windows/HorizontalWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/Windows/HorizontalWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Vault.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Vault.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/Windows/VerticalWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/Windows/VerticalWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/Windows/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/Windows/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/behaviour/HelperFunctions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/behaviour/HelperFunctions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/MoveToActivatable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/MoveToActivatable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects/interfaces/Activatable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects/interfaces/Activatable.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,83 +37,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Vault.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-              <folding>
-                <element signature="e#2030#2031#0" expanded="true" />
-                <element signature="e#2054#2055#0" expanded="true" />
-                <element signature="e#2094#2095#0" expanded="true" />
-                <element signature="e#2127#2128#0" expanded="true" />
-                <element signature="e#2201#2202#0" expanded="true" />
-                <element signature="e#2243#2244#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Idle.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/objects/FileIO/FileWriter.java">
+        <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/MoveToActivatable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/objects/interfaces/VaultableListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/objects/misc/ObjectMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/objects/misc/PathGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/8.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/1.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Headpat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+            <state relative-caret-position="274">
+              <caret line="29" column="48" lean-forward="true" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,10 +59,86 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/MoveToVaultable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1474#1475#0" expanded="true" />
+                <element signature="e#1498#1499#0" expanded="true" />
+                <element signature="e#1538#1539#0" expanded="true" />
+                <element signature="e#1571#1572#0" expanded="true" />
+                <element signature="e#1645#1646#0" expanded="true" />
+                <element signature="e#1687#1688#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="206">
+              <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Windows/HorizontalWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
+            <state relative-caret-position="1530">
+              <caret line="121" column="21" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/objects/FileIO/FileComparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Move.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-289">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Windows/VerticalWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="223">
+              <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+              <folding>
+                <element signature="e#1402#1403#0" expanded="true" />
+                <element signature="e#1429#1430#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/CloseWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Windows/Window.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-49">
+              <caret line="14" column="81" selection-start-line="14" selection-start-column="81" selection-end-line="14" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -155,13 +167,10 @@
       <list>
         <option value="$PROJECT_DIR$/src/objects/interfaces/VaultableListener.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/HelperFunctions.java" />
-        <option value="$PROJECT_DIR$/src/objects/gameObjects/behaviour/HelperFunctions.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/behaviour/Arbitrator.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/MoveToVaultable.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/behaviour/Navigator.java" />
         <option value="$PROJECT_DIR$/src/objects/interfaces/Vaultable.java" />
-        <option value="$PROJECT_DIR$/src/objects/gameObjects/Windows/Window.java" />
-        <option value="$PROJECT_DIR$/src/objects/gameObjects/Windows/VerticalWindow.java" />
         <option value="$PROJECT_DIR$/src/objects/handlers/KeyHandler.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Move.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/CloseWindow.java" />
@@ -171,23 +180,27 @@
         <option value="$PROJECT_DIR$/src/objects/interfaces/AnimeListener.java" />
         <option value="$PROJECT_DIR$/src/objects/interfaces/Character.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/Hunter.java" />
-        <option value="$PROJECT_DIR$/src/objects/interfaces/Activatable.java" />
         <option value="$PROJECT_DIR$/src/game/Main.java" />
         <option value="$PROJECT_DIR$/src/objects/handlers/StateHandler.java" />
         <option value="$PROJECT_DIR$/src/objects/misc/animation/Animation.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Headpat.java" />
         <option value="$PROJECT_DIR$/src/objects/interfaces/ActivatableListener.java" />
-        <option value="$PROJECT_DIR$/src/objects/gameObjects/Player.java" />
-        <option value="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/MoveToActivatable.java" />
-        <option value="$PROJECT_DIR$/src/objects/gameObjects/Anime.java" />
-        <option value="$PROJECT_DIR$/src/objects/gameObjects/Windows/HorizontalWindow.java" />
         <option value="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Vault.java" />
+        <option value="$PROJECT_DIR$/src/objects/gameObjects/behaviour/HelperFunctions.java" />
+        <option value="$PROJECT_DIR$/src/game/Test.java" />
+        <option value="$PROJECT_DIR$/src/objects/interfaces/Activatable.java" />
+        <option value="$PROJECT_DIR$/src/objects/gameObjects/Anime.java" />
+        <option value="$PROJECT_DIR$/src/objects/gameObjects/Windows/Window.java" />
+        <option value="$PROJECT_DIR$/src/objects/gameObjects/Windows/HorizontalWindow.java" />
+        <option value="$PROJECT_DIR$/src/objects/gameObjects/Windows/VerticalWindow.java" />
+        <option value="$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/MoveToActivatable.java" />
+        <option value="$PROJECT_DIR$/src/objects/gameObjects/Player.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-35" />
-    <option name="y" value="-14" />
+    <option name="x" value="135" />
+    <option name="y" value="-16" />
     <option name="width" value="1286" />
     <option name="height" value="1053" />
   </component>
@@ -400,7 +413,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomeInvasion.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+    <configuration name="HomeInvasion.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/HomeInvasion_jar/HomeInvasion.jar" />
       <method v="2" />
     </configuration>
@@ -461,17 +474,18 @@
       <workItem from="1568418642599" duration="23495000" />
       <workItem from="1568534835501" duration="14431000" />
       <workItem from="1568667913507" duration="2737000" />
+      <workItem from="1568892465892" duration="2328000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43725000" />
+    <option name="totallyTimeSpent" value="46053000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4983871" visible="true" weight="0.26332623" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4983871" visible="true" weight="0.26650366" />
       <window_info id="Structure" order="1" sideWeight="0.5016129" side_tool="true" weight="0.18123667" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -481,7 +495,7 @@
       <window_info id="simpleUML" order="7" weight="0.32995737" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3261105" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3163597" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.31578946" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.37053087" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -489,7 +503,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3261105" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32586786" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="bottom" id="Duplicate detector" order="13" weight="0.32719395" />
@@ -576,36 +590,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/headpat/5.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/headpat/6.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/headpat/7.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/headpat/8.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/headpat/9.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/headpat/10.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/headpat/11.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/headpat/12.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/headpat/13.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/headpat/14.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/sprites/player/headpat/15.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -630,27 +614,10 @@
     <entry file="file://$PROJECT_DIR$/res/sprites/player/headpat/22.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/interfaces/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/interfaces/ActivatableListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="56" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Move.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -689,61 +656,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="192" column="13" selection-start-line="192" selection-start-column="13" selection-end-line="192" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Hunter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Anime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="28" column="45" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2300#2301#0" expanded="true" />
-            <element signature="e#2327#2328#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/MoveToVaultable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1474#1475#0" expanded="true" />
-            <element signature="e#1498#1499#0" expanded="true" />
-            <element signature="e#1538#1539#0" expanded="true" />
-            <element signature="e#1571#1572#0" expanded="true" />
-            <element signature="e#1645#1646#0" expanded="true" />
-            <element signature="e#1687#1688#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/MoveToActivatable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1304#1305#0" expanded="true" />
-            <element signature="e#1328#1329#0" expanded="true" />
-            <element signature="e#1399#1400#0" expanded="true" />
-            <element signature="e#1432#1433#0" expanded="true" />
-            <element signature="e#1448#1449#0" expanded="true" />
-            <element signature="e#1494#1495#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -761,40 +677,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/5.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/7.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/5.png" />
+    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/7.png" />
     <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/14.png" />
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/3.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/4.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/13.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/12.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/8.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Headpat.java">
+    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/2.png" />
+    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/3.png" />
+    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/4.png" />
+    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/13.png" />
+    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/12.png" />
+    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/8.png" />
+    <entry file="file://$PROJECT_DIR$/res/sprites/player/vaulting/1.png" />
+    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Vault.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+        <state relative-caret-position="187">
+          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#2030#2031#0" expanded="true" />
+            <element signature="e#2054#2055#0" expanded="true" />
+            <element signature="e#2094#2095#0" expanded="true" />
+            <element signature="e#2127#2128#0" expanded="true" />
+            <element signature="e#2201#2202#0" expanded="true" />
+            <element signature="e#2243#2244#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -803,13 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/interfaces/VaultableListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -827,32 +723,171 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Headpat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/interfaces/VaultableListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/interfaces/Vaultable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/HelperFunctions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/interfaces/Activatable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/interfaces/AnimeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/interfaces/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/ActivatableBounds.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Anime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="79" column="13" lean-forward="true" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Windows/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-49">
+          <caret line="14" column="81" selection-start-line="14" selection-start-column="81" selection-end-line="14" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/FileIO/FileComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-289">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Windows/HorizontalWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
+        <state relative-caret-position="1530">
+          <caret line="121" column="21" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Windows/VerticalWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="51" column="5" lean-forward="true" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+          <folding>
+            <element signature="e#1402#1403#0" expanded="true" />
+            <element signature="e#1429#1430#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/CloseWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Idle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/Vault.java">
+    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/MoveToActivatable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+        <state relative-caret-position="274">
+          <caret line="29" column="48" lean-forward="true" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
           <folding>
-            <element signature="e#2030#2031#0" expanded="true" />
-            <element signature="e#2054#2055#0" expanded="true" />
-            <element signature="e#2094#2095#0" expanded="true" />
-            <element signature="e#2127#2128#0" expanded="true" />
-            <element signature="e#2201#2202#0" expanded="true" />
-            <element signature="e#2243#2244#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/behaviour/playerBehaviours/MoveToVaultable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1474#1475#0" expanded="true" />
+            <element signature="e#1498#1499#0" expanded="true" />
+            <element signature="e#1538#1539#0" expanded="true" />
+            <element signature="e#1571#1572#0" expanded="true" />
+            <element signature="e#1645#1646#0" expanded="true" />
+            <element signature="e#1687#1688#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/gameObjects/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
         </state>
       </provider>
     </entry>

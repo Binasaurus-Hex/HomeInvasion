@@ -12,6 +12,8 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Anime extends GameObject implements Activatable {
     private ActivatableBounds activatableBounds;
@@ -76,8 +78,9 @@ public class Anime extends GameObject implements Activatable {
     }
 
     @Override
-    public Pair<Point2D.Double, Double> getAnchor() {
-
-        return new Pair<>(anchor,facing);
+    public List<Pair<Point2D.Double, Double>> getAnchors() {
+        List<Pair<Point2D.Double,Double>> pairs = new ArrayList<>();
+        pairs.add(new Pair<>(anchor,facing));
+        return pairs;
     }
 }

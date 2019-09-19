@@ -1,12 +1,14 @@
 package objects.gameObjects.Windows;
 
 import game.Game;
+import javafx.util.Pair;
 import objects.gameObjects.ActivatableBounds;
 import objects.gameObjects.GameObjectID;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
+import java.util.List;
 
 public class VerticalWindow extends Window {
 
@@ -67,5 +69,10 @@ public class VerticalWindow extends Window {
     @Override
     public boolean useable() {
         return isOpen();
+    }
+
+    @Override
+    public List<Pair<Point2D.Double, Double>> getAnchors() {
+        return null;
     }
 }

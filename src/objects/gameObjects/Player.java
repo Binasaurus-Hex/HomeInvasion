@@ -40,7 +40,6 @@ public class Player extends GameObject implements Character {
     private OpenWindow openWindow;
     private CloseWindow closeWindow;
     private Vault vault;
-    private MoveToVaultable moveToVaultable;
     private Headpat headpat;
     private MoveToActivatable moveToActivatable;
     private boolean collidable = true;
@@ -62,14 +61,12 @@ public class Player extends GameObject implements Character {
         openWindow = new OpenWindow(this);
         closeWindow = new CloseWindow(this);
         vault = new Vault(this);
-        moveToVaultable = new MoveToVaultable(this);
         headpat = new Headpat(this);
         moveToActivatable = new MoveToActivatable(this);
         arbitrator.addBehaviour(move);
         arbitrator.addBehaviour(openWindow);
         arbitrator.addBehaviour(closeWindow);
         arbitrator.addBehaviour(vault);
-        arbitrator.addBehaviour(moveToVaultable);
         arbitrator.addBehaviour(headpat);
         arbitrator.addBehaviour(moveToActivatable);
     }
@@ -186,7 +183,7 @@ public class Player extends GameObject implements Character {
     public void onWindowTouched(Window window) {
         openWindow.setWindowTouched(window);
         closeWindow.setWindowTouched(window);
-        moveToVaultable.setVaultableTouched(window);
+        moveToActivatable.setActivatable(window);
         vault.setVaultableTouched(window);
     }
 
