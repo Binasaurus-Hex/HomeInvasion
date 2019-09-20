@@ -21,16 +21,11 @@ public class Vault implements Behaviour, VaultableListener {
     private Point2D.Double start;
     private Point2D.Double end;
     private boolean activated;
+    private boolean started = false;
 
     public Vault(Player player){
         this.player = player;
         vault = new Animation("/sprites/player/vaulting",14,12);
-    }
-
-    private boolean reachedStart(){
-        setAnchors();
-        if(player.getPoint().distance(start) < Navigator.targetDistance)return true;
-        else return false;
     }
 
     private void setAnchors(){
@@ -42,9 +37,9 @@ public class Vault implements Behaviour, VaultableListener {
 
     @Override
     public void start() {
-        Point2D.Double[] anchors = HelperFunctions.getOrderedAnchors(player.getPoint(),vaultable.getAnchorPoints());
-        start = anchors[0];
-        end = anchors[1];
+        started = true;
+        if(vaultable == null)return;
+        setAnchors();
         player.setCollidable(false);
         vault.reset();
         player.currentSprite = vault.getSprite();
@@ -55,7 +50,7 @@ public class Vault implements Behaviour, VaultableListener {
     @Override
     public boolean needsControl() {
         if(activated)return true;
-        if(vaultable != null && vaultable.useable() && reachedStart()){
+        if(vaultable != null && vaultable.useable()){
             if(KeyHandler.isKeyPressed(KeyBindings.VAULT)){
                 activated = true;
                 return true;
@@ -83,11 +78,13 @@ public class Vault implements Behaviour, VaultableListener {
 
     @Override
     public int getPriority() {
-        return 4;
+        if(!started)return 4;
+        else return 7;
     }
 
     @Override
     public void stop() {
+        started = false;
         player.setVelY(player.speed);
         player.setVelX(player.speed);
         activated = false;

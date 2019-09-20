@@ -55,7 +55,7 @@ public class MoveToActivatable implements Behaviour, ActivatableListener {
 
     @Override
     public int getPriority() {
-        return 5;
+        return 4;
     }
 
     @Override
