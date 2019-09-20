@@ -3,6 +3,7 @@ package objects.gameObjects.behaviour.playerBehaviours;
 import objects.gameObjects.Anime;
 import objects.gameObjects.Player;
 import objects.gameObjects.behaviour.Behaviour;
+import objects.handlers.KeyBindings;
 import objects.handlers.KeyHandler;
 import objects.interfaces.AnimeListener;
 import objects.misc.animation.Animation;
@@ -30,7 +31,7 @@ public class Headpat implements Behaviour, AnimeListener {
     @Override
     public boolean needsControl() {
         if(anime != null){
-            if(KeyHandler.isKeyPressed("F") || activated){
+            if(KeyHandler.isKeyPressed(KeyBindings.INTERACT) || activated){
                 activated = true;
                 return true;
             }

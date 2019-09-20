@@ -2,6 +2,7 @@ package objects.gameObjects.behaviour.playerBehaviours;
 
 import objects.gameObjects.Player;
 import objects.gameObjects.behaviour.Behaviour;
+import objects.handlers.KeyBindings;
 import objects.handlers.KeyHandler;
 import objects.misc.animation.Animation;
 
@@ -22,7 +23,7 @@ public class Move implements Behaviour {
 
     @Override
     public boolean needsControl() {
-        if(KeyHandler.isKeyPressed("W") || KeyHandler.isKeyPressed("S") || KeyHandler.isKeyPressed("A") || KeyHandler.isKeyPressed("D")){
+        if(KeyHandler.isKeyPressed(KeyBindings.UP) || KeyHandler.isKeyPressed(KeyBindings.DOWN) || KeyHandler.isKeyPressed(KeyBindings.LEFT) || KeyHandler.isKeyPressed(KeyBindings.RIGHT)){
             return true;
         }
         return false;
@@ -30,29 +31,29 @@ public class Move implements Behaviour {
 
     @Override
     public void update() {
-        if(KeyHandler.isKeyPressed("W")){
+        if(KeyHandler.isKeyPressed(KeyBindings.UP)){
             player.setY(player.getY()-player.getVelY());
             player.setRotation(-1.5);
         }
-        if(KeyHandler.isKeyPressed("S")){
+        if(KeyHandler.isKeyPressed(KeyBindings.DOWN)){
             player.setY(player.getY()+player.getVelY());
             player.setRotation(1.5);
         }
-        if(KeyHandler.isKeyPressed("A")){
+        if(KeyHandler.isKeyPressed(KeyBindings.LEFT)){
             player.setX(player.getX()-player.getVelX());
             player.setRotation(-3);
         }
-        if(KeyHandler.isKeyPressed("D")){
+        if(KeyHandler.isKeyPressed(KeyBindings.RIGHT)){
             player.setX(player.getX()+player.getVelX());
             player.setRotation(0);
         }
-        if(KeyHandler.isKeyPressed("W") && KeyHandler.isKeyPressed("D")) {
+        if(KeyHandler.isKeyPressed(KeyBindings.UP) && KeyHandler.isKeyPressed(KeyBindings.RIGHT)) {
             player.setRotation(-0.75);
-        } else if(KeyHandler.isKeyPressed("S") && KeyHandler.isKeyPressed("D")) {
+        } else if(KeyHandler.isKeyPressed(KeyBindings.DOWN) && KeyHandler.isKeyPressed(KeyBindings.RIGHT)) {
             player.setRotation(0.75);
-        } else if(KeyHandler.isKeyPressed("W") && KeyHandler.isKeyPressed("A")) {
+        } else if(KeyHandler.isKeyPressed(KeyBindings.UP) && KeyHandler.isKeyPressed(KeyBindings.LEFT)) {
             player.setRotation(-2.5);
-        } else if(KeyHandler.isKeyPressed("S") && KeyHandler.isKeyPressed("A")) {
+        } else if(KeyHandler.isKeyPressed(KeyBindings.DOWN) && KeyHandler.isKeyPressed(KeyBindings.LEFT)) {
             player.setRotation(2.5);
         }
         walkingAnimation.update();

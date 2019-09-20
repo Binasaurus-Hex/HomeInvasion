@@ -6,6 +6,7 @@ import objects.gameObjects.Windows.Window;
 import objects.gameObjects.behaviour.Behaviour;
 import objects.gameObjects.behaviour.HelperFunctions;
 import objects.gameObjects.behaviour.Navigator;
+import objects.handlers.KeyBindings;
 import objects.handlers.KeyHandler;
 import objects.interfaces.WindowListener;
 import objects.misc.animation.Animation;
@@ -37,7 +38,7 @@ public class CloseWindow implements Behaviour, WindowListener {
     @Override
     public boolean needsControl() {
         if(window != null){
-            if(window.isOpen() && KeyHandler.isKeyPressed("F") || activated){
+            if(window.isOpen() && KeyHandler.isKeyPressed(KeyBindings.INTERACT) || activated){
                 activated = true;
                 return true;
             }

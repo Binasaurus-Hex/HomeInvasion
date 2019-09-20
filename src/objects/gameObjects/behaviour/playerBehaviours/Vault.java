@@ -4,6 +4,8 @@ import objects.gameObjects.Player;
 import objects.gameObjects.Windows.Window;
 import objects.gameObjects.behaviour.Behaviour;
 import objects.gameObjects.behaviour.HelperFunctions;
+import objects.gameObjects.behaviour.Navigator;
+import objects.handlers.KeyBindings;
 import objects.handlers.KeyHandler;
 import objects.interfaces.Vaultable;
 import objects.interfaces.VaultableListener;
@@ -25,6 +27,18 @@ public class Vault implements Behaviour, VaultableListener {
         vault = new Animation("/sprites/player/vaulting",14,12);
     }
 
+    private boolean reachedStart(){
+        setAnchors();
+        if(player.getPoint().distance(start) < Navigator.targetDistance)return true;
+        else return false;
+    }
+
+    private void setAnchors(){
+        Point2D.Double[] anchors = HelperFunctions.getOrderedAnchors(player.getPoint(),vaultable.getAnchorPoints());
+        start = anchors[0];
+        end = anchors[1];
+    }
+
 
     @Override
     public void start() {
@@ -40,8 +54,9 @@ public class Vault implements Behaviour, VaultableListener {
 
     @Override
     public boolean needsControl() {
-        if(vaultable != null && vaultable.useable()){
-            if(KeyHandler.isKeyPressed("Space") || activated){
+        if(activated)return true;
+        if(vaultable != null && vaultable.useable() && reachedStart()){
+            if(KeyHandler.isKeyPressed(KeyBindings.VAULT)){
                 activated = true;
                 return true;
             }
@@ -68,11 +83,13 @@ public class Vault implements Behaviour, VaultableListener {
 
     @Override
     public int getPriority() {
-        return 0;
+        return 6;
     }
 
     @Override
     public void stop() {
+        player.setVelY(player.speed);
+        player.setVelX(player.speed);
         activated = false;
     }
 

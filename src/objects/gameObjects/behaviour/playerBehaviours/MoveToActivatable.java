@@ -4,6 +4,7 @@ import javafx.util.Pair;
 import objects.gameObjects.Player;
 import objects.gameObjects.behaviour.Behaviour;
 import objects.gameObjects.behaviour.HelperFunctions;
+import objects.handlers.KeyBindings;
 import objects.handlers.KeyHandler;
 import objects.interfaces.Activatable;
 import objects.interfaces.ActivatableListener;
@@ -20,7 +21,6 @@ public class MoveToActivatable implements Behaviour, ActivatableListener {
 
     public MoveToActivatable(Player player){
         this.player = player;
-
     }
 
 
@@ -36,7 +36,7 @@ public class MoveToActivatable implements Behaviour, ActivatableListener {
     @Override
     public boolean needsControl() {
         if(activatable != null){
-            if(KeyHandler.isKeyPressed("F") || KeyHandler.isKeyPressed("Space") || activated){
+            if(KeyHandler.isKeyPressed(KeyBindings.INTERACT) || KeyHandler.isKeyPressed(KeyBindings.VAULT) || activated){
                 activated = true;
                 return true;
             }

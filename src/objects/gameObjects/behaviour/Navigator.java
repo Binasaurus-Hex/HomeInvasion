@@ -13,6 +13,7 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 
 public class Navigator {
+    public static double targetDistance = 1.5;
     GameObject object;
     PathGenerator generator;
     public PathList path;
@@ -32,7 +33,7 @@ public class Navigator {
 
     public boolean reachedGoal(){
         currentPos = game.grid.getNearestNode(object.getPoint());
-        if(currentPos.getPoint().distance(goal.getPoint())<1.1){
+        if(currentPos.getPoint().distance(goal.getPoint())<targetDistance){
             goal.setColor(Color.green);
             return true;
         }
@@ -64,7 +65,7 @@ public class Navigator {
         double y = object.getY();
         object.setRotation(findRotation(object.getPoint(),point));
         double[] unitVector = MathsMethods.getUnitVector(x,y,point.getX(),point.getY());
-        if(MathsMethods.distance(x,y, point.getX(), point.getY())>1.5) {
+        if(MathsMethods.distance(x,y, point.getX(), point.getY())>targetDistance) {
             x +=(unitVector[0]*object.getVelX());
             y +=(unitVector[1]*object.getVelY());
             object.setX(x);
