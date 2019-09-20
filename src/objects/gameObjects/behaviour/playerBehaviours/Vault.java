@@ -83,7 +83,7 @@ public class Vault implements Behaviour, VaultableListener {
 
     @Override
     public int getPriority() {
-        return 6;
+        return 4;
     }
 
     @Override
