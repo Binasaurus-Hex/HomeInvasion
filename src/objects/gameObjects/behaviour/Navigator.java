@@ -14,6 +14,7 @@ import java.awt.geom.Point2D;
 
 public class Navigator {
     private double targetDistance;
+    private double goalDistance;
     GameObject object;
     PathGenerator generator;
     public PathList path;
@@ -29,15 +30,19 @@ public class Navigator {
         grid = game.grid;
         currentPos = game.grid.getNearestJunction(object.getPoint());
         targetDistance = 1.5;
+        goalDistance = 1.5;
     }
 
     public void setTargetDistance(double targetDistance) {
         this.targetDistance = targetDistance;
     }
+    public void setGoalDistance(double goalDistance){
+        this.goalDistance = goalDistance;
+    }
 
     public boolean reachedGoal(){
         currentPos = game.grid.getNearestJunction(object.getPoint());
-        if(currentPos.getPoint().distance(goal.getPoint())<targetDistance){
+        if(currentPos.getPoint().distance(goal.getPoint())<goalDistance){
             return true;
         }
         else return false;

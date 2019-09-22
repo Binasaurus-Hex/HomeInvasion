@@ -76,18 +76,6 @@ public class Player extends Character {
         }
     }
 
-    public boolean moveToAnchorPoint(Point2D.Double start,Point2D.Double end){
-        setVelX(1);
-        setVelY(1);
-        if(navigator.moveToPoint(start)){
-            setRotation(Math.atan2(end.getY()-start.getY(),end.getX()-start.getX()));
-            setVelX(speed);
-            setVelY(speed);
-            return true;
-        }
-        return false;
-    }
-
     public boolean moveToPoint(Point2D.Double point){
         return navigator.moveToPoint(point);
     }
@@ -112,17 +100,6 @@ public class Player extends Character {
                 }
             }
         }
-    }
-
-    private void move() {
-        if(KeyHandler.isKeyPressed("I")){
-            visible = true;
-        }
-        if(KeyHandler.isKeyPressed("P")){
-            visible = false;
-        }
-
-
     }
 
     public void kill(){
