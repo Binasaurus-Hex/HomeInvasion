@@ -4,14 +4,13 @@ import game.Game;
 import objects.gameObjects.behaviour.EnemyAI.*;
 import objects.gameObjects.behaviour.Arbitrator;
 import objects.gameObjects.behaviour.Navigator;
-import objects.interfaces.Character;
 
 import java.awt.*;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
-public abstract class Enemy extends GameObject implements Character {
+public abstract class Enemy extends Character {
     protected double width,height;
     public boolean seenPlayer = false;
 
@@ -68,15 +67,7 @@ public abstract class Enemy extends GameObject implements Character {
         try{
             Player player = getPlayer();
             if(!player.visible)return false;
-            line = new Line2D.Double(x,y,player.x,player.y);
-            for(GameObject object : game.objectHandler.objects) {
-                if(object.id == GameObjectID.Wall || object.id == GameObjectID.Door) {
-                    if(line.intersects(object.getBounds())) {
-                        return false;
-                    }
-                }
-            }
-            return true;
+            return hasLineOfSight(player);
         }catch (Exception e){
             return false;
         }

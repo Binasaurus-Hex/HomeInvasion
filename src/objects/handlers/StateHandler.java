@@ -58,8 +58,15 @@ public class StateHandler {
         game.objectHandler.add(new Anime(1000,1500,game));
 
 
+        Player player = new Player(747,447,1,50,50,game);
+
+        //Pet
+        game.objectHandler.add(new Pet(1000,1200,player,game));
+
         //Player
-        game.objectHandler.add(new Player(747,447,1,50,50,game));
+        game.objectHandler.add(player);
+
+
 
         //adding the enemies
         game.objectHandler.add(new Hunter(1000, 1200, game, Color.BLUE));

@@ -6,35 +6,24 @@ import objects.gameObjects.Windows.Window;
 import objects.gameObjects.behaviour.Arbitrator;
 import objects.gameObjects.behaviour.Navigator;
 import objects.gameObjects.behaviour.playerBehaviours.*;
-import objects.interfaces.Character;
 import objects.interfaces.Drawable;
 import objects.handlers.KeyHandler;
-import objects.FileIO.BufferedImageLoader;
 import objects.misc.Camera;
-import objects.misc.animation.Animation;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
-import java.util.HashMap;
-import java.util.Map;
 
-public class Player extends GameObject implements Character {
+public class Player extends Character {
     public double width, height;
     private boolean movable = true;
     private Camera camera;
-    private boolean moving;
     private boolean ded;
-    public boolean visible = true;
+    public boolean visible = false;
     private Rectangle2D.Double bounds;
 
-    private final int MAXDETECT=300;
-    private final int TRANSITIONTIME=1;
-
     private Navigator navigator;
-
-    public BufferedImage currentSprite;
     private Arbitrator arbitrator;
     private Move move;
     private OpenWindow openWindow;
@@ -138,7 +127,6 @@ public class Player extends GameObject implements Character {
 
     public void kill(){
         if(!ded) {
-            moving = false;
             PopupLose lose = new PopupLose(0, 0, 0, 0, GameObjectID.Popup, game);
             game.objectHandler.add(lose);
             game.repaint();

@@ -13,7 +13,7 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 
 public class Navigator {
-    public static double targetDistance = 1.5;
+    private double targetDistance;
     GameObject object;
     PathGenerator generator;
     public PathList path;
@@ -28,7 +28,11 @@ public class Navigator {
         this.generator = new PathGenerator(game);
         grid = game.grid;
         currentPos = game.grid.getNearestJunction(object.getPoint());
+        targetDistance = 1.5;
+    }
 
+    public void setTargetDistance(double targetDistance) {
+        this.targetDistance = targetDistance;
     }
 
     public boolean reachedGoal(){

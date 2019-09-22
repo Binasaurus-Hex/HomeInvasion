@@ -4,7 +4,6 @@ import game.CameraID;
 import game.Game;
 import javafx.util.Pair;
 import objects.interfaces.Activatable;
-import objects.interfaces.Character;
 import objects.interfaces.Drawable;
 import objects.misc.animation.Animation;
 

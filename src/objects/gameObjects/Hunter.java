@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hunter extends Enemy {
-    BufferedImage sprite;
     List<WindowListener> windowListeners;
 
     public Hunter(int x, int y, Game game, Color color) {
@@ -24,7 +23,7 @@ public class Hunter extends Enemy {
         velY = 2;
         speed = 2;
         BufferedImageLoader loader = new BufferedImageLoader();
-        sprite = loader.loadImage("/sprites/enemy/walking/enemy.png");
+        currentSprite = loader.loadImage("/sprites/enemy/walking/enemy.png");
         arbitrator.addBehaviour(explore);
         arbitrator.addBehaviour(attack);
         arbitrator.addBehaviour(search);
@@ -77,7 +76,7 @@ public class Hunter extends Enemy {
         Drawable enemy = (graphics)->{
             graphics.setColor(Color.blue);
             graphics.rotate(getRotation(),x,y);
-            graphics.drawImage(sprite, (int)(x-width/2),(int)(y-height/2),(int)width,(int)height, null);
+            graphics.drawImage(currentSprite, (int)(x-width/2),(int)(y-height/2),(int)width,(int)height, null);
         };
         Graphics2D g2d = (Graphics2D)g;
         renderToCamera(enemy,g2d,game.cameraMap.get(CameraID.Main));

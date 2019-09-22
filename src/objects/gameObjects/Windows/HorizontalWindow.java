@@ -4,8 +4,8 @@ import game.CameraID;
 import game.Game;
 import javafx.util.Pair;
 import objects.gameObjects.ActivatableBounds;
+import objects.gameObjects.Character;
 import objects.gameObjects.GameObjectID;
-import objects.interfaces.Character;
 
 
 import java.awt.Graphics;

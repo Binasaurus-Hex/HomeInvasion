@@ -14,5 +14,6 @@ public enum GameObjectID {
     ActivatableBounds,
     Illusion,
     Window,
-    Anime
+    Anime,
+    Pet
 }
