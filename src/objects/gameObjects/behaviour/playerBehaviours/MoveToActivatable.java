@@ -8,6 +8,7 @@ import objects.handlers.KeyBindings;
 import objects.handlers.KeyHandler;
 import objects.interfaces.Activatable;
 import objects.interfaces.ActivatableListener;
+import objects.interfaces.Vaultable;
 
 import java.awt.geom.Point2D;
 import java.util.List;
@@ -36,7 +37,13 @@ public class MoveToActivatable implements Behaviour, ActivatableListener {
     @Override
     public boolean needsControl() {
         if(activatable != null){
-            if(KeyHandler.isKeyPressed(KeyBindings.INTERACT) || KeyHandler.isKeyPressed(KeyBindings.VAULT) || activated){
+            if(KeyHandler.isKeyPressed(KeyBindings.VAULT)){
+                if(activatable instanceof Vaultable){
+                    activated = true;
+                    return true;
+                }
+            }
+            if(KeyHandler.isKeyPressed(KeyBindings.INTERACT) || activated){
                 activated = true;
                 return true;
             }

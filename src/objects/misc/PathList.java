@@ -4,10 +4,11 @@ import game.Game;
 import objects.gameObjects.Node;
 
 import java.awt.geom.Point2D;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class PathList extends CopyOnWriteArrayList<Node> {
+public class PathList extends ArrayList<Node> {
 	/**
 	 * 
 	 */

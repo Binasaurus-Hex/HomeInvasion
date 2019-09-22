@@ -18,7 +18,7 @@ public class Explore implements Behaviour {
 
     @Override
     public void start() {
-        navigator.setGoal(grid.getRandomGoal(grid.getNearestNode(enemy.getPoint())).getPoint());
+        navigator.setGoal(grid.getRandomGoal(grid.getNearestJunction(enemy.getPoint())).getPoint());
     }
 
     @Override
@@ -30,9 +30,8 @@ public class Explore implements Behaviour {
     public void update() {
         navigator.update();
         if(navigator.reachedGoal()) {
-            navigator.setGoal(grid.getRandomGoal(grid.getNearestNode(navigator.currentPos.getPoint())).getPoint());
+            start();
         }
-
     }
 
     @Override

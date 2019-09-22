@@ -16,12 +16,10 @@ PathGenerator {
         this.game = game;
     }
 
-    public PathList getPathList(Point2D.Double start,Point2D.Double goal){
-        Node startNode = game.grid.getNearestNode(start);
-        goalNode = game.grid.getNearestNode(goal);
+    public PathList getPathList(Node start,Node goal){
+        goalNode = goal;
         PathList returnList = new PathList(game);
-        Node currentNode = startNode;
-        ArrayList<Node> aStarResult = aStar(startNode,goalNode);
+        ArrayList<Node> aStarResult = aStar(start,goalNode);
         Collections.reverse(aStarResult);
         returnList.addAll(aStarResult);
         return returnList;

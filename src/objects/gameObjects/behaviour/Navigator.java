@@ -27,26 +27,23 @@ public class Navigator {
         this.game = game;
         this.generator = new PathGenerator(game);
         grid = game.grid;
-        currentPos = game.grid.getNearestNode(object.getPoint());
+        currentPos = game.grid.getNearestJunction(object.getPoint());
 
     }
 
     public boolean reachedGoal(){
-        currentPos = game.grid.getNearestNode(object.getPoint());
+        currentPos = game.grid.getNearestJunction(object.getPoint());
         if(currentPos.getPoint().distance(goal.getPoint())<targetDistance){
-            goal.setColor(Color.green);
             return true;
         }
         else return false;
     }
 
     public void setGoal(Point2D.Double end){
-        Point2D.Double start = object.getPoint();
-        if(!grid.getNearestNode(object.getPoint()).junction){
-            start = grid.getNearestJunction(object.getPoint()).getPoint();
-        }
-        path = generator.getPathList(start, end);
-        this.goal = grid.getNearestNode(end);
+        Node start = grid.getNearestJunction(object.getPoint());
+        Node goal = grid.getNearestJunction(end);
+        path = generator.getPathList(start, goal);
+        this.goal = goal;
     }
 
     private double findRotation(Point2D.Double start , Point2D.Double point){
@@ -61,28 +58,27 @@ public class Navigator {
      * @param point
      */
     public boolean moveToPoint(Point2D.Double point) {
-        double x = object.getX();
-        double y = object.getY();
-        object.setRotation(findRotation(object.getPoint(),point));
-        double[] unitVector = MathsMethods.getUnitVector(x,y,point.getX(),point.getY());
-        if(MathsMethods.distance(x,y, point.getX(), point.getY())>targetDistance) {
+        Point2D.Double objectPos = object.getPoint();
+        if(objectPos.distance(point) < targetDistance){
+            return true;
+        }
+        else{
+            double x = object.getX();
+            double y = object.getY();
+            object.setRotation(findRotation(object.getPoint(),point));
+            double[] unitVector = MathsMethods.getUnitVector(x,y,point.getX(),point.getY());
             x +=(unitVector[0]*object.getVelX());
             y +=(unitVector[1]*object.getVelY());
             object.setX(x);
             object.setY(y);
             return false;
         }
-        else{
-            return true;
-        }
     }
 
     protected void followPath() {
         if(path.getTarget() == null)return;
-        moveToPoint(path.getTarget().getPoint());
-        if(path.hasReachedTarget(object.getPoint())) {
-            //path.getTarget().setColor(Color.green);
-            path.next();
+        if(moveToPoint(path.getTarget().getPoint())){
+           path.next();
         }
     }
 

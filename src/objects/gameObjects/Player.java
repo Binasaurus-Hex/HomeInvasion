@@ -26,7 +26,7 @@ public class Player extends GameObject implements Character {
     private Camera camera;
     private boolean moving;
     private boolean ded;
-    public boolean visible = false;
+    public boolean visible = true;
     private Rectangle2D.Double bounds;
 
     private final int MAXDETECT=300;
