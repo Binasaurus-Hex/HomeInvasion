@@ -30,9 +30,6 @@ public class Hunter extends Enemy {
         arbitrator.addBehaviour(openWindow);
         arbitrator.addBehaviour(vault);
 
-        windowListeners = new ArrayList<>();
-        windowListeners.add(openWindow);
-        windowListeners.add(vault);
     }
 
     @Override
@@ -86,9 +83,7 @@ public class Hunter extends Enemy {
 
     @Override
     public void onWindowTouched(Window window) {
-        for(WindowListener i : windowListeners){
-            i.setWindowTouched(window);
-        }
+        openWindow.setWindowTouched(window);
     }
 
     @Override

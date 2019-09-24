@@ -2,6 +2,7 @@ package objects.gameObjects;
 
 import game.CameraID;
 import game.Game;
+import game.Main;
 import objects.gameObjects.Windows.Window;
 import objects.gameObjects.behaviour.Arbitrator;
 import objects.gameObjects.behaviour.Navigator;
@@ -23,8 +24,7 @@ public class Player extends Character {
     public boolean visible = false;
     private Rectangle2D.Double bounds;
 
-    private Navigator navigator;
-    private Arbitrator arbitrator;
+    //behaviours
     private Move move;
     private OpenWindow openWindow;
     private CloseWindow closeWindow;
@@ -32,7 +32,6 @@ public class Player extends Character {
     private Headpat headpat;
     private MoveToActivatable moveToActivatable;
     private Idle idle;
-    private boolean collidable = true;
 
 
     public Player(double x, double y, int z, double width, double height, Game game) {
@@ -44,9 +43,7 @@ public class Player extends Character {
         velY = 2.5;
         speed = 2.5;
         bounds = new Rectangle2D.Double((x-(width/4)-5), y-(height/4), (width/2)+10, height/2);
-        navigator = new Navigator(this,game);
 
-        arbitrator = new Arbitrator();
         move = new Move(this);
         openWindow = new OpenWindow(this);
         closeWindow = new CloseWindow(this);
@@ -80,9 +77,7 @@ public class Player extends Character {
         return navigator.moveToPoint(point);
     }
 
-    public void setCollidable(boolean value){
-        collidable = value;
-    }
+
 
     private void collision() {
         for(GameObject object : game.objectHandler.objects) {
@@ -132,7 +127,9 @@ public class Player extends Character {
 
         Graphics2D g2d = (Graphics2D) g;
         renderToCamera(player, g2d, camera);
-        renderToCamera(input,g2d,camera);
+        if(Main.debug){
+            renderToCamera(input,g2d,camera);
+        }
         //renderToCamera(debugPos,g2d,camera);
     }
 

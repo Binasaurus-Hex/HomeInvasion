@@ -19,10 +19,7 @@ public abstract class Enemy extends Character {
     protected Line2D line;
     public Color color;
 
-    public Navigator navigator;
-
     //Behaviours
-    protected Arbitrator arbitrator;
     protected Explore explore;
     protected Attack attack;
     protected Search search;
@@ -37,9 +34,8 @@ public abstract class Enemy extends Character {
         height = 50;
         bounds = new Rectangle2D.Double(x-width/4, y-height/4, width/2, height/2);
         playerLastPosition = new Point2D.Double();
-        navigator = new Navigator(this,game);
 
-        arbitrator = new Arbitrator();
+
         explore = new Explore(this);
         attack = new Attack(this);
         search = new Search(this,game);

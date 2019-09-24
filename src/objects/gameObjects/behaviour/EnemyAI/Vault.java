@@ -3,38 +3,42 @@ package objects.gameObjects.behaviour.EnemyAI;
 import objects.gameObjects.Enemy;
 import objects.gameObjects.Windows.Window;
 import objects.gameObjects.behaviour.Behaviour;
+import objects.gameObjects.behaviour.HelperFunctions;
+import objects.interfaces.Vaultable;
+import objects.interfaces.VaultableListener;
 import objects.interfaces.WindowListener;
 
 import java.awt.geom.Point2D;
 
-public class Vault implements Behaviour, WindowListener {
-    private Window touchedWindow;
+public class Vault implements Behaviour, VaultableListener {
+    private Vaultable vaultable;
     private Enemy enemy;
+    private Point2D.Double start;
+    private Point2D.Double end;
 
     public Vault(Enemy enemy){
         this.enemy = enemy;
     }
 
+    private void setAnchors(){
+        Point2D.Double[] anchors = HelperFunctions.getOrderedAnchors(enemy.getPoint(),vaultable.getAnchorPoints());
+        start = anchors[0];
+        end = anchors[1];
+    }
+
     @Override
     public void start() {
-        Point2D.Double[] anchorPoints = touchedWindow.getAnchorPoints();
-        Point2D.Double myPoint = enemy.getPoint();
-        Point2D.Double start;
-        Point2D.Double finish;
-        if(anchorPoints[0].distance(myPoint) < anchorPoints[1].distance(myPoint)){
-            start = anchorPoints[0];
-            finish = anchorPoints[1];
-        }
-        else {
-            start = anchorPoints[1];
-            finish = anchorPoints[0];
-        }
+        setAnchors();
+        enemy.setCollidable(false);
+        enemy.setVelX(enemy.speed/3);
+        enemy.setVelY(enemy.speed/3);
+
     }
 
     @Override
     public boolean needsControl() {
-        if(touchedWindow != null){
-            if(touchedWindow.isOpen()){
+        if(vaultable != null){
+            if(vaultable.useable()){
                 return true;
             }
         }
@@ -47,7 +51,7 @@ public class Vault implements Behaviour, WindowListener {
             enemy.navigator.update();
         }
         else{
-            touchedWindow = null;
+
         }
     }
 
@@ -62,7 +66,7 @@ public class Vault implements Behaviour, WindowListener {
     }
 
     @Override
-    public void setWindowTouched(Window window) {
-        touchedWindow = window;
+    public void setVaultableTouched(Vaultable vaultable) {
+        this.vaultable = vaultable;
     }
 }
