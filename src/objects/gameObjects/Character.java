@@ -10,7 +10,8 @@ import java.awt.image.BufferedImage;
 
 public abstract class Character extends GameObject {
     public BufferedImage currentSprite;
-    protected boolean collidable = false;
+    protected boolean collidable = true;
+    public boolean visible = true;
     public Navigator navigator;
     protected Arbitrator arbitrator;
 

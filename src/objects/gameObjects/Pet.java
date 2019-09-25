@@ -27,6 +27,7 @@ public class Pet extends Character {
     private int width,height;
     public boolean sitting = true;
     private Rectangle2D.Double bounds;
+    private boolean moving = false;
 
     public Pet(double x, double y, Player master, Game game) {
         super(x, y, 0, 0, GameObjectID.Pet, game);
@@ -95,7 +96,12 @@ public class Pet extends Character {
 
     @Override
     public Rectangle2D.Double getBounds() {
-        bounds.setRect(x-(width/2),y-(height/2),width,height);
+        if(getRotation() == 0 || getRotation() == -3) {
+            bounds.setRect(x-(width/4), (y-(height/4))-5, width/2, (height/2)+10);
+        }
+        else{
+            bounds.setRect((x-(width/4)-5), y-(height/4), (width/2)+10, height/2);
+        }
         return bounds;
     }
 

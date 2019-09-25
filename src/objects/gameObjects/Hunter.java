@@ -2,6 +2,7 @@ package objects.gameObjects;
 
 import game.CameraID;
 import game.Game;
+import game.Main;
 import objects.interfaces.WindowListener;
 import objects.gameObjects.Windows.Window;
 import objects.interfaces.Drawable;
@@ -49,7 +50,7 @@ public class Hunter extends Enemy {
                         break;
                     case Player:
                         Player player = (Player)object;
-                        //player.kill();
+                        player.kill();
                         break;
                     case Door:
                         resolveCollision(object);
@@ -77,8 +78,9 @@ public class Hunter extends Enemy {
         };
         Graphics2D g2d = (Graphics2D)g;
         renderToCamera(enemy,g2d,game.cameraMap.get(CameraID.Main));
-        //renderToCamera(debugPos,g2d,game.cameraMap.get(CameraID.Main));
-
+        if(Main.debug){
+            renderToCamera(debugPos,g2d,game.cameraMap.get(CameraID.Main));
+        }
     }
 
     @Override

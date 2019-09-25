@@ -15,6 +15,8 @@ public class Vault implements Behaviour, VaultableListener {
     private Enemy enemy;
     private Point2D.Double start;
     private Point2D.Double end;
+    private boolean activated;
+    private boolean vaulting = false;
 
     public Vault(Enemy enemy){
         this.enemy = enemy;
@@ -32,15 +34,16 @@ public class Vault implements Behaviour, VaultableListener {
         enemy.setCollidable(false);
         enemy.setVelX(enemy.speed/3);
         enemy.setVelY(enemy.speed/3);
+        vaulting = true;
 
     }
 
     @Override
     public boolean needsControl() {
-        if(vaultable != null){
-            if(vaultable.useable()){
-                return true;
-            }
+        if(activated)return true;
+        if(vaultable != null && vaultable.useable()){
+            activated = true;
+            return true;
         }
         return false;
     }
@@ -57,12 +60,20 @@ public class Vault implements Behaviour, VaultableListener {
 
     @Override
     public int getPriority() {
-        return 10;
+        if(vaulting){
+            return 100;
+        }
+        else {
+            return 10;
+        }
     }
 
     @Override
     public void stop() {
-
+        enemy.setVelX(enemy.speed);
+        enemy.setVelY(enemy.speed);
+        vaulting = false;
+        activated = false;
     }
 
     @Override

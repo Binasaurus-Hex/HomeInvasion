@@ -21,7 +21,7 @@ public class Player extends Character {
     private boolean movable = true;
     private Camera camera;
     private boolean ded;
-    public boolean visible = false;
+
     private Rectangle2D.Double bounds;
 
     //behaviours

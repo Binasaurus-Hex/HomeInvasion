@@ -7,13 +7,11 @@ import objects.misc.Grid;
 
 public class Attack implements Behaviour {
     private Enemy enemy;
-    private Grid grid;
     private Navigator navigator;
 
     public Attack(Enemy enemy){
         this.enemy = enemy;
         this.navigator = enemy.navigator;
-        this.grid = navigator.grid;
     }
 
     @Override
