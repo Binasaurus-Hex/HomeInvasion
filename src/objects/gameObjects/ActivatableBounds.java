@@ -46,7 +46,6 @@ public class ActivatableBounds extends GameObject {
     }
 
     public void addObjectClass(Class cls){
-        System.out.println(cls);
         searchClasses.add(cls);
     }
 
