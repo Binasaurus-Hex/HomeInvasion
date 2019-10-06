@@ -18,20 +18,13 @@ public class OpenWindow implements Behaviour, WindowListener {
 
     @Override
     public void start() {
-        new Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                touchedWindow.open();
-                touchedWindow = null;
-            }
-        },1000);
+        touchedWindow.open();
     }
 
     @Override
     public boolean needsControl() {
         if(touchedWindow != null){
             if (!touchedWindow.isBarricaded() && touchedWindow.isClosed()){
-                System.out.println("i want to open it");
                 return true;
             }
         }

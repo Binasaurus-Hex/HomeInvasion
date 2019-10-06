@@ -33,28 +33,28 @@ public class Move implements Behaviour {
     public void update() {
         if(KeyHandler.isKeyPressed(KeyBindings.UP)){
             player.setY(player.getY()-player.getVelY());
-            player.setRotation(-1.5);
+            player.setRotation(-Math.PI/2);
         }
         if(KeyHandler.isKeyPressed(KeyBindings.DOWN)){
             player.setY(player.getY()+player.getVelY());
-            player.setRotation(1.5);
+            player.setRotation(Math.PI/2);
         }
         if(KeyHandler.isKeyPressed(KeyBindings.LEFT)){
             player.setX(player.getX()-player.getVelX());
-            player.setRotation(-3);
+            player.setRotation(-Math.PI);
         }
         if(KeyHandler.isKeyPressed(KeyBindings.RIGHT)){
             player.setX(player.getX()+player.getVelX());
             player.setRotation(0);
         }
         if(KeyHandler.isKeyPressed(KeyBindings.UP) && KeyHandler.isKeyPressed(KeyBindings.RIGHT)) {
-            player.setRotation(-0.75);
+            player.setRotation(-Math.PI/4);
         } else if(KeyHandler.isKeyPressed(KeyBindings.DOWN) && KeyHandler.isKeyPressed(KeyBindings.RIGHT)) {
-            player.setRotation(0.75);
+            player.setRotation(Math.PI/4);
         } else if(KeyHandler.isKeyPressed(KeyBindings.UP) && KeyHandler.isKeyPressed(KeyBindings.LEFT)) {
-            player.setRotation(-2.5);
+            player.setRotation(-Math.PI*3/4);
         } else if(KeyHandler.isKeyPressed(KeyBindings.DOWN) && KeyHandler.isKeyPressed(KeyBindings.LEFT)) {
-            player.setRotation(2.5);
+            player.setRotation(Math.PI*3/4);
         }
         walkingAnimation.update();
         player.currentSprite = walkingAnimation.getSprite();

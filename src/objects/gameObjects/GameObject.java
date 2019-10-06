@@ -3,8 +3,11 @@ package objects.gameObjects;
 import game.Game;
 import objects.misc.Camera;
 import objects.interfaces.Drawable;
+import org.w3c.dom.css.Rect;
 
+import javax.sound.sampled.Line;
 import java.awt.*;
+import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
@@ -59,6 +62,16 @@ public abstract class GameObject {
         }
     }
 
+    protected boolean isColliding(Line2D ray){
+        if(ray == null)return false;
+        if(getBounds().intersectsLine(ray)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     protected void resolveCollision(GameObject g){
         if(x <= g.getBounds().x) {
             x += velX * -1;
@@ -91,6 +104,28 @@ public abstract class GameObject {
     public Point2D.Double getPoint(){
         point.setLocation(x,y);
         return point;
+    }
+
+    protected boolean isFacing(GameObject object){
+        Line2D.Double ray = getRay();
+        if(object.isColliding(ray)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    protected Line2D.Double getRay(){
+        Point2D.Double facing = getFacing();
+        Line2D.Double ray = new Line2D.Double(x,y,x+(facing.x*1000),y+(facing.y*1000));
+        return ray;
+    }
+
+    private Point2D.Double getFacing(){
+        Point2D.Double facing = new Point2D.Double();
+        facing.setLocation(Math.cos(rotation),Math.sin(rotation));
+        return facing;
     }
 
 

@@ -7,7 +7,9 @@ import objects.gameObjects.behaviour.HelperFunctions;
 import objects.interfaces.Vaultable;
 import objects.interfaces.VaultableListener;
 import objects.interfaces.WindowListener;
+import physics.MathsMethods;
 
+import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 
 public class Vault implements Behaviour, VaultableListener {
@@ -28,6 +30,12 @@ public class Vault implements Behaviour, VaultableListener {
         end = anchors[1];
     }
 
+    private boolean isFacingVaulable(){
+        Line2D.Double ray = new Line2D.Double();
+        double rotation = enemy.getRotation();
+        return true;
+    }
+
     @Override
     public void start() {
         setAnchors();
@@ -35,7 +43,6 @@ public class Vault implements Behaviour, VaultableListener {
         enemy.setVelX(enemy.speed/3);
         enemy.setVelY(enemy.speed/3);
         vaulting = true;
-
     }
 
     @Override
@@ -50,11 +57,12 @@ public class Vault implements Behaviour, VaultableListener {
 
     @Override
     public void update() {
-        if(!enemy.navigator.reachedGoal()){
-            enemy.navigator.update();
-        }
-        else{
-
+        if(enemy.navigator.moveToPoint(end)){
+            vaulting = false;
+            enemy.setVelX(enemy.speed);
+            enemy.setVelY(enemy.speed);
+            enemy.setCollidable(true);
+            activated = false;
         }
     }
 
@@ -64,16 +72,13 @@ public class Vault implements Behaviour, VaultableListener {
             return 100;
         }
         else {
-            return 10;
+            return 6;
         }
     }
 
     @Override
     public void stop() {
-        enemy.setVelX(enemy.speed);
-        enemy.setVelY(enemy.speed);
-        vaulting = false;
-        activated = false;
+
     }
 
     @Override

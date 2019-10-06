@@ -12,6 +12,7 @@ import objects.handlers.KeyHandler;
 import objects.misc.Camera;
 
 import java.awt.*;
+import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
@@ -127,10 +128,10 @@ public class Player extends Character {
 
         Graphics2D g2d = (Graphics2D) g;
         renderToCamera(player, g2d, camera);
-        if(Main.debug){
-            renderToCamera(input,g2d,camera);
+        if(Main.debug) {
+            renderToCamera(input, g2d, camera);
+            renderToCamera(debugPos, g2d, camera);
         }
-        //renderToCamera(debugPos,g2d,camera);
     }
 
     @Override

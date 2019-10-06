@@ -35,10 +35,8 @@ public class Hunter extends Enemy {
 
     @Override
     public void update() {
-        collision();
         arbitrator.update();
-
-
+        if(collidable)collision();
     }
 
     private void collision() {
@@ -56,10 +54,7 @@ public class Hunter extends Enemy {
                         resolveCollision(object);
                         break;
                     case Window:
-                        Window window = (Window)object;
-                        if(window.isClosed()){
-                            resolveCollision(window);
-                        }
+                        resolveCollision(object);
                 }
             }
         }
@@ -86,6 +81,7 @@ public class Hunter extends Enemy {
     @Override
     public void onWindowTouched(Window window) {
         openWindow.setWindowTouched(window);
+        vault.setVaultableTouched(window);
     }
 
     @Override

@@ -28,6 +28,7 @@ public class Pet extends Character {
     public boolean sitting = true;
     private Rectangle2D.Double bounds;
     private boolean moving = false;
+    public final int comfortDistance = 100;
 
     public Pet(double x, double y, Player master, Game game) {
         super(x, y, 0, 0, GameObjectID.Pet, game);

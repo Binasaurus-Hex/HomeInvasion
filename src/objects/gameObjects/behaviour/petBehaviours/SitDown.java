@@ -17,7 +17,7 @@ public class SitDown implements Behaviour {
     }
 
     private boolean isNearEnough(){
-        return (master.getPoint().distance(pet.getPoint()) < 60);
+        return (master.getPoint().distance(pet.getPoint()) < pet.comfortDistance);
     }
 
     @Override

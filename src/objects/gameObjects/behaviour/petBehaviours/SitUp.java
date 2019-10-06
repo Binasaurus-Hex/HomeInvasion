@@ -16,7 +16,7 @@ public class SitUp implements Behaviour {
     }
 
     private boolean isNearEnough(){
-        return (player.getPoint().distance(pet.getPoint()) < 60);
+        return (player.getPoint().distance(pet.getPoint()) < pet.comfortDistance);
     }
 
     @Override
