@@ -35,12 +35,7 @@ public class HorizontalDoor extends Door {
 
         doorBounds = closedBounds;
         doorActivate = new ActivatableBounds(x,y-(width/2)+(height/2),width,width,game);
-        doorActivate.addObjectID(GameObjectID.Enemy);
-        doorActivate.addObjectID(GameObjectID.Player);
-        doorActivate.addObjectID(GameObjectID.Pet);
-        doorActivate.setOnEnter((object)->open());
-        doorActivate.setOnExit((object)->close());
-        game.objectHandler.add(doorActivate);
+        initActivate();
     }
 
 

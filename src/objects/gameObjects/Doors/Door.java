@@ -3,6 +3,7 @@ package objects.gameObjects.Doors;
 import game.CameraID;
 import game.Game;
 import objects.gameObjects.ActivatableBounds;
+import objects.gameObjects.Character;
 import objects.gameObjects.GameObject;
 import objects.gameObjects.GameObjectID;
 import objects.interfaces.Drawable;
@@ -64,5 +65,12 @@ public abstract class Door extends GameObject {
     @Override
     public Rectangle2D.Double getBounds() {
         return doorBounds;
+    }
+
+    protected void initActivate(){
+        doorActivate.addObjectClass(Character.class);
+        doorActivate.setOnEnter((object)->open());
+        doorActivate.setOnExit((object)->close());
+        game.objectHandler.add(doorActivate);
     }
 }

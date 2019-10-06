@@ -26,6 +26,7 @@ public class ActivatableBounds extends GameObject {
     private Action exit;
     private Rectangle2D.Double bounds;
     private List<GameObjectID> searchObjects;
+    private List<Class> searchClasses;
 
     public ActivatableBounds(double x, double y,double width,double height,Game game) {
         super(x, y,0, 0, GameObjectID.ActivatableBounds, game);
@@ -33,6 +34,7 @@ public class ActivatableBounds extends GameObject {
         exit = null;
         bounds = new Rectangle2D.Double(x,y,width,height);
         searchObjects = new ArrayList<>();
+        searchClasses = new ArrayList<>();
         objectsEntered = new HashMap<>();
     }
 
@@ -43,6 +45,11 @@ public class ActivatableBounds extends GameObject {
         searchObjects.add(id);
     }
 
+    public void addObjectClass(Class cls){
+        System.out.println(cls);
+        searchClasses.add(cls);
+    }
+
     public void setOnEnter(Action a){
         enter = a;
     }
@@ -51,10 +58,19 @@ public class ActivatableBounds extends GameObject {
         exit = a;
     }
 
+    private boolean containsClass(Class cls){
+        for(Class c : searchClasses){
+            if(c.isAssignableFrom(cls)){
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Override
     public void update() {
         for(GameObject object : game.objectHandler.objects){
-            if(searchObjects.contains(object.id)){
+            if(searchObjects.contains(object.id) || containsClass(object.getClass())){
                 if(isColliding(object)){
                     boolean entered = objectsEntered.getOrDefault(object,false);
                     if(!entered){
