@@ -106,7 +106,7 @@ public abstract class GameObject {
         return point;
     }
 
-    protected boolean isFacing(GameObject object){
+    public boolean isFacing(GameObject object){
         Line2D.Double ray = getRay();
         if(object.isColliding(ray)){
             return true;

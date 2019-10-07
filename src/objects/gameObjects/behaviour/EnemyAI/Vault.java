@@ -1,6 +1,7 @@
 package objects.gameObjects.behaviour.EnemyAI;
 
 import objects.gameObjects.Enemy;
+import objects.gameObjects.GameObject;
 import objects.gameObjects.Windows.Window;
 import objects.gameObjects.behaviour.Behaviour;
 import objects.gameObjects.behaviour.HelperFunctions;
@@ -28,16 +29,13 @@ public class Vault implements Behaviour, VaultableListener {
         Point2D.Double[] anchors = HelperFunctions.getOrderedAnchors(enemy.getPoint(),vaultable.getAnchorPoints());
         start = anchors[0];
         end = anchors[1];
-    }
-
-    private boolean isFacingVaulable(){
-        Line2D.Double ray = new Line2D.Double();
-        double rotation = enemy.getRotation();
-        return true;
+        activated = false;
     }
 
     @Override
     public void start() {
+        enemy.navigator.setTargetDistance(5);
+        System.out.println("enemy vaulting");
         setAnchors();
         enemy.setCollidable(false);
         enemy.setVelX(enemy.speed/3);
@@ -48,7 +46,7 @@ public class Vault implements Behaviour, VaultableListener {
     @Override
     public boolean needsControl() {
         if(activated)return true;
-        if(vaultable != null && vaultable.useable()){
+        if(vaultable != null && vaultable.useable() && enemy.isFacing((GameObject)vaultable)){
             activated = true;
             return true;
         }
@@ -72,13 +70,15 @@ public class Vault implements Behaviour, VaultableListener {
             return 100;
         }
         else {
-            return 6;
+            return 10;
         }
     }
 
     @Override
     public void stop() {
-
+        activated = false;
+        vaulting = false;
+        enemy.navigator.setTargetDistance(1.5);
     }
 
     @Override

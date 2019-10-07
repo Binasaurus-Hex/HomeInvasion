@@ -3,8 +3,10 @@ package objects.gameObjects.behaviour.EnemyAI;
 import objects.gameObjects.Enemy;
 import objects.gameObjects.Windows.Window;
 import objects.gameObjects.behaviour.Behaviour;
+import objects.gameObjects.behaviour.HelperFunctions;
 import objects.interfaces.WindowListener;
 
+import java.awt.geom.Point2D;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -38,7 +40,7 @@ public class OpenWindow implements Behaviour, WindowListener {
 
     @Override
     public int getPriority() {
-        return 10;
+        return 6;
     }
 
     @Override

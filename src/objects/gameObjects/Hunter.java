@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hunter extends Enemy {
-    List<WindowListener> windowListeners;
 
     public Hunter(int x, int y, Game game, Color color) {
         super(x, y, game,color);
@@ -24,12 +23,13 @@ public class Hunter extends Enemy {
         velY = 2;
         speed = 2;
         BufferedImageLoader loader = new BufferedImageLoader();
-        currentSprite = loader.loadImage("/sprites/enemy/walking/enemy.png");
+        currentSprite = loader.loadImage("/sprites/enemy/moving/1.png");
         arbitrator.addBehaviour(explore);
         arbitrator.addBehaviour(attack);
         arbitrator.addBehaviour(search);
         arbitrator.addBehaviour(openWindow);
         arbitrator.addBehaviour(vault);
+        arbitrator.addBehaviour(moveToActivatable);
 
     }
 
@@ -37,6 +37,12 @@ public class Hunter extends Enemy {
     public void update() {
         arbitrator.update();
         if(collidable)collision();
+    }
+
+    @Override
+    public void setRotation(double rotation) {
+        super.setRotation(rotation);
+
     }
 
     private void collision() {
@@ -48,7 +54,7 @@ public class Hunter extends Enemy {
                         break;
                     case Player:
                         Player player = (Player)object;
-                        player.kill();
+                        //player.kill();
                         break;
                     case Door:
                         resolveCollision(object);
@@ -80,6 +86,7 @@ public class Hunter extends Enemy {
 
     @Override
     public void onWindowTouched(Window window) {
+        moveToActivatable.setActivatable(window);
         openWindow.setWindowTouched(window);
         vault.setVaultableTouched(window);
     }

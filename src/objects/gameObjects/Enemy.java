@@ -25,6 +25,7 @@ public abstract class Enemy extends Character {
     protected Search search;
     protected OpenWindow openWindow;
     protected Vault vault;
+    protected MoveToActivatable moveToActivatable;
 
     private Rectangle2D.Double bounds;
 
@@ -41,6 +42,7 @@ public abstract class Enemy extends Character {
         search = new Search(this,game);
         openWindow = new OpenWindow(this);
         vault = new Vault(this);
+        moveToActivatable = new MoveToActivatable(this);
     }
 
 

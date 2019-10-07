@@ -1,6 +1,7 @@
 package objects.gameObjects.behaviour.playerBehaviours;
 
 import javafx.util.Pair;
+import objects.gameObjects.Character;
 import objects.gameObjects.Player;
 import objects.gameObjects.behaviour.Behaviour;
 import objects.gameObjects.behaviour.HelperFunctions;
@@ -14,21 +15,21 @@ import java.awt.geom.Point2D;
 import java.util.List;
 
 public class MoveToActivatable implements Behaviour, ActivatableListener {
-    private Player player;
-    private Activatable activatable;
-    private boolean activated = false;
-    private Point2D.Double anchor;
-    private double rotation;
+    protected Character character;
+    protected Activatable activatable;
+    protected boolean activated = false;
+    protected Point2D.Double anchor;
+    protected double rotation;
 
-    public MoveToActivatable(Player player){
-        this.player = player;
+    public MoveToActivatable(Character character){
+        this.character = character;
     }
 
 
     @Override
     public void start() {
         List<Pair<Point2D.Double,Double>> anchorPairs = activatable.getAnchors();
-        List<Pair<Point2D.Double,Double>> sortedPairs = HelperFunctions.getOrderedAnchorPairs(player.getPoint(),anchorPairs);
+        List<Pair<Point2D.Double,Double>> sortedPairs = HelperFunctions.getOrderedAnchorPairs(character.getPoint(),anchorPairs);
 
         anchor = sortedPairs.get(0).getKey();
         rotation = sortedPairs.get(0).getValue();
@@ -53,9 +54,9 @@ public class MoveToActivatable implements Behaviour, ActivatableListener {
 
     @Override
     public void update() {
-        if(!player.moveToPoint(anchor));
+        if(!character.navigator.moveToPoint(anchor));
         else {
-            player.setRotation(rotation);
+            character.setRotation(rotation);
             activated = false;
         }
     }

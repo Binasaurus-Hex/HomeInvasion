@@ -31,7 +31,6 @@ public class OpenWindow implements Behaviour, WindowListener {
     }
     @Override
     public void start() {
-        System.out.println("OpenWindow");
         player.currentSprite = openWindow.getSprite();
     }
 
