@@ -14,11 +14,14 @@ public abstract class Character extends GameObject {
     public boolean visible = true;
     public Navigator navigator;
     protected Arbitrator arbitrator;
+    public double width,height;
 
-    public Character(double x, double y, int z, double rotation, GameObjectID id, Game game) {
-        super(x, y, z, rotation, id, game);
+    public Character(double x, double y,double width, double height, double rotation, GameObjectID id, Game game) {
+        super(x, y, 0, rotation, id, game);
         arbitrator = new Arbitrator();
         navigator = new Navigator(this,game);
+        this.width = width;
+        this.height = height;
     }
 
     public void setCollidable(boolean value){
@@ -35,7 +38,7 @@ public abstract class Character extends GameObject {
     public boolean hasLineOfSight(GameObject object){
         Line2D.Double line = new Line2D.Double(x,y,object.getX(),object.getY());
         for(GameObject obstacle : game.objectHandler.objects) {
-            if(obstacle.id == GameObjectID.Wall || obstacle.id == GameObjectID.Door) {
+            if(obstacle.id == GameObjectID.Wall || obstacle.id == GameObjectID.Door || obstacle.id == GameObjectID.Window) {
                 if(line.intersects(obstacle.getBounds())) {
                     return false;
                 }

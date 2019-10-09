@@ -24,7 +24,7 @@ public class HorizontalWindow extends Window {
 
     public HorizontalWindow(double x, double y, int z, Game game) {
         super(x, y, z, game);
-        width = 50;
+        width = 100;
         height = 6;
 
         point = new Point2D.Double(x+width/2,y+height/2);

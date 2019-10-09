@@ -18,7 +18,6 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 
 public class Player extends Character {
-    public double width, height;
     private boolean movable = true;
     private Camera camera;
     private boolean ded;
@@ -36,13 +35,11 @@ public class Player extends Character {
 
 
     public Player(double x, double y, int z, double width, double height, Game game) {
-        super(x, y, z,0, GameObjectID.Player,game);
+        super(x, y, width,height,0, GameObjectID.Player,game);
         camera = game.cameraMap.get(CameraID.Main);
-        this.width = width;
-        this.height = height;
-        velX = 2.5;
-        velY = 2.5;
-        speed = 2.5;
+        velX = 5;
+        velY = 5;
+        speed = 5;
         bounds = new Rectangle2D.Double((x-(width/4)-5), y-(height/4), (width/2)+10, height/2);
 
         move = new Move(this);
@@ -63,6 +60,12 @@ public class Player extends Character {
 
     @Override
     public void update() {
+        if(KeyHandler.isKeyPressed("I")){
+            visible = true;
+        }
+        if(KeyHandler.isKeyPressed("O")){
+            visible = false;
+        }
         if(KeyHandler.isKeyPressed("L")){
             game.stop();
         }

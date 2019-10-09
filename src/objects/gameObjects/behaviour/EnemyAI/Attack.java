@@ -16,6 +16,7 @@ public class Attack implements Behaviour {
 
     @Override
     public void start() {
+        enemy.playerPosition.hide();
     }
 
     @Override
@@ -29,8 +30,8 @@ public class Attack implements Behaviour {
 
     @Override
     public void update() {
-        enemy.setLastPlayerPosition();
-        navigator.moveToPoint(enemy.getLastPlayerPosition());
+        enemy.setPlayerLastPosition();
+        navigator.moveToPoint(enemy.getPlayerLastPosition());
     }
 
     @Override
