@@ -13,6 +13,7 @@ import java.util.TimerTask;
 public class OpenWindow implements Behaviour, WindowListener {
     private Enemy enemy;
     private Window touchedWindow;
+    private int counter = 0;
 
     public OpenWindow(Enemy enemy){
         this.enemy = enemy;
@@ -20,7 +21,7 @@ public class OpenWindow implements Behaviour, WindowListener {
 
     @Override
     public void start() {
-        touchedWindow.open();
+
     }
 
     @Override
@@ -35,7 +36,11 @@ public class OpenWindow implements Behaviour, WindowListener {
 
     @Override
     public void update() {
-
+        if(counter > 60){
+            touchedWindow.open();
+            counter = 0;
+        }
+        counter++;
     }
 
     @Override

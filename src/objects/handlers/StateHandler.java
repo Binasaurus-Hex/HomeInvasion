@@ -70,9 +70,9 @@ public class StateHandler {
 
         //adding the enemies
         game.objectHandler.add(new Hunter(1000, 1200, game, Color.BLUE));
-        //game.objectHandler.add(new Hunter(1000, 1200, game,Color.white));
-        //game.objectHandler.add(new Hunter(1000, 1200, game,Color.pink));
-        //game.objectHandler.add(new Hunter(1000, 1200, game,Color.black));
+        game.objectHandler.add(new Hunter(1000, 1200, game,Color.white));
+        game.objectHandler.add(new Hunter(1000, 1200, game,Color.pink));
+        game.objectHandler.add(new Hunter(1000, 1200, game,Color.black));
 
 
         int xOffsetHorizontal = 3;
