@@ -14,11 +14,14 @@ public abstract class Character extends GameObject {
     public boolean visible = true;
     public Navigator navigator;
     protected Arbitrator arbitrator;
+    public double width,height;
 
-    public Character(double x, double y, int z, double rotation, GameObjectID id, Game game) {
-        super(x, y, z, rotation, id, game);
+    public Character(double x, double y,double width, double height, double rotation, GameObjectID id, Game game) {
+        super(x, y, 0, rotation, id, game);
         arbitrator = new Arbitrator();
         navigator = new Navigator(this,game);
+        this.width = width;
+        this.height = height;
     }
 
     public void setCollidable(boolean value){

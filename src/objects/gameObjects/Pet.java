@@ -24,14 +24,13 @@ public class Pet extends Character {
     private SitDown sitDown;
     private Idle idle;
     //</editor-fold>
-    private int width,height;
     public boolean sitting = true;
     private Rectangle2D.Double bounds;
     private boolean moving = false;
     public final int comfortDistance = 100;
 
     public Pet(double x, double y, Player master, Game game) {
-        super(x, y, 0, 0, GameObjectID.Pet, game);
+        super(x, y, 40,40, 0, GameObjectID.Pet, game);
 
         navigator.setGoalDistance(30);
         navigator.setTargetDistance(5);
@@ -47,8 +46,6 @@ public class Pet extends Character {
         arbitrator.addBehaviour(sitDown);
         //</editor-fold>
 
-        width = 40;
-        height = 40;
         velX = 3;
         velY = 3;
         speed = 3;
@@ -65,7 +62,7 @@ public class Pet extends Character {
     public void render(Graphics g) {
         Drawable drawable = (graphics)->{
             graphics.rotate(getRotation(),x,y);
-            graphics.drawImage(currentSprite,(int)(x-width),(int)(y-height),width*2,height*2,null);
+            graphics.drawImage(currentSprite,(int)(x-width),(int)(y-height),(int)width*2,(int)height*2,null);
         };
         Drawable debug = (graphics)->{
             graphics.setColor(Color.red);

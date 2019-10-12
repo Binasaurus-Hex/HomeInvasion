@@ -19,6 +19,7 @@ public class Explore implements Behaviour {
     @Override
     public void start() {
         navigator.setGoal(grid.getRandomGoal(grid.getNearestJunction(enemy.getPoint())).getPoint());
+        enemy.playerPosition.hide();
     }
 
     @Override

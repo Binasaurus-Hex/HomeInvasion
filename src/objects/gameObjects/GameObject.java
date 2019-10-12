@@ -122,7 +122,7 @@ public abstract class GameObject {
         return ray;
     }
 
-    private Point2D.Double getFacing(){
+    public Point2D.Double getFacing(){
         Point2D.Double facing = new Point2D.Double();
         facing.setLocation(Math.cos(rotation),Math.sin(rotation));
         return facing;

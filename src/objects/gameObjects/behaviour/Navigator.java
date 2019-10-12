@@ -55,6 +55,13 @@ public class Navigator {
         this.goal = goal;
     }
 
+    public void setGoal(Point2D.Double start,Point2D.Double end){
+        Node begin = grid.getNearestJunction(start);
+        Node goal = grid.getNearestJunction(end);
+        path = generator.getPathList(begin,goal);
+        this.goal = goal;
+    }
+
     private double findRotation(Point2D.Double start , Point2D.Double point){
         double xDiff = point.x-start.x;
         double yDiff = point.y-start.y;

@@ -35,6 +35,7 @@ public class Hunter extends Enemy {
 
     @Override
     public void update() {
+        if(canSeePlayer())setPlayerLastPosition();
         arbitrator.update();
         if(collidable)collision();
     }

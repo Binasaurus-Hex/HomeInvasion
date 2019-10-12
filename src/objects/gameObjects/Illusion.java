@@ -5,19 +5,20 @@ import game.Game;
 import objects.interfaces.Drawable;
 
 import java.awt.*;
+import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 
 public class Illusion extends GameObject {
 
+    private boolean visible = false;
+    private Character character;
     private BufferedImage image;
-    private double width,height;
+    private double rotation = 0;
 
-    public Illusion(double x, double y,double width,double height, double rotation, BufferedImage image, Game game) {
-        super(x, y, 0, rotation, GameObjectID.Illusion, game);
-        this.image = tint(image,Color.blue);
-        this.width = width;
-        this.height = height;
+    public Illusion(double x, double y, Character character, Game game) {
+        super(x, y, 0, character.getRotation(), GameObjectID.Illusion, game);
+        this.character = character;
     }
 
     public BufferedImage tint(BufferedImage image, Color color) {
@@ -36,6 +37,27 @@ public class Illusion extends GameObject {
         return newImage;
     }
 
+    public void setPosition(double x, double y){
+        this.x = x;
+        this.y = y;
+    }
+
+    public void setPosition(Point2D.Double point){
+        this.x = point.getX();
+        this.y = point.getY();
+        image = tint(character.currentSprite,Color.blue);
+        rotation = character.getRotation();
+    }
+
+    public void show(){
+        visible = true;
+
+    }
+
+    public void hide(){
+        visible = false;
+    }
+
     @Override
     public void update() {
 
@@ -44,11 +66,13 @@ public class Illusion extends GameObject {
     @Override
     public void render(Graphics g) {
         Drawable illusion = graphics -> {
-            graphics.rotate(getRotation(),x,y);
-            graphics.drawImage(image, (int)(x-(width/2)), (int)(y-(width/2)), (int)width, (int)height, null);
+            graphics.rotate(rotation,x,y);
+            graphics.drawImage(image, (int)(x-(character.width/2)), (int)(y-(character.height/2)), (int)character.width, (int)character.height, null);
         };
         Graphics2D g2d = (Graphics2D)g;
-        renderToCamera(illusion,g2d,game.cameraMap.get(CameraID.Main));
+        if(visible){
+            renderToCamera(illusion,g2d,game.cameraMap.get(CameraID.Main));
+        }
     }
 
     @Override

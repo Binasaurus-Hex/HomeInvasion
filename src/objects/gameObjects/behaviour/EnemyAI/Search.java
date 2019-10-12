@@ -15,8 +15,6 @@ public class Search implements Behaviour {
     Grid grid;
     Enemy enemy;
     Game game;
-    Illusion illusion;
-
 
     public Search(Enemy enemy,Game game){
         this.enemy = enemy;
@@ -28,12 +26,10 @@ public class Search implements Behaviour {
 
     @Override
     public void start() {
-        Player player = enemy.getPlayer();
-        Point2D.Double playerPos = enemy.getLastPlayerPosition();
-
-        navigator.setGoal(grid.getNearestJunction(playerPos).getPoint());
-        illusion = new Illusion(playerPos.x,playerPos.y,player.width,player.height,player.getRotation(),player.currentSprite,game);
-        game.objectHandler.add(illusion);
+        Point2D.Double facing = enemy.getFacing();
+        facing.setLocation(enemy.getX()+(facing.getX()*20),enemy.getY()+(facing.getY()*20));
+        navigator.setGoal(facing,enemy.playerPosition.getPoint());
+        enemy.playerPosition.show();
     }
 
     @Override
@@ -50,7 +46,7 @@ public class Search implements Behaviour {
     public void update() {
         if(navigator.reachedGoal()){
             enemy.seenPlayer = false;
-
+            enemy.playerPosition.hide();
         }
         navigator.update();
     }
@@ -62,6 +58,6 @@ public class Search implements Behaviour {
 
     @Override
     public void stop() {
-        game.objectHandler.remove(illusion);
+        
     }
 }

@@ -11,8 +11,9 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
 public abstract class Enemy extends Character {
-    protected double width,height;
     public boolean seenPlayer = false;
+    public Illusion playerPosition;
+    private Player player;
 
     //attributes for working out line of sight
     protected Point2D.Double playerLastPosition;
@@ -30,9 +31,7 @@ public abstract class Enemy extends Character {
     private Rectangle2D.Double bounds;
 
     public Enemy(int x, int y, Game game, Color color) {
-        super(x, y, 1, 0, GameObjectID.Enemy, game);
-        width = 50;
-        height = 50;
+        super(x, y,50,50,0, GameObjectID.Enemy, game);
         bounds = new Rectangle2D.Double(x-width/4, y-height/4, width/2, height/2);
         playerLastPosition = new Point2D.Double();
 
@@ -43,12 +42,15 @@ public abstract class Enemy extends Character {
         openWindow = new OpenWindow(this);
         vault = new Vault(this);
         moveToActivatable = new MoveToActivatable(this);
+        this.player = getPlayer();
+        playerPosition = new Illusion(player.x,player.y,player,game);
+        game.objectHandler.add(playerPosition);
     }
 
 
     public boolean canSeePlayer() {
-        Point2D.Double playerPosition = getPlayer().getPoint();
-        double playerDistance = getPoint().distance(playerPosition);
+        if(playerPosition == null)return false;
+        double playerDistance = getPoint().distance(playerPosition.getPoint());
         if(isSightClear() && playerDistance < 5000) {
             return true;
         }
@@ -63,7 +65,6 @@ public abstract class Enemy extends Character {
      */
     public boolean isSightClear(){
         try{
-            Player player = getPlayer();
             if(!player.visible)return false;
             return hasLineOfSight(player);
         }catch (Exception e){
@@ -71,25 +72,21 @@ public abstract class Enemy extends Character {
         }
     }
 
-    /**
-     * sets the last known position of the playerBehaviours
-     */
-    public void setLastPlayerPosition(){
-        Player player = getPlayer();
-        playerLastPosition.setLocation(player.getX(), player.getY());
-    }
-
-    public Point2D.Double getLastPlayerPosition(){
-        return playerLastPosition;
-    }
-
-    public Player getPlayer(){
+    protected Player getPlayer(){
         for(GameObject object : game.objectHandler.objects) {
             if(object.id == GameObjectID.Player) {
                 return (Player)object;
             }
         }
         return null;
+    }
+
+    public void setPlayerLastPosition(){
+        playerPosition.setPosition(player.getPoint());
+    }
+
+    public Point2D.Double getPlayerLastPosition(){
+        return playerPosition.getPoint();
     }
 
     @Override

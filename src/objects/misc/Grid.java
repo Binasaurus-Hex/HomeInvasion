@@ -2,11 +2,15 @@ package objects.misc;
 
 import game.Game;
 import objects.FileIO.BufferedImageLoader;
+import objects.gameObjects.Illusion;
 import objects.gameObjects.Node;
+
 
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Grid {
     
@@ -18,7 +22,7 @@ public class Grid {
         this.game = game;
         nodeList = new ObjectList<>();
         BufferedImageLoader loader = new BufferedImageLoader();
-        readGridFromFile(loader.loadImage("/map/Floor2.png"));
+        readGridFromFile(loader.loadImage("/map/FloorWindowTest.png"));
         generateNodes();
     }
 
@@ -123,7 +127,7 @@ public class Grid {
         return nodeList.get(row).get(column);
     }
 
-    public Node getNearestJunction(Point2D.Double point){
+    public Node getNearestJunctionR(Point2D.Double point){
         Node nearest = null;
         double lowestDist = Double.MAX_VALUE;
         for(ObjectList<Node> i : nodeList){
@@ -138,6 +142,37 @@ public class Grid {
                     }
                 }
 
+            }
+        }
+        return nearest;
+    }
+
+    public Node getNearestJunction(Point2D.Double point){
+        Node starter = getNearestNode(point);
+        if(starter.getColor() == Color.green)return starter;
+
+        //get surrounding nodes
+        int row = (int)Math.round((point.y)/Node.size);
+        int column = (int)Math.round((point.x)/Node.size);
+        List<Node> candidates = new ArrayList<>();
+        Node east = nodeList.get(row).get(column-1);
+        Node west = nodeList.get(row).get(column+1);
+        Node north = nodeList.get(row-1).get(column);
+        Node south = nodeList.get(row+1).get(column);
+
+        candidates.add(east);
+        candidates.add(west);
+        candidates.add(north);
+        candidates.add(south);
+
+        Node nearest = null;
+        double lowestDist = Integer.MAX_VALUE;
+        for(Node i : candidates){
+            if(i.getColor() != Color.green)continue;
+            double distance = i.getPoint().distance(point);
+            if(distance < lowestDist){
+                lowestDist = distance;
+                nearest = i;
             }
         }
         return nearest;
