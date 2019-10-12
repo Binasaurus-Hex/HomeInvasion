@@ -22,7 +22,7 @@ public class FollowPlayer implements Behaviour {
     }
 
     private boolean isNearEnough(){
-        return (player.getPoint().distance(pet.getPoint()) < 60);
+        return (player.getPoint().distance(pet.getPoint()) < pet.comfortDistance);
     }
 
     @Override
@@ -41,6 +41,14 @@ public class FollowPlayer implements Behaviour {
 
     @Override
     public void update() {
+        if(pet.getPoint().distance(player.getPoint())<pet.comfortDistance+20){
+            pet.setVelX(player.speed);
+            pet.setVelY(player.speed);
+        }
+        else{
+            pet.setVelY(pet.speed);
+            pet.setVelX(pet.speed);
+        }
         if(pet.hasLineOfSight(player)){
             navigator.moveToPoint(player.getPoint());
             seenPlayer = true;

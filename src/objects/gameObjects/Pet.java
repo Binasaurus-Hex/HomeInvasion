@@ -51,6 +51,7 @@ public class Pet extends Character {
         height = 40;
         velX = 3;
         velY = 3;
+        speed = 3;
         bounds = new Rectangle2D.Double(x,y,width,height);
     }
 
