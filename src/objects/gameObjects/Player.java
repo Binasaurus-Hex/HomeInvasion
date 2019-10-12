@@ -37,9 +37,9 @@ public class Player extends Character {
     public Player(double x, double y, int z, double width, double height, Game game) {
         super(x, y, width,height,0, GameObjectID.Player,game);
         camera = game.cameraMap.get(CameraID.Main);
-        velX = 5;
-        velY = 5;
-        speed = 5;
+        velX = 2.5;
+        velY = 2.5;
+        speed = 2.5;
         bounds = new Rectangle2D.Double((x-(width/4)-5), y-(height/4), (width/2)+10, height/2);
 
         move = new Move(this);

@@ -30,7 +30,6 @@ public class Attack implements Behaviour {
 
     @Override
     public void update() {
-        enemy.setPlayerLastPosition();
         navigator.moveToPoint(enemy.getPlayerLastPosition());
     }
 

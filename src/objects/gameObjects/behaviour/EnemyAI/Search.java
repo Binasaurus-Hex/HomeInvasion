@@ -26,7 +26,9 @@ public class Search implements Behaviour {
 
     @Override
     public void start() {
-        navigator.setGoal(enemy.playerPosition.getPoint());
+        Point2D.Double facing = enemy.getFacing();
+        facing.setLocation(enemy.getX()+(facing.getX()*20),enemy.getY()+(facing.getY()*20));
+        navigator.setGoal(facing,enemy.playerPosition.getPoint());
         enemy.playerPosition.show();
     }
 
@@ -56,6 +58,6 @@ public class Search implements Behaviour {
 
     @Override
     public void stop() {
-        enemy.playerPosition.hide();
+        
     }
 }

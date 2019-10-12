@@ -38,7 +38,7 @@ public abstract class Character extends GameObject {
     public boolean hasLineOfSight(GameObject object){
         Line2D.Double line = new Line2D.Double(x,y,object.getX(),object.getY());
         for(GameObject obstacle : game.objectHandler.objects) {
-            if(obstacle.id == GameObjectID.Wall || obstacle.id == GameObjectID.Door || obstacle.id == GameObjectID.Window) {
+            if(obstacle.id == GameObjectID.Wall || obstacle.id == GameObjectID.Door) {
                 if(line.intersects(obstacle.getBounds())) {
                     return false;
                 }

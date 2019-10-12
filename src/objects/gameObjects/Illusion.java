@@ -45,12 +45,13 @@ public class Illusion extends GameObject {
     public void setPosition(Point2D.Double point){
         this.x = point.getX();
         this.y = point.getY();
+        image = tint(character.currentSprite,Color.blue);
+        rotation = character.getRotation();
     }
 
     public void show(){
         visible = true;
-        image = tint(character.currentSprite,Color.blue);
-        rotation = character.getRotation();
+
     }
 
     public void hide(){
