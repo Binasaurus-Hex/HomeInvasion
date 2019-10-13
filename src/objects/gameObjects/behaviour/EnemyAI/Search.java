@@ -7,6 +7,7 @@ import objects.gameObjects.Player;
 import objects.gameObjects.behaviour.Behaviour;
 import objects.gameObjects.behaviour.Navigator;
 import objects.misc.Grid;
+import objects.misc.animation.Animation;
 
 import java.awt.geom.Point2D;
 
@@ -15,12 +16,14 @@ public class Search implements Behaviour {
     Grid grid;
     Enemy enemy;
     Game game;
+    private Animation move;
 
     public Search(Enemy enemy,Game game){
         this.enemy = enemy;
         navigator = enemy.navigator;
         grid = navigator.grid;
         this.game = game;
+        move = new Animation("/sprites/enemy/moving",10,10);
     }
 
 
@@ -30,6 +33,7 @@ public class Search implements Behaviour {
         facing.setLocation(enemy.getX()+(facing.getX()*20),enemy.getY()+(facing.getY()*20));
         navigator.setGoal(facing,enemy.playerPosition.getPoint());
         enemy.playerPosition.show();
+        move.reset();
     }
 
     @Override
@@ -49,6 +53,8 @@ public class Search implements Behaviour {
             enemy.playerPosition.hide();
         }
         navigator.update();
+        move.update();
+        enemy.currentSprite = move.getSprite();
     }
 
     @Override

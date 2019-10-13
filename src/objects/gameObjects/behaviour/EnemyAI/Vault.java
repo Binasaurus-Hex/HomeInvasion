@@ -8,6 +8,7 @@ import objects.gameObjects.behaviour.HelperFunctions;
 import objects.interfaces.Vaultable;
 import objects.interfaces.VaultableListener;
 import objects.interfaces.WindowListener;
+import objects.misc.animation.Animation;
 import physics.MathsMethods;
 
 import java.awt.geom.Line2D;

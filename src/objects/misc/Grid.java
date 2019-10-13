@@ -22,7 +22,7 @@ public class Grid {
         this.game = game;
         nodeList = new ObjectList<>();
         BufferedImageLoader loader = new BufferedImageLoader();
-        readGridFromFile(loader.loadImage("/map/FloorWindowTest.png"));
+        readGridFromFile(loader.loadImage("/map/Floor2.png"));
         generateNodes();
     }
 
@@ -127,7 +127,7 @@ public class Grid {
         return nodeList.get(row).get(column);
     }
 
-    public Node getNearestJunctionR(Point2D.Double point){
+    public Node getNearestJunction(Point2D.Double point){
         Node nearest = null;
         double lowestDist = Double.MAX_VALUE;
         for(ObjectList<Node> i : nodeList){
@@ -147,7 +147,7 @@ public class Grid {
         return nearest;
     }
 
-    public Node getNearestJunction(Point2D.Double point){
+    public Node getNearestJunctionR(Point2D.Double point){
         Node starter = getNearestNode(point);
         if(starter.getColor() == Color.green)return starter;
 
