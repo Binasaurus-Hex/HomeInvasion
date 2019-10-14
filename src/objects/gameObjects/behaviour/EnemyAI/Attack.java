@@ -14,7 +14,7 @@ public class Attack implements Behaviour {
     public Attack(Enemy enemy){
         this.enemy = enemy;
         this.navigator = enemy.navigator;
-        move = new Animation("/sprites/enemy/moving",10,10);
+        move = new Animation("/sprites/enemy/moving",20,10);
     }
 
     @Override

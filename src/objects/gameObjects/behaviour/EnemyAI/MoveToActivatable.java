@@ -25,6 +25,14 @@ public class MoveToActivatable implements Behaviour, ActivatableListener {
         pose = HelperFunctions.getOrderedAnchorPairs(enemy.getPoint(),activatable.getAnchors()).get(0);
     }
 
+    private boolean isInPosition(){
+        Point2D.Double anchor = HelperFunctions.getOrderedAnchorPairs(enemy.getPoint(),activatable.getAnchors()).get(0).getKey();
+        if(enemy.getPoint().distance(anchor) <= 1.5){
+            return true;
+        }
+        return false;
+    }
+
     @Override
     public void start() {
         setPose();
@@ -35,7 +43,7 @@ public class MoveToActivatable implements Behaviour, ActivatableListener {
     @Override
     public boolean needsControl() {
         if(activated)return true;
-        if(activatable!=null && (enemy.isFacing((GameObject)activatable)) && !finished){
+        if(activatable!=null && (enemy.isFacing((GameObject)activatable)) && !finished && !isInPosition()){
             return true;
         }
         return false;

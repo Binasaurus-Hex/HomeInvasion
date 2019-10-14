@@ -6,6 +6,8 @@ import objects.gameObjects.behaviour.Navigator;
 import objects.misc.Grid;
 import objects.misc.animation.Animation;
 
+import java.awt.geom.Point2D;
+
 public class Explore implements Behaviour {
     private Navigator navigator;
     private Grid grid;
@@ -21,7 +23,9 @@ public class Explore implements Behaviour {
 
     @Override
     public void start() {
-        navigator.setGoal(grid.getRandomGoal(grid.getNearestJunction(enemy.getPoint())).getPoint());
+        Point2D.Double facing = enemy.getFacing();
+        facing.setLocation(enemy.getX()+(facing.getX()*20),enemy.getY()+(facing.getY()*20));
+        navigator.setGoal(facing,grid.getRandomGoal(grid.getNearestJunction(enemy.getPoint())).getPoint());
         enemy.playerPosition.hide();
         move.reset();
     }

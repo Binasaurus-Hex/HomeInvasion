@@ -188,7 +188,7 @@ public class StateHandler {
         game.objectHandler.add(new RoomBounds(1100, 1150, 200, 100, game));//HallwayH3-sub
 
         //windows
-        game.objectHandler.add(Window.Horizontal(875,1500,game));
+        game.objectHandler.add(Window.Horizontal(925,1347,game));
         game.objectHandler.add(new LightSource(0, 0, 0, game));
 
         game.objectHandler.add(new Score(-200,-450,game));

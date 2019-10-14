@@ -21,7 +21,7 @@ public class OpenWindow implements Behaviour, WindowListener {
 
     @Override
     public void start() {
-
+        counter = 0;
     }
 
     @Override
