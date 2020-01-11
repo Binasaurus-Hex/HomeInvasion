@@ -128,6 +128,13 @@ public abstract class GameObject {
         return facing;
     }
 
+    public void setFacing(GameObject object){
+        double xDiff = object.x-x;
+        double yDiff = object.y-y;
+        double angle = Math.atan2(yDiff,xDiff);
+        setRotation(angle);
+    }
+
 
     public double getX() {
         return x;

@@ -4,11 +4,12 @@ import game.Game;
 import objects.gameObjects.Windows.Window;
 import objects.gameObjects.behaviour.Arbitrator;
 import objects.gameObjects.behaviour.Navigator;
+import objects.interfaces.Selectable;
 
 import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
 
-public abstract class Character extends GameObject {
+public abstract class Character extends GameObject implements Selectable {
     public BufferedImage currentSprite;
     protected boolean collidable = true;
     public boolean visible = true;

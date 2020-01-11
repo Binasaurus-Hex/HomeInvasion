@@ -42,7 +42,7 @@ public class LightSource extends GameObject{
             RadialGradientPaint p = new RadialGradientPaint(center, radius, distance, colors);
             graphics.setPaint(p);
             graphics.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.50f));
-            graphics.fillRect(-game.window.gameWidth/2, -game.window.gameHeight/2, game.window.gameWidth+200, game.window.gameHeight);
+            graphics.fillRect(-game.window.gameWidth/2, -game.window.gameHeight/2, game.window.gameWidth, game.window.gameHeight);
         };
 
         Graphics2D g2d = (Graphics2D) g;

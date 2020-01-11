@@ -6,7 +6,7 @@ public class Camera {
     private AffineTransform transform;
     private double x,y;
     private double zoom;
-    private double width,height;
+    public double width,height;
 
     public Camera(double x, double y, double zoom, double width, double height) {
         transform = new AffineTransform();

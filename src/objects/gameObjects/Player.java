@@ -7,6 +7,7 @@ import objects.gameObjects.Windows.Window;
 import objects.gameObjects.behaviour.Arbitrator;
 import objects.gameObjects.behaviour.Navigator;
 import objects.gameObjects.behaviour.playerBehaviours.*;
+import objects.handlers.MouseHandler;
 import objects.interfaces.Drawable;
 import objects.handlers.KeyHandler;
 import objects.misc.Camera;
@@ -32,6 +33,10 @@ public class Player extends Character {
     private Headpat headpat;
     private MoveToActivatable moveToActivatable;
     private Idle idle;
+    private Fighting fighting;
+
+    //systems
+    public MouseSelector selector;
 
 
     public Player(double x, double y, int z, double width, double height, Game game) {
@@ -42,12 +47,15 @@ public class Player extends Character {
         speed = 2.5;
         bounds = new Rectangle2D.Double((x-(width/4)-5), y-(height/4), (width/2)+10, height/2);
 
+        selector = new MouseSelector(game,game.cameraMap.get(CameraID.Main));
+
         move = new Move(this);
         openWindow = new OpenWindow(this);
         closeWindow = new CloseWindow(this);
         vault = new Vault(this);
         headpat = new Headpat(this);
         moveToActivatable = new MoveToActivatable(this);
+        fighting = new Fighting(this);
         idle = new Idle(this);
         arbitrator.addBehaviour(move);
         arbitrator.addBehaviour(openWindow);
@@ -56,10 +64,12 @@ public class Player extends Character {
         arbitrator.addBehaviour(headpat);
         arbitrator.addBehaviour(moveToActivatable);
         arbitrator.addBehaviour(idle);
+        arbitrator.addBehaviour(fighting);
     }
 
     @Override
     public void update() {
+        selector.update();
         if(KeyHandler.isKeyPressed("I")){
             visible = true;
         }
@@ -115,6 +125,7 @@ public class Player extends Character {
     @Override
     public void render(Graphics g) {
         Drawable player = (graphics)->{
+            selector.render(graphics);
             graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             graphics.rotate(getRotation(), x, y);
             graphics.drawImage(currentSprite, (int)(x-(width/2)), (int)(y-(width/2)), (int)width, (int)height, null);

@@ -189,6 +189,8 @@ public class StateHandler {
 
         //windows
         game.objectHandler.add(Window.Horizontal(925,1347,game));
+
+
         game.objectHandler.add(new LightSource(0, 0, 0, game));
 
         game.objectHandler.add(new Score(-200,-450,game));

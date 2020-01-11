@@ -14,6 +14,8 @@ import java.util.Map;
 
 public class Game extends JComponent {
     public Window window;
+    public KeyHandler keyHandler;
+    public MouseHandler mouseHandler;
 
     public EventHandler eventHandler;
     public GameState state;
@@ -37,8 +39,11 @@ public class Game extends JComponent {
 
         grid = new Grid(this);
         objectHandler = new ObjectHandler();
+
+        keyHandler = new KeyHandler();
+        mouseHandler = new MouseHandler(this);
         //creating the window
-        window = new Window(this,"There's no place like home - Running on Scythe engine");
+        window = new Window(this,"There's no place like home - Running on Scythe engine",keyHandler,mouseHandler);
 
         //setting default game state
         state = GameState.Main;

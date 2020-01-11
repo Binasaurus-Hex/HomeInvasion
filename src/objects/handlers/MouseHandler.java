@@ -1,18 +1,25 @@
 package objects.handlers;
 
+import game.CameraID;
+import game.Game;
+import objects.misc.Camera;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseWheelEvent;
+import java.awt.geom.AffineTransform;
 import java.awt.geom.Point2D;
 
 public class MouseHandler extends MouseAdapter {
-    private boolean mouseDown = false;
-    private Point2D.Double mousePos;
+    private boolean mouseDown;
+    private Point2D.Double mousePos = new Point2D.Double();
+    private Game game;
 
-    public MouseHandler() {
+    public MouseHandler(Game game) {
         super();
-        mousePos = new Point2D.Double();
+        this.game = game;
+        mouseDown = false;
     }
 
     @Override
@@ -50,12 +57,15 @@ public class MouseHandler extends MouseAdapter {
     @Override
     public void mouseDragged(MouseEvent e) {
         super.mouseDragged(e);
+        mousePos.setLocation(e.getPoint());
+        mouseDown = true;
     }
 
     @Override
     public void mouseMoved(MouseEvent e) {
         super.mouseMoved(e);
-        mousePos.setLocation(e.getX(),e.getY());
+        mousePos.setLocation(e.getPoint());
+        mouseDown = false;
     }
 
     public boolean isMouseDown(){
@@ -63,8 +73,15 @@ public class MouseHandler extends MouseAdapter {
     }
 
     public Point2D.Double getMousePos(){
-        return mousePos;
+        return new Point2D.Double(mousePos.getX(),mousePos.getY());
     }
 
+    public Point2D getRelativeMousePos(){
+        Point2D mouse = getMousePos();
+        Camera camera = game.cameraMap.get(CameraID.Main);
+        AffineTransform transform = camera.getTransform();
+        mouse.setLocation((mouse.getX() - transform.getTranslateX())/transform.getScaleX() , (mouse.getY() - transform.getTranslateY())/transform.getScaleY());
+        return mouse;
+    }
 
 }
