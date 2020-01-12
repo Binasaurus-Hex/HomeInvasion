@@ -55,7 +55,7 @@ public class Game extends JComponent {
             main = new Camera(0, 0, 1,window.gameWidth,window.gameHeight);
         }
         else{
-            main = new Camera(0,0,2,window.gameWidth,window.gameHeight);
+            main = new Camera(0,0,1,window.gameWidth,window.gameHeight);
         }
 
         Camera screen = new Camera(0,0,1,window.gameWidth,window.gameHeight);

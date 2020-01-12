@@ -59,6 +59,11 @@ public abstract class Enemy extends Character {
         }
     }
 
+    public void setSpeed(double speed){
+        velX = speed;
+        velY = speed;
+    }
+
     /**
      * works out if there are any walls in between the enemy and the playerBehaviours
      * @return

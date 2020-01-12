@@ -1,5 +1,6 @@
 package objects.gameObjects.behaviour.playerBehaviours;
 
+import game.Game;
 import objects.gameObjects.GameObject;
 import objects.gameObjects.MouseSelector;
 import objects.gameObjects.Player;
@@ -13,12 +14,14 @@ public class Fighting implements Behaviour {
     private GameObject target;
     private double slow;
     private double speed;
+    private Game game;
 
-    public Fighting(Player player){
+    public Fighting(Player player, Game game){
         this.player = player;
         selector = player.selector;
         slow = player.speed * 0.90;
         this.speed = player.speed;
+        this.game = game;
     }
 
     @Override
@@ -37,6 +40,7 @@ public class Fighting implements Behaviour {
     public void update() {
         target = selector.getSelection();
         if(target == null)return;
+        if(target == player)return;
         player.speed = slow;
         player.setFacing(target);
         if(KeyHandler.isKeyPressed(KeyBindings.UP)){
@@ -50,6 +54,10 @@ public class Fighting implements Behaviour {
         }
         if(KeyHandler.isKeyPressed(KeyBindings.RIGHT)){
             player.setX(player.getX()+player.getVelX());
+        }
+
+        if(game.mouseHandler.isMouseDown()){
+
         }
     }
 

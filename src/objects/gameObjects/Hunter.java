@@ -10,6 +10,7 @@ import objects.FileIO.BufferedImageLoader;
 
 
 import java.awt.*;
+import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +20,9 @@ public class Hunter extends Enemy {
     public Hunter(int x, int y, Game game, Color color) {
         super(x, y, game,color);
         this.color = color;
+        speed = 2;
         velX = 2;
         velY = 2;
-        speed = 2;
         BufferedImageLoader loader = new BufferedImageLoader();
         currentSprite = loader.loadImage("/sprites/enemy/moving/1.png");
         arbitrator.addBehaviour(explore);
@@ -95,5 +96,25 @@ public class Hunter extends Enemy {
     @Override
     public void onAnimeTouched(Anime anime) {
 
+    }
+
+    @Override
+    public void attack() {
+        for(GameObject object: game.objectHandler.objects){
+            if(object.isColliding(getRay(100)) && object instanceof Character){
+                Character character = (Character)object;
+                character.onAttacked(getFacing(),100);
+            }
+        }
+    }
+
+    @Override
+    public void onAttacked(Point2D.Double force, double damage) {
+
+    }
+
+    @Override
+    public boolean isSelectable() {
+        return true;
     }
 }

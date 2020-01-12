@@ -3,13 +3,14 @@ package objects.gameObjects.behaviour.EnemyAI;
 import objects.gameObjects.Enemy;
 import objects.gameObjects.behaviour.Behaviour;
 import objects.gameObjects.behaviour.Navigator;
-import objects.misc.Grid;
 import objects.misc.animation.Animation;
 
 public class Attack implements Behaviour {
     private Enemy enemy;
     private Navigator navigator;
     private Animation move;
+    private double speed;
+    private double fast;
 
     public Attack(Enemy enemy){
         this.enemy = enemy;
@@ -19,6 +20,9 @@ public class Attack implements Behaviour {
 
     @Override
     public void start() {
+        speed = enemy.speed;
+        fast = speed * 1.2;
+        enemy.setSpeed(fast);
         enemy.playerPosition.hide();
         move.reset();
     }
@@ -46,5 +50,6 @@ public class Attack implements Behaviour {
 
     @Override
     public void stop() {
+        enemy.setSpeed(enemy.speed);
     }
 }

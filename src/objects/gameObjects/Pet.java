@@ -108,4 +108,19 @@ public class Pet extends Character {
     public Point2D.Double getPoint() {
         return new Point2D.Double(x,y);
     }
+
+    @Override
+    public boolean isSelectable() {
+        return false;
+    }
+
+    @Override
+    public void attack() {
+
+    }
+
+    @Override
+    public void onAttacked(Point2D.Double force, double damage) {
+
+    }
 }

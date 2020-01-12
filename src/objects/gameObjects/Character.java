@@ -7,6 +7,7 @@ import objects.gameObjects.behaviour.Navigator;
 import objects.interfaces.Selectable;
 
 import java.awt.geom.Line2D;
+import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 
 public abstract class Character extends GameObject implements Selectable {
@@ -47,4 +48,7 @@ public abstract class Character extends GameObject implements Selectable {
         }
         return true;
     }
+
+    public abstract void attack();
+    public abstract void onAttacked(Point2D.Double force,double damage);
 }

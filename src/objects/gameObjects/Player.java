@@ -55,7 +55,7 @@ public class Player extends Character {
         vault = new Vault(this);
         headpat = new Headpat(this);
         moveToActivatable = new MoveToActivatable(this);
-        fighting = new Fighting(this);
+        fighting = new Fighting(this,game);
         idle = new Idle(this);
         arbitrator.addBehaviour(move);
         arbitrator.addBehaviour(openWindow);
@@ -171,5 +171,20 @@ public class Player extends Character {
     public void onAnimeTouched(Anime anime) {
         headpat.setAnimeTouched(anime);
         moveToActivatable.setActivatable(anime);
+    }
+
+    @Override
+    public void attack() {
+
+    }
+
+    @Override
+    public void onAttacked(Point2D.Double force, double damage) {
+
+    }
+
+    @Override
+    public boolean isSelectable() {
+        return false;
     }
 }

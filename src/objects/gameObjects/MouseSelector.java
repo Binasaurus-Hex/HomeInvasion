@@ -24,7 +24,7 @@ public class MouseSelector extends GameObject{
 
     public GameObject getHover(){
         for(GameObject obj : game.objectHandler.objects){
-            if((obj instanceof Selectable) && getPoint().distance(obj.getPoint()) < 50){
+            if((obj instanceof Selectable) && ((Selectable) obj).isSelectable() && getPoint().distance(obj.getPoint()) < 50){
                 return obj;
             }
         }

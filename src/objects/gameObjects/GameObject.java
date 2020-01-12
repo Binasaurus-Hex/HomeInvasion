@@ -117,8 +117,12 @@ public abstract class GameObject {
     }
 
     protected Line2D.Double getRay(){
+        return getRay(1000);
+    }
+
+    protected Line2D.Double getRay(double length){
         Point2D.Double facing = getFacing();
-        Line2D.Double ray = new Line2D.Double(x,y,x+(facing.x*1000),y+(facing.y*1000));
+        Line2D.Double ray = new Line2D.Double(x,y,x+(facing.x*length),y+(facing.y*length));
         return ray;
     }
 
