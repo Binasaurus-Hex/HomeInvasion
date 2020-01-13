@@ -13,6 +13,7 @@ import objects.handlers.KeyHandler;
 import objects.misc.Camera;
 
 import java.awt.*;
+import java.awt.geom.Area;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
@@ -175,7 +176,15 @@ public class Player extends Character {
 
     @Override
     public void attack() {
-
+        for(GameObject object: game.objectHandler.objects){
+            if(object instanceof Character && object.isColliding(getRay(50))){
+                Character character = (Character)object;
+                Point2D.Double facing = getFacing();
+                facing.x = facing.getX()*25;
+                facing.y = facing.getY()*25;
+                character.onAttacked(facing,100);
+            }
+        }
     }
 
     @Override

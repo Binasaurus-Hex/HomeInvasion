@@ -17,6 +17,7 @@ public abstract class Character extends GameObject implements Selectable {
     public Navigator navigator;
     protected Arbitrator arbitrator;
     public double width,height;
+    protected int health = 0;
 
     public Character(double x, double y,double width, double height, double rotation, GameObjectID id, Game game) {
         super(x, y, 0, rotation, id, game);

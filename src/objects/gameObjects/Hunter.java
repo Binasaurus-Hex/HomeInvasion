@@ -10,6 +10,7 @@ import objects.FileIO.BufferedImageLoader;
 
 
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -31,6 +32,8 @@ public class Hunter extends Enemy {
         arbitrator.addBehaviour(openWindow);
         arbitrator.addBehaviour(vault);
         arbitrator.addBehaviour(moveToActivatable);
+
+        health = 100;
 
     }
 
@@ -110,7 +113,12 @@ public class Hunter extends Enemy {
 
     @Override
     public void onAttacked(Point2D.Double force, double damage) {
-
+        x += force.x;
+        y += force.y;
+        health -= damage;
+        if(health < 0){
+            game.objectHandler.objects.remove(this);
+        }
     }
 
     @Override

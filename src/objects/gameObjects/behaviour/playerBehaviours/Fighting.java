@@ -57,7 +57,7 @@ public class Fighting implements Behaviour {
         }
 
         if(game.mouseHandler.isMouseDown()){
-
+            player.attack();
         }
     }
 
